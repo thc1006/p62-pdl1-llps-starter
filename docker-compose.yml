@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # GPU-Accelerated Analysis Environment
+  # ============================================
+  p62-llps-analysis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: p62-pdl1-llps:latest
+    container_name: p62_llps_analysis
+
+    # GPU support (requires NVIDIA Docker runtime)
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - CUDA_VISIBLE_DEVICES=0
+
+    # Mount project directory
+    volumes:
+      - ./:/workspace
+      - ./outputs:/workspace/outputs
+      - ./data:/workspace/data
+      - huggingface_cache:/workspace/.cache/huggingface
+
+    # Keep container running
+    stdin_open: true
+    tty: true
+
+    # Working directory
+    working_dir: /workspace
+
+    # Default command
+    command: /bin/bash
+
+  # ============================================
+  # AlphaFold-Multimer (ColabFold)
+  # ============================================
+  alphafold-multimer:
+    image: ghcr.io/sokrypton/colabfold:latest
+    container_name: p62_alphafold_multimer
+
+    # GPU required
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+
+    # Mount data
+    volumes:
+      - ./data:/data
+      - ./outputs/alphafold_multimer:/output
+
+    # Working directory
+    working_dir: /data
+
+    # Command to run (override as needed)
+    command: >
+      colabfold_batch
+      --num-recycle 3
+      --amber
+      /data/p62_pdl1_sequences.fasta
+      /output
+
+volumes:
+  huggingface_cache:
+    driver: local
