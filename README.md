@@ -2,7 +2,8 @@
 
 **Integrative analysis of p62/SQSTM1 condensate-mediated PD-L1 regulation**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/1087789702.svg)](https://doi.org/10.5281/zenodo.17503202)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![GPU Accelerated](https://img.shields.io/badge/GPU-CUDA%2012.4-green.svg)](https://developer.nvidia.com/cuda-toolkit)
 
@@ -229,9 +230,9 @@ If you use this framework in your research, please cite:
 
 ## License
 
-MIT License - See LICENSE file for details.
+Apache License 2.0 - See LICENSE file for details.
 
-Free for academic and commercial use with attribution.
+Free for academic and commercial use with attribution and patent grant.
 
 ---
 
