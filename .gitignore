@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# R / temp
+.Rhistory
+.Rproj.user
+
+# Data / artifacts
+data/*
+!data/.gitkeep
+artifacts/
+figures/
+outputs/
+
+# OS
+.DS_Store
+CLAUDE.md
+.claude/
+mcp/
+scripts/
+skills/
+tools/
+docs/MCP.md
+data/.gitkeep
