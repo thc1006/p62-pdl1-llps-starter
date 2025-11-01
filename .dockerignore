@@ -1,0 +1,21 @@
+# Exclude problematic symlinks and large files
+tools/foldseek/foldseek/foldseek
+tools/*/bin/
+tools/*/.git/
+*.pyc
+__pycache__/
+.git/
+.idea/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+outputs/gdc_expression/*.tsv.gz
+outputs/gdc_expression/*.tsv
+.cache/
+*.swp
+*.swo
+*~
+.DS_Store
