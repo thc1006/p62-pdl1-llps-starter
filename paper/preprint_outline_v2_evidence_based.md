@@ -1,6 +1,6 @@
 # Evidence-Based Preprint Outline: p62-PD-L1 Phase Separation
 
-**Updated:** 2025-11-02 03:00
+**Updated:** 2025-11-02 03:18
 **Status:** Draft v2.0 (data-driven)
 
 ---
@@ -398,7 +398,7 @@ This work establishes a roadmap for studying LLPS-mediated immune checkpoint con
 
 **Document metadata:**
 - Version: 2.0 (evidence-based)
-- Generated: 2025-11-02 03:00
+- Generated: 2025-11-02 03:18
 - Data sources: PubMed (n=178), TCGA (n=50), SaProt predictions
 - Status: Ready for Methods/Results expansion
 
