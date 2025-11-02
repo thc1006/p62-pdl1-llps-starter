@@ -17,8 +17,24 @@ library(tidyverse)
 # Configuration
 # =============================================================================
 
-BASE_DIR <- dirname(dirname(dirname(rstudioapi::getActiveDocumentContext()$path)))
-if (BASE_DIR == "" || is.na(BASE_DIR)) {
+# Get BASE_DIR for command-line execution
+if (interactive() && requireNamespace("rstudioapi", quietly = TRUE)) {
+  # Running in RStudio
+  BASE_DIR <- dirname(dirname(dirname(rstudioapi::getActiveDocumentContext()$path)))
+} else {
+  # Running from command line - use script location or working directory
+  script_path <- commandArgs(trailingOnly = FALSE)
+  file_arg <- grep("^--file=", script_path, value = TRUE)
+  if (length(file_arg) > 0) {
+    script_file <- sub("^--file=", "", file_arg)
+    BASE_DIR <- dirname(dirname(dirname(script_file)))
+  } else {
+    BASE_DIR <- getwd()
+  }
+}
+
+# Fallback to working directory if BASE_DIR is invalid
+if (BASE_DIR == "" || is.na(BASE_DIR) || !dir.exists(BASE_DIR)) {
   BASE_DIR <- getwd()
 }
 
@@ -69,6 +85,30 @@ colnames(expr_matrix) <- sample_id
 cat(sprintf("  Matrix: %d genes x %d samples\n", nrow(expr_matrix), ncol(expr_matrix)))
 
 # =============================================================================
+# Step 2.5: Convert Ensembl IDs to Gene Symbols
+# =============================================================================
+
+cat("\n[ANNOTATE] Converting Ensembl IDs to gene symbols...\n")
+
+# Check if rownames are Ensembl IDs
+if (grepl("^ENSG", rownames(expr_matrix)[1])) {
+  cat("  Detected Ensembl IDs, converting to gene symbols...\n")
+
+  # Use IOBR's anno_eset function with built-in annotation
+  # probe="id" means rownames are Ensembl IDs
+  expr_matrix <- anno_eset(
+    eset = expr_matrix,
+    annotation = anno_grch38,
+    probe = "id"
+  )
+
+  cat(sprintf("  [OK] Converted to gene symbols: %d genes x %d samples\n",
+              nrow(expr_matrix), ncol(expr_matrix)))
+} else {
+  cat("  Gene symbols detected, no conversion needed\n")
+}
+
+# =============================================================================
 # Step 3: Run TIMER2.0 Deconvolution
 # =============================================================================
 
@@ -83,12 +123,16 @@ cat("\n[DECONVOLUTE] Running TIMER2.0...\n")
 # - Myeloid.dendritic: Dendritic cells
 
 tryCatch({
+  # Prepare cancer type indications for TIMER2.0
+  # TIMER requires cancer type codes (lowercase) for each sample
+  indications <- tolower(cancer_type)
+
+  cat(sprintf("  Cancer types: %s\n", paste(unique(indications), collapse = ", ")))
+
   # Run TIMER2.0 deconvolution
   timer_results <- deconvo_timer(
     eset = expr_matrix,
-    tumor = TRUE,  # TCGA is tumor tissue
-    arrays = FALSE,  # RNA-seq data
-    rmgenes = NULL  # Keep all genes
+    indications = indications  # Cancer type for each sample (required)
   )
 
   cat("  [OK] TIMER2.0 deconvolution completed\n")
