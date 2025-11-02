@@ -104,6 +104,27 @@ if (grepl("^ENSG", rownames(expr_matrix)[1])) {
 
   cat(sprintf("  [OK] Converted to gene symbols: %d genes x %d samples\n",
               nrow(expr_matrix), ncol(expr_matrix)))
+
+  # CRITICAL FIX: Filter to protein-coding genes only
+  # This prevents TIMER2.0 from stalling on non-coding RNAs
+  cat("\n[FILTER] Removing non-coding genes (BEST PRACTICE)...\n")
+
+  # Get annotation with biotype information
+  anno_data <- anno_grch38
+
+  # Match current genes with annotation
+  matched_genes <- rownames(expr_matrix)[rownames(expr_matrix) %in% anno_data$symbol]
+  anno_subset <- anno_data[anno_data$symbol %in% matched_genes, ]
+
+  # Keep only protein-coding genes
+  protein_coding_genes <- anno_subset$symbol[anno_subset$biotype == "protein_coding"]
+
+  # Filter expression matrix
+  expr_matrix <- expr_matrix[rownames(expr_matrix) %in% protein_coding_genes, ]
+
+  cat(sprintf("  Removed non-coding genes (LINCs, miRNAs, pseudogenes)\n"))
+  cat(sprintf("  [OK] %d protein-coding genes retained\n", nrow(expr_matrix)))
+
 } else {
   cat("  Gene symbols detected, no conversion needed\n")
 }
