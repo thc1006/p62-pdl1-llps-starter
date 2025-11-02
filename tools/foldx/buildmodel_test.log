@@ -1,0 +1,75 @@
+   ********************************************
+   ***                                      ***
+   ***             FoldX 5 (c)            ***
+   ***                                      ***
+   ***     code by the FoldX Consortium     ***
+   ***                                      ***
+   ***     Jesper Borg, Frederic Rousseau   ***
+   ***    Joost Schymkowitz, Luis Serrano   ***
+   ***    Peter Vanhee, Erik Verschueren    ***
+   ***     Lies Baeten, Javier Delgado      ***
+   ***       and Francois Stricher          ***
+   *** and any other of the 9! permutations ***
+   ***   based on an original concept by    ***
+   ***   Raphael Guerois and Luis Serrano   ***
+   ********************************************
+
+ *** THIS IS AN IMPORTANT MESSAGE: 
+ >> External parametrized molecules were detected...
+ >> Final energetic values will depend of the correct parametrization of this molecules. 
+
+
+1 models read: 5XJH.pdb
+1 models read: 5XJH.pdb
+
+BackHbond       =               -176.83
+SideHbond       =               -48.96
+Energy_VdW      =               -313.16
+Electro         =               -9.30
+Energy_SolvP    =               439.64
+Energy_SolvH    =               -396.69
+Energy_vdwclash =               20.15
+energy_torsion  =               11.60
+backbone_vdwclash=              160.49
+Entropy_sidec   =               138.41
+Entropy_mainc   =               395.43
+water bonds     =               0.00
+helix dipole    =               -1.28
+loop_entropy    =               0.00
+cis_bond        =               0.00
+disulfide       =               -6.46
+kn electrostatic=               0.00
+partial covalent interactions = 0.00
+Energy_Ionisation =             0.91
+Entropy Complex =               0.00
+-----------------------------------------------------------
+Total          = 				  53.46
+
+
+BackHbond       =               -176.83
+SideHbond       =               -48.96
+Energy_VdW      =               -313.16
+Electro         =               -9.30
+Energy_SolvP    =               439.64
+Energy_SolvH    =               -396.69
+Energy_vdwclash =               20.15
+energy_torsion  =               11.60
+backbone_vdwclash=              160.49
+Entropy_sidec   =               138.41
+Entropy_mainc   =               395.43
+water bonds     =               0.00
+helix dipole    =               -1.28
+loop_entropy    =               0.00
+cis_bond        =               0.00
+disulfide       =               -6.46
+kn electrostatic=               0.00
+partial covalent interactions = 0.00
+Energy_Ionisation =             0.91
+Entropy Complex =               0.00
+-----------------------------------------------------------
+Total          = 				  53.46
+
+Starting BuildModel
+Reading SA233K;
+SA233K	Specified residue not found.
+no mutations performed.

@@ -1,0 +1,29 @@
+{
+  "servers": [
+    {
+      "name": "fs",
+      "type": "filesystem",
+      "root": "."
+    },
+    {
+      "name": "git",
+      "type": "git",
+      "repo": "local"
+    },
+    {
+      "name": "http-cbioportal",
+      "type": "http",
+      "base_url": "https://www.cbioportal.org/api"
+    },
+    {
+      "name": "http-gdc",
+      "type": "http",
+      "base_url": "https://api.gdc.cancer.gov"
+    },
+    {
+      "name": "http-depmap",
+      "type": "http",
+      "base_url": "https://depmap.org/portal/api"
+    }
+  ]
+}

@@ -15,13 +15,20 @@ artifacts/
 figures/
 outputs/
 
+# Large model weights (>100MB) and problematic files
+# tools/SaProt is a 4.9GB git repo with large model files
+tools/SaProt/
+
 # OS
 .DS_Store
 CLAUDE.md
 .claude/
-mcp/
-scripts/
-skills/
-tools/
 docs/MCP.md
 data/.gitkeep
+
+# Large model files (>100MB)
+pytorch_model.bin
+SaProt_650M_AF2.pt
+tools/SaProt/weights/
+*.bin
+*.pt
