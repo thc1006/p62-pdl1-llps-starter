@@ -416,9 +416,20 @@ def main():
         'meta_results': meta_results.to_dict('records')
     }
 
+    # Save summary with NumPy type converter
+    class NumpyEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, (np.integer, np.int64)):
+                return int(obj)
+            elif isinstance(obj, (np.floating, np.float64)):
+                return float(obj)
+            elif isinstance(obj, np.ndarray):
+                return obj.tolist()
+            return super().default(obj)
+
     json_file = OUTPUT_DIR / "external_validation_summary.json"
     with open(json_file, 'w') as f:
-        json.dump(summary, f, indent=2)
+        json.dump(summary, f, indent=2, cls=NumpyEncoder)
     print(f"  Saved: {json_file}")
 
     # Final summary
