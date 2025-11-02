@@ -1,40 +1,12 @@
-FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
+# Dockerfile for Excellence Upgrade Pipeline
+FROM python:3.9-slim
 
-# Set working directory
-WORKDIR /workspace
+# Install dependencies
+RUN apt-get update && apt-get install -y build-essential curl git && rm -rf /var/lib/apt/lists/*
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    wget \
-    curl \
-    vim \
-    && rm -rf /var/lib/apt/lists/*
+# Install Python packages
+RUN pip install --no-cache-dir pandas==1.4.4 numpy==1.23.5 scipy==1.9.3 matplotlib==3.6.2 seaborn==0.12.1 lifelines==0.27.4 scikit-learn==1.1.3 statsmodels==0.13.5 reportlab==3.6.12 Pillow==9.3.0 pingouin==0.5.3 tqdm==4.64.1
 
-# Copy SaProt requirements
-COPY tools/SaProt/requirements.txt /tmp/saprot_requirements.txt
-
-# Install Python dependencies
-RUN pip install --no-cache-dir -r /tmp/saprot_requirements.txt
-
-# Install additional tools
-RUN pip install --no-cache-dir \
-    requests \
-    pandas \
-    numpy \
-    matplotlib \
-    seaborn \
-    lifelines \
-    pyyaml \
-    lxml \
-    biopython
-
-# Copy project files
-COPY . /workspace/
-
-# Set environment variables
-ENV PYTHONPATH=/workspace
-ENV TRANSFORMERS_CACHE=/workspace/.cache/huggingface
-
-# Default command
-CMD ["/bin/bash"]
+WORKDIR /project
+COPY . /project
+CMD ["bash"]
