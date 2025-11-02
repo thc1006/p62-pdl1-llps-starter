@@ -1,0 +1,59 @@
+FROM nvidia/cuda:12.4.0-runtime-ubuntu22.04
+
+# 基本環境設置
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+# 安裝系統依賴
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    python3-dev \
+    r-base \
+    r-base-dev \
+    git \
+    wget \
+    curl \
+    build-essential \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# 升級 pip
+RUN pip3 install --upgrade pip setuptools wheel
+
+# 安裝 Python 科學計算包
+RUN pip3 install \
+    pandas>=2.0.0 \
+    numpy>=1.24.0 \
+    scipy>=1.10.0 \
+    matplotlib>=3.7.0 \
+    seaborn>=0.12.0 \
+    scikit-learn>=1.3.0 \
+    statsmodels>=0.14.0 \
+    lifelines>=0.27.0 \
+    reportlab>=4.0.0 \
+    openpyxl>=3.1.0 \
+    requests>=2.31.0 \
+    tqdm>=4.65.0
+
+# 安裝 rpy2 (R-Python 橋接)
+RUN pip3 install rpy2>=3.5.0
+
+# 安裝 R 套件 (用於 xCell, TIMER2.0)
+RUN R -e "install.packages(c('BiocManager', 'devtools'), repos='https://cloud.r-project.org/')" && \
+    R -e "BiocManager::install(c('limma', 'edgeR', 'DESeq2'))" && \
+    R -e "BiocManager::install('immunedeconv')"
+
+# 創建工作目錄
+WORKDIR /workspace
+
+# 複製專案文件
+COPY . /workspace/
+
+# 設置權限
+RUN chmod +x /workspace/scripts/excellence_upgrade/*.py
+
+# 預設命令
+CMD ["python3", "/workspace/scripts/excellence_upgrade/AUTOMATE_ALL_FIXES.py"]

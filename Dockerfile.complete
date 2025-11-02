@@ -1,0 +1,97 @@
+# Complete Research Pipeline Docker Image
+# Includes all dependencies for data download, processing, and analysis
+
+FROM nvidia/cuda:12.4.0-runtime-ubuntu22.04
+
+# Set environment
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+ENV PATH="/opt/conda/bin:${PATH}"
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    git \
+    curl \
+    vim \
+    build-essential \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    libxml2-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Miniconda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
+    bash /tmp/miniconda.sh -b -p /opt/conda && \
+    rm /tmp/miniconda.sh
+
+# Create conda environment
+RUN conda create -n research python=3.11 -y
+SHELL ["conda", "run", "-n", "research", "/bin/bash", "-c"]
+
+# Install Python packages
+RUN pip install --no-cache-dir \
+    pandas==2.1.4 \
+    numpy==1.26.2 \
+    scipy==1.11.4 \
+    matplotlib==3.8.2 \
+    seaborn==0.13.0 \
+    scikit-learn==1.3.2 \
+    statsmodels==0.14.1 \
+    lifelines==0.27.8 \
+    requests==2.31.0 \
+    tqdm==4.66.1 \
+    jupyterlab==4.0.9 \
+    ipywidgets==8.1.1 \
+    plotly==5.18.0 \
+    biopython==1.82 \
+    pyyaml==6.0.1
+
+# Install R and packages
+RUN conda install -c conda-forge -n research \
+    r-base=4.3 \
+    r-essentials \
+    r-devtools \
+    r-tidyverse \
+    r-ggplot2 \
+    r-biocmanager \
+    -y
+
+# Install R Bioconductor packages
+RUN conda run -n research R -e "\
+    BiocManager::install(c(\
+        'IOBR', \
+        'xCell', \
+        'ESTIMATE', \
+        'immunedeconv', \
+        'DESeq2', \
+        'edgeR'\
+    ), ask=FALSE, update=FALSE)"
+
+# Download GDC Client
+RUN wget https://gdc.cancer.gov/system/files/authenticated%20user/0/gdc-client_v1.6.1_Ubuntu_x64.zip -O /tmp/gdc-client.zip && \
+    apt-get update && apt-get install -y unzip && \
+    unzip /tmp/gdc-client.zip -d /usr/local/bin/ && \
+    chmod +x /usr/local/bin/gdc-client && \
+    rm /tmp/gdc-client.zip
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy project files
+COPY . /workspace/
+
+# Create output directories
+RUN mkdir -p \
+    /workspace/data/tcga_raw \
+    /workspace/outputs/tcga_full_cohort_real \
+    /workspace/outputs/timer2_results \
+    /workspace/outputs/single_cell_validation \
+    /workspace/outputs/external_validation
+
+# Activate conda environment by default
+RUN echo "conda activate research" >> ~/.bashrc
+ENV PATH /opt/conda/envs/research/bin:$PATH
+
+# Default command
+CMD ["bash"]
