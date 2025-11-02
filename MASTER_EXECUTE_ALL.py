@@ -55,7 +55,7 @@ PHASES = [
         "name": "Download Complete TCGA Data",
         "script": None,  # Manual step
         "description": "Download RNA-seq + Clinical data (~50GB)",
-        "critical": True,
+        "critical": False,  # Changed to False - data already downloaded in 1A
         "estimated_time": "2-8 hours (depends on connection)",
         "prerequisites": ["1A"],
         "manual": True,
@@ -72,7 +72,7 @@ PHASES = [
         "description": "Normalize, QC, combine all projects",
         "critical": True,
         "estimated_time": "30-60 min",
-        "prerequisites": ["1B"]
+        "prerequisites": ["1A"]  # Changed from 1B to 1A (data already downloaded)
     },
     {
         "phase": "1D",
@@ -81,7 +81,7 @@ PHASES = [
         "description": "Extract OS, stage, demographics",
         "critical": True,
         "estimated_time": "10 min",
-        "prerequisites": ["1B"]
+        "prerequisites": ["1A"]  # Changed from 1B to 1A (data already downloaded)
     },
 
     # Phase 2: Core Analysis (Fixed Methods)

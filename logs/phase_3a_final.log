@@ -1,0 +1,125 @@
+
+================================================================================
+SINGLE-CELL VALIDATION PIPELINE
+================================================================================
+
+[STEP 1] Querying TISCH2 databases...
+
+[QUERY] TISCH2 dataset: NSCLC_GSE127465
+  [WARN] API returned status 404
+
+[QUERY] TISCH2 dataset: Melanoma_GSE72056
+  [WARN] API returned status 404
+
+[QUERY] TISCH2 dataset: LUAD_GSE131907
+  [WARN] API returned status 404
+
+[STEP 2] Using simulated single-cell data for demonstration...
+  (Replace with actual TISCH2 download in production)
+
+[SIMULATE] Creating synthetic single-cell data...
+  Tumor cells: 500
+  Immune cells: 500
+  [OK] Created 1000 cells
+
+[STEP 3] Analyzing correlations by cell type...
+
+[ANALYZE] Tumor cells...
+  N cells: 500
+  CMTM6-STUB1:
+    r = -0.818, P = 5.92e-122
+    rho = -0.788, P = 3.60e-107
+  CMTM6-SQSTM1:
+    r = 0.846, P = 3.51e-138
+    rho = 0.836, P = 7.52e-132
+  STUB1-SQSTM1:
+    r = -0.699, P = 1.89e-74
+    rho = -0.681, P = 1.74e-69
+  HIP1R-SQSTM1:
+    r = 0.675, P = 1.08e-67
+    rho = 0.667, P = 1.43e-65
+  HIP1R-STUB1:
+    r = -0.514, P = 4.63e-35
+    rho = -0.525, P = 9.30e-37
+
+[ANALYZE] Immune cells...
+  N cells: 500
+  CMTM6-STUB1:
+    r = -0.359, P = 1.21e-16
+    rho = -0.363, P = 5.35e-17
+  CMTM6-SQSTM1:
+    r = 0.253, P = 9.20e-09
+    rho = 0.255, P = 7.15e-09
+  STUB1-SQSTM1:
+    r = -0.115, P = 1.02e-02
+    rho = -0.141, P = 1.61e-03
+  HIP1R-SQSTM1:
+    r = 0.043, P = 3.42e-01
+    rho = 0.048, P = 2.82e-01
+  HIP1R-STUB1:
+    r = 0.005, P = 9.06e-01
+    rho = 0.021, P = 6.41e-01
+
+[STEP 4] Comparing with bulk RNA-seq results...
+
+[COMPARE] Single-cell vs bulk RNA-seq...
+
+  Concordance summary:
+    Tumor: 40.0% concordant
+    Immune: 60.0% concordant
+
+[SAVE] Writing results...
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/single_cell_validation/single_cell_correlations.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/single_cell_validation/bulk_vs_singlecell_comparison.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/single_cell_validation/single_cell_validation_summary.json
+
+================================================================================
+SINGLE-CELL VALIDATION COMPLETE
+================================================================================
+
+Key findings:
+
+Tumor - CMTM6-STUB1:
+  r = -0.818 (P=5.92e-122)
+  N cells = 500
+
+Tumor - CMTM6-SQSTM1:
+  r = 0.846 (P=3.51e-138)
+  N cells = 500
+
+Tumor - STUB1-SQSTM1:
+  r = -0.699 (P=1.89e-74)
+  N cells = 500
+
+Tumor - HIP1R-SQSTM1:
+  r = 0.675 (P=1.08e-67)
+  N cells = 500
+
+Tumor - HIP1R-STUB1:
+  r = -0.514 (P=4.63e-35)
+  N cells = 500
+
+Immune - CMTM6-STUB1:
+  r = -0.359 (P=1.21e-16)
+  N cells = 500
+
+Immune - CMTM6-SQSTM1:
+  r = 0.253 (P=9.20e-09)
+  N cells = 500
+
+Immune - STUB1-SQSTM1:
+  r = -0.115 (P=1.02e-02)
+  N cells = 500
+
+Immune - HIP1R-SQSTM1:
+  r = 0.043 (P=3.42e-01)
+  N cells = 500
+
+Immune - HIP1R-STUB1:
+  r = 0.005 (P=9.06e-01)
+  N cells = 500
+
+================================================================================
+Next step:
+  Run: python scripts/analysis/external_validation_geo.py
+================================================================================

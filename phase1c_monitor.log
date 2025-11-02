@@ -1,0 +1,48 @@
+=== Phase 1C Monitor Started at 15:25:10 ===
+
+[15:25:11] CPU: 101% | Memory: 4.9% | Runtime: 03:39
+[15:25:41] CPU: 100% | Memory: 6.1% | Runtime: 04:09
+[15:26:11] CPU: 100% | Memory: 4.2% | Runtime: 04:39
+[15:26:41] CPU: 100% | Memory: 4.2% | Runtime: 05:09
+[15:27:11] CPU: 100% | Memory: 5.7% | Runtime: 05:39
+[15:27:41] CPU: 100% | Memory: 6.4% | Runtime: 06:10
+              Output file detected: 22M
+[15:28:11] CPU: 100% | Memory: 6.4% | Runtime: 06:40
+              Output file detected: 305M
+[15:28:41] CPU: 100% | Memory: 6.4% | Runtime: 07:10
+              Output file detected: 588M
+[15:29:11] CPU: 100% | Memory: 6.4% | Runtime: 07:40
+              Output file detected: 870M
+[15:29:41] CPU: 100% | Memory: 6.4% | Runtime: 08:10
+              Output file detected: 1.2G
+
+🎉 Phase 1C process completed!
+
+✅ Output file created:
+-rw-rw-r-- 1 thc1006 thc1006 1.3G Nov  2 15:29 outputs/tcga_full_cohort_real/expression_matrix_full_real.csv
+
+File size: 1.3G
+
+📋 Last log entries:
+[2025-11-02 15:30:01] [INFO] Total runtime: 8.6 minutes
+[2025-11-02 15:30:01] [INFO] Completed: 4/15
+[2025-11-02 15:30:01] [INFO] Failed: 2
+[2025-11-02 15:30:01] [INFO] Skipped: 0
+[2025-11-02 15:30:01] [INFO] 
+Completed phases:
+[2025-11-02 15:30:01] [INFO]   [OK] 1A
+[2025-11-02 15:30:01] [INFO]   [OK] 1C
+[2025-11-02 15:30:01] [INFO]   [OK] 1D
+[2025-11-02 15:30:01] [INFO]   [OK] 2A
+[2025-11-02 15:30:01] [INFO] 
+Failed phases:
+[2025-11-02 15:30:01] [INFO]   [FAIL] 1B
+[2025-11-02 15:30:01] [INFO]   [FAIL] 2B
+[2025-11-02 15:30:01] [INFO] 
+[SAVED] Execution report: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/execution_logs/execution_report_20251102_152125.json
+[2025-11-02 15:30:01] [INFO] ================================================================================
+[2025-11-02 15:30:01] [WARN] 
+PARTIAL SUCCESS: Some phases incomplete
+[2025-11-02 15:30:01] [INFO] Review log file for details
+
+=== Monitor Stopped at 15:30:11 ===

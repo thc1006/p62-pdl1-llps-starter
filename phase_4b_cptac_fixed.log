@@ -1,0 +1,48 @@
+======================================================================
+STAGE 4: CPTAC PROTEIN-LEVEL VALIDATION
+======================================================================
+
+[STEP 1] Loading CPTAC proteomics data...
+  CPTAC data not found. Attempting to download...
+
+  DATA DOWNLOAD INSTRUCTIONS:
+  1. Go to: https://proteomic.datacommons.cancer.gov/pdc/
+  2. Search for: CPTAC-3 LUAD
+  3. Download: Protein abundance data (log2-ratio)
+  4. Repeat for: CPTAC-3 LUSC
+  5. Merge both files and save to: data/cptac_proteomics.csv
+
+  Required columns:
+    - sample_id
+    - CD274, CMTM6, STUB1, SQSTM1, HIP1R (protein abundance)
+    - cancer_type (LUAD/LUSC)
+
+  WARNING: Using simulated CPTAC data for demonstration!
+  MUST be replaced with real CPTAC data before publication!
+
+  Generating realistic CPTAC simulation...
+Traceback (most recent call last):
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'CD274'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/excellence_upgrade/stage4_cptac_validation.py", line 140, in <module>
+    cptac_df = load_cptac_data()
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/excellence_upgrade/stage4_cptac_validation.py", line 59, in load_cptac_data
+    return generate_cptac_simulation()
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/excellence_upgrade/stage4_cptac_validation.py", line 97, in generate_cptac_simulation
+    mrna = sampled_mrna[gene].values
+           ~~~~~~~~~~~~^^^^^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'CD274'

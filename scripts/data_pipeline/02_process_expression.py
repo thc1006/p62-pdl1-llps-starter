@@ -37,7 +37,10 @@ def read_htseq_file(file_path: Path) -> pd.Series:
     """
     Read single HTSeq count file
 
-    Format:
+    Format (new TCGA format):
+    gene_id    gene_name    gene_type    unstranded    stranded_first    ...
+
+    Or old format:
     ENSG00000000003.15    1234
     ENSG00000000005.6     56
     ...
@@ -48,10 +51,26 @@ def read_htseq_file(file_path: Path) -> pd.Series:
     Returns:
         Series with gene IDs as index, counts as values
     """
-    df = pd.read_csv(file_path, sep='\t', header=None,
-                    names=['gene_id', 'count'], index_col=0)
+    # Read file and check format
+    df = pd.read_csv(file_path, sep='\t', comment='#')  # Skip comment lines
 
-    # Remove summary statistics lines
+    # Check if it's the new TCGA format (has columns)
+    if 'gene_id' in df.columns and 'unstranded' in df.columns:
+        # New format: use gene_id and unstranded columns
+        df = df[['gene_id', 'unstranded']].copy()
+        df.columns = ['gene_id', 'count']
+        df = df.set_index('gene_id')
+    elif df.shape[1] == 2 and df.columns[0] != 'gene_id':
+        # Old format without header
+        df.columns = ['gene_id', 'count']
+        df = df.set_index('gene_id')
+    else:
+        # Try to handle as old format
+        df = pd.read_csv(file_path, sep='\t', header=None,
+                        names=['gene_id', 'count'], index_col=0)
+
+    # Remove summary statistics lines (N_unmapped, N_multimapping, N_noFeature, __)
+    df = df[~df.index.str.startswith('N_')]
     df = df[~df.index.str.startswith('__')]
 
     # Extract Ensembl ID without version

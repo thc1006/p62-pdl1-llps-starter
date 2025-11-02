@@ -1,0 +1,311 @@
+
+================================================================================
+ABSOLUTE FINAL ATTEMPT - IOBR INSTALLATION
+================================================================================
+
+[STEP 1] Installing clusterProfiler...
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: https://cloud.r-project.org/
+Bioconductor version 3.22 (BiocManager 1.30.26), R 4.5.0 (2025-04-11)
+Installing package(s) 'clusterProfiler'
+also installing the dependencies ‘systemfonts’, ‘gdtools’, ‘ggforce’, ‘ggiraph’, ‘ggnewscale’, ‘scatterpie’, ‘ggtree’, ‘enrichplot’
+
+trying URL 'https://cloud.r-project.org/src/contrib/systemfonts_1.3.1.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/gdtools_0.4.4.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggforce_0.5.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggiraph_0.9.2.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggnewscale_0.5.2.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/scatterpie_0.2.6.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/ggtree_4.0.1.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/enrichplot_1.30.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/clusterProfiler_4.18.0.tar.gz'
+* installing *source* package ‘systemfonts’ ...
+** this is package ‘systemfonts’ version ‘1.3.1’
+** package ‘systemfonts’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=-I/usr/include/freetype2 -I/usr/include/libpng16 
+Using PKG_LIBS=-lfontconfig -lfreetype 
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+rm -f systemfonts.so caches.o cpp11.o dev_metrics.o font_matching.o font_local.o font_variation.o font_registry.o ft_cache.o string_shape.o font_metrics.o font_outlines.o font_fallback.o string_metrics.o emoji.o cache_store.o init.o unix/FontManagerLinux.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c caches.cpp -o caches.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c dev_metrics.cpp -o dev_metrics.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_matching.cpp -o font_matching.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_local.cpp -o font_local.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_variation.cpp -o font_variation.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_registry.cpp -o font_registry.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c ft_cache.cpp -o ft_cache.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c string_shape.cpp -o string_shape.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_metrics.cpp -o font_metrics.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_outlines.cpp -o font_outlines.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_fallback.cpp -o font_fallback.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c string_metrics.cpp -o string_metrics.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c emoji.cpp -o emoji.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c cache_store.cpp -o cache_store.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c init.cpp -o init.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/freetype2 -I/usr/include/libpng16  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c unix/FontManagerLinux.cpp -o unix/FontManagerLinux.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o systemfonts.so caches.o cpp11.o dev_metrics.o font_matching.o font_local.o font_variation.o font_registry.o ft_cache.o string_shape.o font_metrics.o font_outlines.o font_fallback.o string_metrics.o emoji.o cache_store.o init.o unix/FontManagerLinux.o -lfontconfig -lfreetype -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-systemfonts/00new/systemfonts/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (systemfonts)
+ERROR: failed to lock directory ‘/home/thc1006/R/library’ for modifying
+Try removing ‘/home/thc1006/R/library/00LOCK-ggnewscale’
+* installing *source* package ‘gdtools’ ...
+** this is package ‘gdtools’ version ‘0.4.4’
+** package ‘gdtools’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=-I/usr/include/cairo -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/pixman-1 
+Using PKG_LIBS=-lcairo -lfreetype 
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/cairo -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/pixman-1  -I../inst/include/ -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c CairoContext.cpp -o CairoContext.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/cairo -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/pixman-1  -I../inst/include/ -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/cairo -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/pixman-1  -I../inst/include/ -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c font_metrics.cpp -o font_metrics.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/cairo -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/pixman-1  -I../inst/include/ -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c gdtools.cpp -o gdtools.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/cairo -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/pixman-1  -I../inst/include/ -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c versions.cpp -o versions.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o gdtools.so CairoContext.o RcppExports.o font_metrics.o gdtools.o versions.o -lcairo -lfreetype -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-gdtools/00new/gdtools/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gdtools)
+* installing *source* package ‘ggforce’ ...
+** this is package ‘ggforce’ version ‘0.5.0’
+** package ‘ggforce’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c bSpline.cpp -o bSpline.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c bezier.cpp -o bezier.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c concaveman.cpp -o concaveman.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c deBoor.cpp -o deBoor.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c ellipseEnclose.cpp -o ellipseEnclose.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c enclose.cpp -o enclose.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cpp11/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c pointPath.cpp -o pointPath.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o ggforce.so bSpline.o bezier.o concaveman.o cpp11.o deBoor.o ellipseEnclose.o enclose.o pointPath.o -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-ggforce/00new/ggforce/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggforce)
+* installing *source* package ‘ggiraph’ ...
+** this is package ‘ggiraph’ version ‘0.9.2’
+** package ‘ggiraph’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c a_color.cpp -o a_color.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c clip.cpp -o clip.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c dsvg.cpp -o dsvg.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c dsvg_dev.cpp -o dsvg_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c geom.cpp -o geom.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c indexed.cpp -o indexed.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c interactive.cpp -o interactive.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c mask.cpp -o mask.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c pattern.cpp -o pattern.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c raster.cpp -o raster.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c shapes.cpp -o shapes.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c svg.cpp -o svg.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c text.cpp -o text.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c tinyxml2.cpp -o tinyxml2.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c utils.cpp -o utils.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o ggiraph.so RcppExports.o a_color.o clip.o dsvg.o dsvg_dev.o geom.o indexed.o interactive.o mask.o pattern.o raster.o shapes.o svg.o text.o tinyxml2.o utils.o -lpng -lz -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-ggiraph/00new/ggiraph/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggiraph)
+* installing *source* package ‘scatterpie’ ...
+** this is package ‘scatterpie’ version ‘0.2.6’
+** package ‘scatterpie’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (scatterpie)
+* installing *source* package ‘ggtree’ ...
+** this is package ‘ggtree’ version ‘4.0.1’
+** package ‘ggtree’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggtree)
+ERROR: dependency ‘ggnewscale’ is not available for package ‘enrichplot’
+Perhaps try a variation of:
+install.packages('ggnewscale')
+* removing ‘/home/thc1006/R/library/enrichplot’
+ERROR: dependency ‘enrichplot’ is not available for package ‘clusterProfiler’
+Perhaps try a variation of:
+install.packages('enrichplot')
+* removing ‘/home/thc1006/R/library/clusterProfiler’
+
+The downloaded source packages are in
+	‘/tmp/RtmpD1cLku/downloaded_packages’
+✅ clusterProfiler installed
+
+Warning messages:
+1: In install.packages(...) :
+  installation of package ‘ggnewscale’ had non-zero exit status
+2: In install.packages(...) :
+  installation of package ‘enrichplot’ had non-zero exit status
+3: In install.packages(...) :
+  installation of package ‘clusterProfiler’ had non-zero exit status
+[STEP 2] Installing GSVA...
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: https://cloud.r-project.org/
+Bioconductor version 3.22 (BiocManager 1.30.26), R 4.5.0 (2025-04-11)
+Installing package(s) 'GSVA'
+also installing the dependencies ‘magick’, ‘SpatialExperiment’
+
+trying URL 'https://cloud.r-project.org/src/contrib/magick_2.9.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/SpatialExperiment_1.20.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/GSVA_2.4.0.tar.gz'
+* installing *source* package ‘magick’ ...
+** this is package ‘magick’ version ‘2.9.0’
+** package ‘magick’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=-I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32 
+Using PKG_LIBS=-lMagick++-7.Q16 -lMagickWand-7.Q16 -lMagickCore-7.Q16 
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c animation.cpp -o animation.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c attributes.cpp -o attributes.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c base.cpp -o base.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c color.cpp -o color.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c composite.cpp -o composite.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c config.cc -o config.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c convolve.cpp -o convolve.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c device.cpp -o device.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c edges.cpp -o edges.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c edit.cpp -o edit.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c fonts.cpp -o fonts.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c options.cpp -o options.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c properties.cpp -o properties.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c resize.cpp -o resize.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c segment.cpp -o segment.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/x86_64-linux-gnu/ImageMagick-7 -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32  -I'/home/thc1006/R/library/Rcpp/include'    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c transformations.cpp -o transformations.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o magick.so RcppExports.o animation.o attributes.o base.o color.o composite.o config.o convolve.o device.o edges.o edit.o fonts.o options.o properties.o resize.o segment.o transformations.o -lMagick++-7.Q16 -lMagickWand-7.Q16 -lMagickCore-7.Q16 -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-magick/00new/magick/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (magick)
+* installing *source* package ‘SpatialExperiment’ ...
+** this is package ‘SpatialExperiment’ version ‘1.20.0’
+** package ‘SpatialExperiment’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (SpatialExperiment)
+* installing *source* package ‘GSVA’ ...
+** this is package ‘GSVA’ version ‘2.4.0’
+** package ‘GSVA’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Debian 14.2.0-19) 14.2.0’
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cli/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c ecdfvals.c -o ecdfvals.o
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cli/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c kcdfvals.c -o kcdfvals.o
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cli/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c kernel_estimation.c -o kernel_estimation.o
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cli/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c ks_test.c -o ks_test.o
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cli/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c register_cmethods.c -o register_cmethods.o
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/cli/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c utils.c -o utils.o
+gcc -std=gnu23 -shared -L/usr/lib/R/lib -Wl,-z,relro -o GSVA.so ecdfvals.o kcdfvals.o kernel_estimation.o ks_test.o register_cmethods.o utils.o -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-GSVA/00new/GSVA/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (GSVA)
+
+The downloaded source packages are in
+	‘/tmp/RtmpD1cLku/downloaded_packages’
+✅ GSVA installed
+
+[STEP 3] Verifying installations...
+  clusterProfiler: ❌ MISSING
+  GSVA: ✅ OK
+
+❌ Dependencies still missing, cannot install IOBR

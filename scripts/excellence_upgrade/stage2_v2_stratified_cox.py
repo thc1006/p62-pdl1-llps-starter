@@ -25,12 +25,36 @@ print("  - Per-cancer Cox models + meta-analysis")
 print("="*70)
 
 # ============================================================================
+# Gene mapping: Ensembl ID -> Gene Symbol
+# ============================================================================
+GENE_MAP = {
+    'ENSG00000120217': 'CD274',   # PD-L1
+    'ENSG00000091317': 'CMTM6',
+    'ENSG00000103266': 'STUB1',   # CHIP
+    'ENSG00000107018': 'HIP1R',
+    'ENSG00000161011': 'SQSTM1',  # p62
+}
+
+# ============================================================================
 # 1. Load Data
 # ============================================================================
 print("\n[STEP 1] Loading data...")
 expr_file = Path("outputs/tcga_full_cohort/expression_matrix.csv")
 expr_df = pd.read_csv(expr_file)
 print(f"  Expression: {len(expr_df)} samples")
+
+# Check if columns are Ensembl IDs or gene symbols
+sample_col = expr_df.columns[0]
+if sample_col.startswith('ENSG'):
+    print("  ⚠️  Detected Ensembl IDs - converting to gene symbols")
+    rename_dict = {}
+    for ensembl_id, gene_symbol in GENE_MAP.items():
+        if ensembl_id in expr_df.columns:
+            rename_dict[ensembl_id] = gene_symbol
+            print(f"     {ensembl_id} → {gene_symbol}")
+    if rename_dict:
+        expr_df = expr_df.rename(columns=rename_dict)
+        print(f"  ✓ Converted {len(rename_dict)} genes to symbols")
 
 # Load or generate clinical data
 def load_or_generate_clinical(expr_df):

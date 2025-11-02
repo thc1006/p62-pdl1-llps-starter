@@ -1,0 +1,411 @@
+[2025-11-02 18:16:47] [INFO] 
+================================================================================
+[2025-11-02 18:16:47] [INFO] MASTER EXECUTION PIPELINE - COMPLETE RESEARCH WORKFLOW
+[2025-11-02 18:16:47] [INFO] ================================================================================
+[2025-11-02 18:16:47] [INFO] Start time: 2025-11-02 18:16:47
+[2025-11-02 18:16:47] [INFO] Log file: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/execution_logs/master_execution_20251102_181647.log
+[2025-11-02 18:16:47] [INFO] 
+--------------------------------------------------------------------------------
+[2025-11-02 18:16:47] [INFO] PHASE OVERVIEW
+[2025-11-02 18:16:47] [INFO] --------------------------------------------------------------------------------
+[2025-11-02 18:16:47] [INFO]   1A: Setup Data Download Pipeline [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 5 min
+[2025-11-02 18:16:47] [INFO]   1B: Download Complete TCGA Data [OPTIONAL] [MANUAL]
+[2025-11-02 18:16:47] [INFO]        Time: 2-8 hours (depends on connection)
+[2025-11-02 18:16:47] [INFO]   1C: Process Expression Data [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 30-60 min
+[2025-11-02 18:16:47] [INFO]   1D: Process Clinical Data [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 10 min
+[2025-11-02 18:16:47] [INFO]   2A: Re-run Fixed Analysis with Real Data [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 5 min
+[2025-11-02 18:16:47] [INFO]   2B: TIMER2.0 Immune Deconvolution [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 15 min
+[2025-11-02 18:16:47] [INFO]   2C: Re-run Partial Correlation with TIMER2 Scores [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 3 min
+[2025-11-02 18:16:47] [INFO]   3A: Single-Cell Validation (TISCH2) [OPTIONAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 20 min
+[2025-11-02 18:16:47] [INFO]   3B: External Cohort Validation (GEO) [OPTIONAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 30 min
+[2025-11-02 18:16:47] [INFO]   3C: Sensitivity Analysis [OPTIONAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 10 min
+[2025-11-02 18:16:47] [INFO]   4A: Generate Publication-Quality Figures [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 15 min
+[2025-11-02 18:16:47] [INFO]   4B: Update Manuscript [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 5 min
+[2025-11-02 18:16:47] [INFO]   5A: Generate Final PDF [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 2 min
+[2025-11-02 18:16:47] [INFO]   5B: Prepare Supplementary Materials [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 5 min
+[2025-11-02 18:16:47] [INFO]   5C: Generate Submission Package [CRITICAL] 
+[2025-11-02 18:16:47] [INFO]        Time: 2 min
+[2025-11-02 18:16:47] [INFO] --------------------------------------------------------------------------------
+[2025-11-02 18:16:47] [INFO] 
+This will execute the complete research pipeline.
+[2025-11-02 18:16:47] [INFO] Estimated total time: 4-10 hours (mostly data download)
+[2025-11-02 18:16:47] [INFO] 
+[2025-11-02 18:16:47] [INFO] [AUTO-YES] Proceeding automatically...
+[2025-11-02 18:16:47] [INFO] ================================================================================
+[2025-11-02 18:16:47] [PHASE] PHASE 1A: Setup Data Download Pipeline
+[2025-11-02 18:16:47] [INFO] ================================================================================
+[2025-11-02 18:16:47] [INFO] Description: Query GDC and setup download manifest
+[2025-11-02 18:16:47] [INFO] Estimated time: 5 min
+[2025-11-02 18:16:47] [INFO] Executing: /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/01_download_tcga_complete.py
+[2025-11-02 18:16:53] [DEBUG] STDOUT:
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   ================================================================================
+[2025-11-02 18:16:53] [DEBUG]   TCGA COMPLETE DATA DOWNLOAD PIPELINE
+[2025-11-02 18:16:53] [DEBUG]   ================================================================================
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [STEP 1] Querying GDC for available data...
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   ================================================================================
+[2025-11-02 18:16:53] [DEBUG]   TCGA DATA AVAILABILITY SUMMARY
+[2025-11-02 18:16:53] [DEBUG]   ================================================================================
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   TCGA-LUAD: Lung Adenocarcinoma
+[2025-11-02 18:16:53] [DEBUG]   ----------------------------------------
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [QUERY] TCGA-LUAD - Transcriptome Profiling
+[2025-11-02 18:16:53] [DEBUG]     Found 601 files (2.37 GB)
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [QUERY] TCGA-LUAD - Clinical
+[2025-11-02 18:16:53] [DEBUG]     Found 623 files (0.02 GB)
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]     RNA-seq files: 601
+[2025-11-02 18:16:53] [DEBUG]     Clinical files: 623
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   TCGA-LUSC: Lung Squamous Cell Carcinoma
+[2025-11-02 18:16:53] [DEBUG]   ----------------------------------------
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [QUERY] TCGA-LUSC - Transcriptome Profiling
+[2025-11-02 18:16:53] [DEBUG]     Found 562 files (2.22 GB)
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [QUERY] TCGA-LUSC - Clinical
+[2025-11-02 18:16:53] [DEBUG]     Found 577 files (0.02 GB)
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]     RNA-seq files: 562
+[2025-11-02 18:16:53] [DEBUG]     Clinical files: 577
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   TCGA-SKCM: Skin Cutaneous Melanoma
+[2025-11-02 18:16:53] [DEBUG]   ----------------------------------------
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [QUERY] TCGA-SKCM - Transcriptome Profiling
+[2025-11-02 18:16:53] [DEBUG]     Found 473 files (1.86 GB)
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [QUERY] TCGA-SKCM - Clinical
+[2025-11-02 18:16:53] [DEBUG]     Found 499 files (0.02 GB)
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]     RNA-seq files: 473
+[2025-11-02 18:16:53] [DEBUG]     Clinical files: 499
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   ================================================================================
+[2025-11-02 18:16:53] [DEBUG]   
+[2025-11-02 18:16:53] [DEBUG]   [DATA EXISTS] All data already downloaded. Skipping download.
+[2025-11-02 18:16:53] [OK] Phase 1A completed successfully (5.4s)
+[2025-11-02 18:16:53] [INFO] ================================================================================
+[2025-11-02 18:16:53] [PHASE] PHASE 1B: Download Complete TCGA Data
+[2025-11-02 18:16:53] [INFO] ================================================================================
+[2025-11-02 18:16:53] [INFO] Description: Download RNA-seq + Clinical data (~50GB)
+[2025-11-02 18:16:53] [INFO] Estimated time: 2-8 hours (depends on connection)
+[2025-11-02 18:16:53] [WARN] This is a MANUAL phase
+[2025-11-02 18:16:53] [INFO] Instructions:
+[2025-11-02 18:16:53] [INFO]   1. Use gdc-client or direct HTTP download
+[2025-11-02 18:16:53] [INFO]   2. Download TCGA-LUAD, TCGA-LUSC, TCGA-SKCM
+[2025-11-02 18:16:53] [INFO]   3. Verify file integrity
+[2025-11-02 18:16:53] [WARN] 
+[AUTO-YES] Skipping manual phase (will need to run separately)
+[2025-11-02 18:16:53] [SKIP] Manual phase auto-skipped
+[2025-11-02 18:16:53] [INFO] ================================================================================
+[2025-11-02 18:16:53] [PHASE] PHASE 1C: Process Expression Data
+[2025-11-02 18:16:53] [INFO] ================================================================================
+[2025-11-02 18:16:53] [INFO] Description: Normalize, QC, combine all projects
+[2025-11-02 18:16:53] [INFO] Estimated time: 30-60 min
+[2025-11-02 18:16:53] [INFO] Executing: /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/02_process_expression.py
+[2025-11-02 18:24:28] [DEBUG] STDOUT:
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   ================================================================================
+[2025-11-02 18:24:28] [DEBUG]   TCGA EXPRESSION DATA PROCESSING PIPELINE
+[2025-11-02 18:24:28] [DEBUG]   ================================================================================
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   [MAPPING] Getting Ensembl to Gene Symbol mapping...
+[2025-11-02 18:24:28] [DEBUG]     Downloading from GENCODE...
+[2025-11-02 18:24:28] [DEBUG]     [WARN] Mapping file not found
+[2025-11-02 18:24:28] [DEBUG]     Using gene IDs as-is
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   [PROCESS] TCGA-LUAD
+[2025-11-02 18:24:28] [DEBUG]     Found 601 files
+[2025-11-02 18:24:28] [DEBUG]     Processing: 50/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 100/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 150/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 200/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 250/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 300/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 350/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 400/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 450/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 500/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 550/601
+[2025-11-02 18:24:28] [DEBUG]     Processing: 600/601
+[2025-11-02 18:24:28] [DEBUG]     Created matrix: 60660 genes x 601 samples
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   [CONVERT] Converting Ensembl IDs to gene symbols...
+[2025-11-02 18:24:28] [DEBUG]     [SKIP] No mapping available, keeping Ensembl IDs
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   [NORMALIZE] Normalizing expression (log2tpm)...
+[2025-11-02 18:24:28] [DEBUG]     Filtered to 44961 expressed genes
+[2025-11-02 18:24:28] [DEBUG]     Range: 0.00 to 17.27
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   [QC] Quality control for TCGA-LUAD...
+[2025-11-02 18:24:28] [DEBUG]     Samples: 601 -> 601 (removed 0 low-quality)
+[2025-11-02 18:24:28] [DEBUG]     Genes: 44961 -> 44961 (removed 0 zero-variance)
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   [Z-SCORE] Normalizing by gene...
+[2025-11-02 18:24:28] [DEBUG]     Mean: 0.00, Std: 0.89
+[2025-11-02 18:24:28] [DEBUG]   
+[2025-11-02 18:24:28] [DEBUG]   [PROCESS] TCGA-LUSC
+[2025-11-02 18:24:28] [DEBUG]     Found 562 files
+[2025-11-02 18:24:28] [DEBUG]     Processing: 50/562
+[2025-11-02 18:24:28] [DEBUG]     Processing: 100/562
+[2025-11-02 18:24:28] [DEBUG]     Processing: 150/562
+[2025-11-02 18:24:28] [DEBUG]     Processing: 200/562
+[2025-11-02 18:24:28] [DEBUG]     Processing: 250/562
+[2025-11-02 18:24:28] [DEBUG]     Processing: 300/562
+[2025-11-02 18:24:28] [DEBUG]     Processing: 350/562
+[2025-11-02 18:24:28] [DEBUG]     Processing: 400/562
+[2025-11-02 18:24:28] [OK] Phase 1C completed successfully (455.6s)
+[2025-11-02 18:24:28] [INFO] ================================================================================
+[2025-11-02 18:24:28] [PHASE] PHASE 1D: Process Clinical Data
+[2025-11-02 18:24:28] [INFO] ================================================================================
+[2025-11-02 18:24:28] [INFO] Description: Extract OS, stage, demographics
+[2025-11-02 18:24:28] [INFO] Estimated time: 10 min
+[2025-11-02 18:24:28] [INFO] Executing: /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py
+[2025-11-02 18:24:31] [DEBUG] STDOUT:
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   ================================================================================
+[2025-11-02 18:24:31] [DEBUG]   TCGA CLINICAL DATA PROCESSING PIPELINE
+[2025-11-02 18:24:31] [DEBUG]   ================================================================================
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [COMBINE] Merging all projects...
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [PROCESS] TCGA-LUAD Clinical Data
+[2025-11-02 18:24:31] [DEBUG]     Found 617 XML files, 0 JSON files
+[2025-11-02 18:24:31] [DEBUG]     Extracted 617 patient records
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [CLEAN] Standardizing clinical variables...
+[2025-11-02 18:24:31] [DEBUG]     Samples: 617 -> 522 (removed 95 duplicates)
+[2025-11-02 18:24:31] [DEBUG]     Valid OS data: 441 patients
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]     Clinical variables summary:
+[2025-11-02 18:24:31] [DEBUG]       Age: 441 available
+[2025-11-02 18:24:31] [DEBUG]       Gender: 441 available
+[2025-11-02 18:24:31] [DEBUG]       Stage: 433 available
+[2025-11-02 18:24:31] [DEBUG]       OS: 441 available
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [PROCESS] TCGA-LUSC Clinical Data
+[2025-11-02 18:24:31] [DEBUG]     Found 571 XML files, 0 JSON files
+[2025-11-02 18:24:31] [DEBUG]     Extracted 571 patient records
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [CLEAN] Standardizing clinical variables...
+[2025-11-02 18:24:31] [DEBUG]     Samples: 571 -> 504 (removed 67 duplicates)
+[2025-11-02 18:24:31] [DEBUG]     Valid OS data: 440 patients
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]     Clinical variables summary:
+[2025-11-02 18:24:31] [DEBUG]       Age: 440 available
+[2025-11-02 18:24:31] [DEBUG]       Gender: 440 available
+[2025-11-02 18:24:31] [DEBUG]       Stage: 436 available
+[2025-11-02 18:24:31] [DEBUG]       OS: 440 available
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [PROCESS] TCGA-SKCM Clinical Data
+[2025-11-02 18:24:31] [DEBUG]     Found 493 XML files, 0 JSON files
+[2025-11-02 18:24:31] [DEBUG]     Extracted 493 patient records
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [CLEAN] Standardizing clinical variables...
+[2025-11-02 18:24:31] [DEBUG]     Samples: 493 -> 470 (removed 23 duplicates)
+[2025-11-02 18:24:31] [DEBUG]     Valid OS data: 426 patients
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]     Clinical variables summary:
+[2025-11-02 18:24:31] [DEBUG]       Age: 426 available
+[2025-11-02 18:24:31] [DEBUG]       Gender: 426 available
+[2025-11-02 18:24:31] [DEBUG]       Stage: 385 available
+[2025-11-02 18:24:31] [DEBUG]       OS: 426 available
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   [FINAL] Combined clinical data: 1307 patients
+[2025-11-02 18:24:31] [DEBUG] STDERR:
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:207: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['OS_status'] = clinical_df['vital_status'].map({
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:215: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['days_to_death'] = pd.to_numeric(clinical_df['days_to_death'], errors='coerce')
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:216: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['days_to_last_followup'] = pd.to_numeric(clinical_df['days_to_last_followup'], errors='coerce')
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:218: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['OS_days'] = clinical_df.apply(
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:207: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['OS_status'] = clinical_df['vital_status'].map({
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:215: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['days_to_death'] = pd.to_numeric(clinical_df['days_to_death'], errors='coerce')
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:216: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['days_to_last_followup'] = pd.to_numeric(clinical_df['days_to_last_followup'], errors='coerce')
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:218: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [DEBUG]   Try using .loc[row_indexer,col_indexer] = value instead
+[2025-11-02 18:24:31] [DEBUG]   
+[2025-11-02 18:24:31] [DEBUG]   See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-11-02 18:24:31] [DEBUG]     clinical_df['OS_days'] = clinical_df.apply(
+[2025-11-02 18:24:31] [DEBUG]   /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/03_process_clinical.py:207: SettingWithCopyWarning: 
+[2025-11-02 18:24:31] [DEBUG]   A value is trying to be set on a copy of a slice from a DataFrame.
+[2025-11-02 18:24:31] [OK] Phase 1D completed successfully (2.4s)
+[2025-11-02 18:24:31] [INFO] ================================================================================
+[2025-11-02 18:24:31] [PHASE] PHASE 2A: Re-run Fixed Analysis with Real Data
+[2025-11-02 18:24:31] [INFO] ================================================================================
+[2025-11-02 18:24:31] [INFO] Description: Stratified Cox + Fixed Partial Correlation + CPTAC
+[2025-11-02 18:24:31] [INFO] Estimated time: 5 min
+[2025-11-02 18:24:31] [INFO] Executing: /home/thc1006/dev/p62-pdl1-llps-starter/scripts/excellence_upgrade/AUTOMATE_ALL_FIXES.py
+[2025-11-02 18:24:32] [DEBUG] STDOUT:
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]    AUTOMATED EXCELLENCE UPGRADE - COMPLETE FIX
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   Started: 2025-11-02 18:24:31
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   [OK] THIS WILL FIX:
+[2025-11-02 18:24:32] [DEBUG]     1. Circular adjustment in IFN-/immune scores
+[2025-11-02 18:24:32] [DEBUG]     2. Cross-cancer Cox analysis issues
+[2025-11-02 18:24:32] [DEBUG]     3. Missing Schoenfeld residuals test
+[2025-11-02 18:24:32] [DEBUG]     4. Missing robustness checks (Spearman, bootstrap)
+[2025-11-02 18:24:32] [DEBUG]     5. Missing VIF multicollinearity check
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]   [STAGE 1/3] Stage 2 v2: Fixed Stratified Cox Analysis
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]   Script: stage2_v2_stratified_cox.py
+[2025-11-02 18:24:32] [DEBUG]   Description: Fixes cross-cancer Cox + adds Schoenfeld test + VIF check
+[2025-11-02 18:24:32] [DEBUG]   Critical: YES
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   [RUN] Executing: python stage2_v2_stratified_cox.py
+[2025-11-02 18:24:32] [DEBUG]   --------------------------------------------------------------------------------
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   [FAIL] FAILED: Stage 2 v2: Fixed Stratified Cox Analysis (exit code 1)
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]    CRITICAL STAGE FAILED - STOPPING EXECUTION
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]    EXECUTION SUMMARY
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   Total stages: 1
+[2025-11-02 18:24:32] [DEBUG]     [OK] Successful: 0
+[2025-11-02 18:24:32] [DEBUG]     [FAIL] Failed: 1
+[2025-11-02 18:24:32] [DEBUG]     [TIME] Total runtime: 0.8s (0.0 minutes)
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   Detailed Results:
+[2025-11-02 18:24:32] [DEBUG]     [FAIL] Stage 2 v2: Fixed Stratified Cox Analysis: FAILED (0.8s)
+[2025-11-02 18:24:32] [DEBUG]        Reason: Exit code 1
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   [SAVED] outputs/excellence_upgrade_results/execution_results_20251102_182432.json
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]   [WARN] SOME STAGES FAILED
+[2025-11-02 18:24:32] [DEBUG]   ================================================================================
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   Please review error messages above and:
+[2025-11-02 18:24:32] [DEBUG]     1. Check if required data files exist
+[2025-11-02 18:24:32] [DEBUG]     2. Ensure all Python dependencies installed
+[2025-11-02 18:24:32] [DEBUG] STDERR:
+[2025-11-02 18:24:32] [DEBUG]   STDERR: Traceback (most recent call last):
+[2025-11-02 18:24:32] [DEBUG]     File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/excellence_upgrade/stage2_v2_stratified_cox.py", line 11, in <module>
+[2025-11-02 18:24:32] [DEBUG]       import seaborn as sns
+[2025-11-02 18:24:32] [DEBUG]   ModuleNotFoundError: No module named 'seaborn'
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [DEBUG]   
+[2025-11-02 18:24:32] [OK] Phase 2A completed successfully (0.8s)
+[2025-11-02 18:24:32] [INFO] ================================================================================
+[2025-11-02 18:24:32] [PHASE] PHASE 2B: TIMER2.0 Immune Deconvolution
+[2025-11-02 18:24:32] [INFO] ================================================================================
+[2025-11-02 18:24:32] [INFO] Description: Calculate 6 immune cell type fractions
+[2025-11-02 18:24:32] [INFO] Estimated time: 15 min
+[2025-11-02 18:24:32] [INFO] Executing: /home/thc1006/dev/p62-pdl1-llps-starter/scripts/analysis/timer2_deconvolution.R
+[2025-11-02 18:24:52] [DEBUG] STDERR:
+[2025-11-02 18:24:52] [DEBUG]   ==========================================================================
+[2025-11-02 18:24:52] [DEBUG]     IOBR v0.99.99  Immuno-Oncology Biological Research 
+[2025-11-02 18:24:52] [DEBUG]     For Tutorial: https://iobr.github.io/book/
+[2025-11-02 18:24:52] [DEBUG]     For Help: https://github.com/IOBR/IOBR/issues
+[2025-11-02 18:24:52] [DEBUG]   
+[2025-11-02 18:24:52] [DEBUG]    If you use IOBR in published research, please cite:
+[2025-11-02 18:24:52] [DEBUG]    DQ Zeng, YR Fang, ..., GC Yu*, WJ Liao*, 
+[2025-11-02 18:24:52] [DEBUG]    Enhancing immuno-oncology investigations through multidimensional decoding 
+[2025-11-02 18:24:52] [DEBUG]    of tumor microenvironment with IOBR 2.0. Cell Rep Methods 4, 100910 (2024). 
+[2025-11-02 18:24:52] [DEBUG]    &  
+[2025-11-02 18:24:52] [DEBUG]    YR Fang, ..., WJ Liao*, DQ Zeng*, 
+[2025-11-02 18:24:52] [DEBUG]    Systematic Investigation of Tumor Microenvironment and 
+[2025-11-02 18:24:52] [DEBUG]    Antitumor Immunity With IOBR, Med Research (2025). 
+[2025-11-02 18:24:52] [DEBUG]    https://onlinelibrary.wiley.com/doi/epdf/10.1002/mdr2.70001 
+[2025-11-02 18:24:52] [DEBUG]   ==========================================================================
+[2025-11-02 18:24:52] [DEBUG]   ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+[2025-11-02 18:24:52] [DEBUG]   ✔ dplyr     1.1.4     ✔ readr     2.1.5
+[2025-11-02 18:24:52] [DEBUG]   ✔ forcats   1.0.1     ✔ stringr   1.5.2
+[2025-11-02 18:24:52] [DEBUG]   ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+[2025-11-02 18:24:52] [DEBUG]   ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+[2025-11-02 18:24:52] [DEBUG]   ✔ purrr     1.1.0     
+[2025-11-02 18:24:52] [DEBUG]   ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+[2025-11-02 18:24:52] [DEBUG]   ✖ dplyr::filter() masks stats::filter()
+[2025-11-02 18:24:52] [DEBUG]   ✖ dplyr::lag()    masks stats::lag()
+[2025-11-02 18:24:52] [DEBUG]   ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+[2025-11-02 18:24:52] [DEBUG]   Error: RStudio not running
+[2025-11-02 18:24:52] [DEBUG]   Execution halted
+[2025-11-02 18:24:52] [DEBUG]   
+[2025-11-02 18:24:52] [FAIL] Phase 2B FAILED (exit code 1)
+[2025-11-02 18:24:52] [CRITICAL] 
+Critical phase 2B FAILED - STOPPING PIPELINE
+[2025-11-02 18:24:52] [INFO] 
+================================================================================
+[2025-11-02 18:24:52] [INFO] EXECUTION COMPLETE
+[2025-11-02 18:24:52] [INFO] ================================================================================
+[2025-11-02 18:24:52] [INFO] Total runtime: 8.1 minutes
+[2025-11-02 18:24:52] [INFO] Completed: 4/15
+[2025-11-02 18:24:52] [INFO] Failed: 2
+[2025-11-02 18:24:52] [INFO] Skipped: 0
+[2025-11-02 18:24:52] [INFO] 
+Completed phases:
+[2025-11-02 18:24:52] [INFO]   [OK] 1A
+[2025-11-02 18:24:52] [INFO]   [OK] 1C
+[2025-11-02 18:24:52] [INFO]   [OK] 1D
+[2025-11-02 18:24:52] [INFO]   [OK] 2A
+[2025-11-02 18:24:52] [INFO] 
+Failed phases:
+[2025-11-02 18:24:52] [INFO]   [FAIL] 1B
+[2025-11-02 18:24:52] [INFO]   [FAIL] 2B
+[2025-11-02 18:24:52] [INFO] 
+[SAVED] Execution report: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/execution_logs/execution_report_20251102_181647.json
+[2025-11-02 18:24:52] [INFO] ================================================================================
+[2025-11-02 18:24:52] [WARN] 
+PARTIAL SUCCESS: Some phases incomplete
+[2025-11-02 18:24:52] [INFO] Review log file for details

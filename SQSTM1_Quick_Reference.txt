@@ -1,0 +1,214 @@
+================================================================================
+                    SQSTM1 基因 - 快速參考卡片
+================================================================================
+
+【基因標識符】
+  官方符號 (Gene Symbol):  SQSTM1
+  最常見別名:              p62
+  Ensembl ID:             ENSG00000161011 ← 標準數據庫 ID
+  NCBI Gene ID:           8878
+  HGNC ID:                HGNC:11280
+  UniProt ID:             Q13501
+  OMIM ID:                601530
+
+【基因位置及結構】
+  染色體:                 5q35.3
+  位置範圍:               chr5:179,806,398-179,838,078 (GRCh38)
+  基因長度:               ~31.7 kb
+  轉錄本數:               26 個 (剪接變異)
+  MANE 轉錄本:            NM_003900.5 / ENST00000389805.9
+
+【蛋白質信息】
+  蛋白質名稱:             Sequestosome-1 (ubiquitin-binding protein p62)
+  蛋白質長度:             440 個氨基酸
+  分子量:                 ~47.7 kDa (理論值)
+  主要功能:               自噬貨物、NF-κB 信號調節、泛素結合蛋白
+
+================================================================================
+                          完整別名列表
+================================================================================
+
+【官方基因別名 (HGNC 記錄)】
+  ✓ A170     ✓ OSIL     ✓ PDB3     ✓ ZIP3
+  ✓ EBIAP    ✓ DMRV     ✓ NADGP    ✓ FTDALS3
+
+【常用蛋白質別名】
+  ✓ p62      ✓ p60      ✓ P62B     ✓ ZIP       ✓ ORCA
+
+【備註】
+  • p62 是最常見的替代名稱 (文獻中廣泛使用)
+  • SQSTM1 是 HGNC 官方符號 (數據庫查詢推薦)
+  • 別名支持因 MyGene.info 版本而異
+
+================================================================================
+                    MyGene.info 正確查詢方法
+================================================================================
+
+【Python - 方法 1 (推薦): 使用基因符號】
+  import mygene
+  mg = mygene.MyGeneInfo()
+  result = mg.querymany(['SQSTM1'],
+                        scopes='symbol',
+                        species='human',
+                        fields='ensembl.gene,symbol,entrezgene')
+  print(result[0]['ensembl']['gene'])  # 輸出: ENSG00000161011
+
+【Python - 方法 2: 使用 Ensembl ID】
+  result = mg.getgene('ENSG00000161011',
+                       fields='symbol,ensembl.gene,entrezgene')
+  print(result['symbol'])  # 輸出: SQSTM1
+
+【Python - 方法 3: 使用 Entrez ID】
+  result = mg.getgene(8878,
+                       fields='symbol,ensembl.gene')
+  print(result['symbol'])  # 輸出: SQSTM1
+
+【REST API - 方法 4: HTTP 直接查詢】
+  http://mygene.info/v3/query?q=symbol:SQSTM1&species=human&fields=ensembl.gene
+  http://mygene.info/v3/gene/ENSG00000161011?fields=symbol,ensembl.gene
+
+【常見錯誤及修正】
+  ✗ 錯誤: mg.querymany(['SQSTM1'], scopes='symbol')
+  ✓ 正確: mg.querymany(['SQSTM1'], scopes='symbol', species='human')
+
+  ✗ 錯誤: mg.query('SQSTM1')
+  ✓ 正確: mg.query('symbol:SQSTM1', species='human')
+
+================================================================================
+                        完整映射驗證
+================================================================================
+
+【驗證查詢結果】
+  預期輸出格式:
+  {
+    'symbol': 'SQSTM1',
+    'name': 'sequestosome 1',
+    'entrezgene': 8878,
+    'ensembl': {'gene': 'ENSG00000161011'},
+    'uniprot': 'Q13501',
+    'refseq': {...}
+  }
+
+【故障排除】
+  問題: 找不到 SQSTM1
+  1. 檢查: 是否指定了 species='human'
+  2. 檢查: 基因符號拼寫是否正確 (SQSTM1, 不是 sqstm1)
+  3. 解決: 試用 Ensembl ID (ENSG00000161011) 或 Entrez ID (8878)
+  4. 解決: 升級 MyGene.py (pip install --upgrade mygene)
+
+================================================================================
+                      別名在 MyGene 中的可用性
+================================================================================
+
+【高度推薦】
+  ✓✓ SQSTM1   - 官方符號,最可靠
+  ✓✓ 8878     - Entrez ID,完全可靠
+  ✓✓ ENSG00000161011  - Ensembl ID,完全可靠
+
+【通常可用】
+  ✓  p62      - 最常見別名,通常可查詢
+  ✓  A170     - 官方別名,可能可用
+  ✓  OSIL     - 官方別名,可能可用
+
+【不推薦或可能不可用】
+  ⚠  PDB3, ZIP3, EBIAP  - 特定領域別名
+  ✗  其他別名            - 數據庫版本依賴
+
+【建議查詢優先級】
+  1. SQSTM1 (官方符號)
+  2. ENSG00000161011 (Ensembl ID)
+  3. 8878 (Entrez ID)
+  4. p62 (如前三項失敗)
+
+================================================================================
+                    SQSTM1 與相關疾病
+================================================================================
+
+【帕傑特病 (Paget Disease of Bone 3)】
+  • SQSTM1 突變導致異常骨代謝
+  • 別名: PDB3
+  • 影響骨重塑過程
+
+【額顳葉癡呆和 ALS (FTD and/or ALS 3)】
+  • SQSTM1 突變導致神經元蛋白聚集
+  • 別名: FTDALS3
+  • p62/SQSTM1 參與自噬調節
+
+【包涵體肌炎 (Inclusion Body Myositis)】
+  • p62 蛋白聚集與肌病相關
+  • 神經肌肉退行性疾病
+
+================================================================================
+                      跨物種基因名稱
+================================================================================
+
+  人類:      SQSTM1          Ensembl: ENSG00000161011
+  小鼠:      Sqstm1          Ensembl: ENSMUSG00000026509
+  大鼠:      Sqstm1          Ensembl: ENSRNOG00000009191
+  斑馬魚:    sqstm1          Ensembl: ENSDARG00000039423
+  線蟲:      sqst-1          WormBase: WBGene00005003
+  果蠅:      ref(2)P         FlyBase: FBgn0000261
+
+【跨物種查詢】
+  # 小鼠
+  mg.query('symbol:Sqstm1', species='mouse')
+
+  # 大鼠
+  mg.query('symbol:Sqstm1', species='rat')
+
+================================================================================
+                       外部資源快速鏈接
+================================================================================
+
+【基因數據庫】
+  • NCBI Gene:  https://www.ncbi.nlm.nih.gov/gene/8878
+  • Ensembl:    https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000161011
+  • HGNC:       https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:11280
+  • OMIM:       https://omim.org/entry/601530
+  • UniProt:    https://www.uniprot.org/uniprot/Q13501
+
+【查詢工具】
+  • MyGene.info:  https://mygene.info/
+  • GeneCards:    https://www.genecards.org/cgi-bin/carddisp.pl?gene=SQSTM1
+  • BioMart:      https://www.ensembl.org/biomart
+  • PubMed:       https://pubmed.ncbi.nlm.nih.gov/?term=SQSTM1
+
+================================================================================
+                        常用代碼片段
+================================================================================
+
+【快速查詢函數】
+  def get_sqstm1_ensembl():
+      import mygene
+      mg = mygene.MyGeneInfo()
+      r = mg.querymany(['SQSTM1'], scopes='symbol',
+                       species='human', fields='ensembl.gene')
+      return r[0]['ensembl']['gene'] if r else None
+
+  print(get_sqstm1_ensembl())  # ENSG00000161011
+
+【批量查詢】
+  genes = ['SQSTM1', 'CDK2', 'TP53']
+  results = mg.querymany(genes, scopes='symbol',
+                         species='human', as_dataframe=True)
+
+【別名測試】
+  aliases = ['SQSTM1', 'p62', 'A170', 'OSIL']
+  for a in aliases:
+      r = mg.query(f'symbol:{a}', species='human', size=1)
+      print(f"{a}: {'✓' if r['total'] > 0 else '✗'}")
+
+================================================================================
+                          重要提示
+================================================================================
+
+1. 別名支持可能因 MyGene.info 版本而異,建議定期更新
+2. 某些別名在多個數據庫中可能指向不同的對象,始終驗證結果
+3. 跨物種查詢時必須指定物種參數
+4. 對於生產環境,優先使用官方 ID (ENSG00000161011 或 8878)
+5. 當進行大規模映射時,使用 querymany() 的批處理功能以提高效率
+
+================================================================================
+                      最後更新: 2025年11月
+                    資料來源: NCBI, Ensembl, HGNC, MyGene.info
+================================================================================

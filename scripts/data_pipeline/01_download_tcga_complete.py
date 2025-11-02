@@ -351,6 +351,16 @@ def main():
     # Check for auto-execution mode
     auto_mode = '--auto' in sys.argv or '--auto-download' in sys.argv or os.environ.get('AUTO_DOWNLOAD', '').lower() in ['1', 'true', 'yes']
 
+    # Check if data already exists
+    data_exists = all((DATA_DIR / project_id).exists() and
+                     len(list((DATA_DIR / project_id).iterdir())) > 100
+                     for project_id in PROJECTS.keys())
+
+    if data_exists:
+        print("\n[DATA EXISTS] All data already downloaded. Skipping download.")
+        print(f"Data location: {DATA_DIR}")
+        return
+
     # Ask user for download method
     print("\n[STEP 2] Choose download method:")
     print("  1. GDC Client (faster, recommended)")

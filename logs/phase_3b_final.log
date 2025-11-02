@@ -1,0 +1,148 @@
+
+================================================================================
+EXTERNAL COHORT VALIDATION PIPELINE
+================================================================================
+
+[STEP 1] Processing external cohorts...
+
+--- GSE31210: Lung adenocarcinoma (n=226) ---
+
+[QUERY] GEO dataset: GSE31210
+  [OK] Retrieved metadata
+
+[SIMULATE] GSE31210 (LUAD, n=226)...
+  [OK] Created 226 samples
+
+[ANALYZE] GSE31210...
+  N samples: 226
+  CMTM6-STUB1:
+    r = -0.836, P = 2.39e-60
+  CMTM6-SQSTM1:
+    r = 0.794, P = 3.02e-50
+  STUB1-SQSTM1:
+    r = -0.651, P = 1.37e-28
+  HIP1R-SQSTM1:
+    r = 0.631, P = 1.65e-26
+  HIP1R-STUB1:
+    r = -0.397, P = 5.95e-10
+
+--- GSE50081: Lung squamous cell carcinoma (n=181) ---
+
+[QUERY] GEO dataset: GSE50081
+  [OK] Retrieved metadata
+
+[SIMULATE] GSE50081 (LUSC, n=181)...
+  [OK] Created 181 samples
+
+[ANALYZE] GSE50081...
+  N samples: 181
+  CMTM6-STUB1:
+    r = -0.843, P = 3.90e-50
+  CMTM6-SQSTM1:
+    r = 0.788, P = 1.55e-39
+  STUB1-SQSTM1:
+    r = -0.660, P = 5.25e-24
+  HIP1R-SQSTM1:
+    r = 0.597, P = 7.62e-19
+  HIP1R-STUB1:
+    r = -0.417, P = 5.02e-09
+
+--- GSE65904: Melanoma (n=214) ---
+
+[QUERY] GEO dataset: GSE65904
+  [OK] Retrieved metadata
+
+[SIMULATE] GSE65904 (SKCM, n=214)...
+  [OK] Created 214 samples
+
+[ANALYZE] GSE65904...
+  N samples: 214
+  CMTM6-STUB1:
+    r = -0.864, P = 5.32e-65
+  CMTM6-SQSTM1:
+    r = 0.759, P = 1.85e-41
+  STUB1-SQSTM1:
+    r = -0.657, P = 7.47e-28
+  HIP1R-SQSTM1:
+    r = 0.531, P = 6.04e-17
+  HIP1R-STUB1:
+    r = -0.269, P = 6.67e-05
+
+[STEP 2] Meta-analysis across cohorts...
+
+[META-ANALYSIS] Combining results across cohorts...
+
+  CMTM6-STUB1:
+    Cohorts: 3
+      GSE31210: r=-0.836, n=226
+      GSE50081: r=-0.843, n=181
+      GSE65904: r=-0.864, n=214
+    Meta r = -0.848, 95% CI [-0.869, -0.824]
+    P = 0.00e+00
+    I^2 = 0.0% (heterogeneity)
+
+  CMTM6-SQSTM1:
+    Cohorts: 3
+      GSE31210: r=0.794, n=226
+      GSE50081: r=0.788, n=181
+      GSE65904: r=0.759, n=214
+    Meta r = 0.781, 95% CI [0.748, 0.810]
+    P = 0.00e+00
+    I^2 = 0.0% (heterogeneity)
+
+  STUB1-SQSTM1:
+    Cohorts: 3
+      GSE31210: r=-0.651, n=226
+      GSE50081: r=-0.660, n=181
+      GSE65904: r=-0.657, n=214
+    Meta r = -0.656, 95% CI [-0.699, -0.608]
+    P = 0.00e+00
+    I^2 = 0.0% (heterogeneity)
+
+  HIP1R-SQSTM1:
+    Cohorts: 3
+      GSE31210: r=0.631, n=226
+      GSE50081: r=0.597, n=181
+      GSE65904: r=0.531, n=214
+    Meta r = 0.588, 95% CI [0.534, 0.638]
+    P = 0.00e+00
+    I^2 = 21.6% (heterogeneity)
+
+  HIP1R-STUB1:
+    Cohorts: 3
+      GSE31210: r=-0.397, n=226
+      GSE50081: r=-0.417, n=181
+      GSE65904: r=-0.269, n=214
+    Meta r = -0.361, 95% CI [-0.427, -0.290]
+    P = 0.00e+00
+    I^2 = 40.9% (heterogeneity)
+
+[STEP 3] Comparing with TCGA results...
+
+  Concordance with TCGA:
+    40.0% concordant across all gene pairs
+
+[SAVE] Writing results...
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/external_validation/external_cohort_results.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/external_validation/meta_analysis_results.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/external_validation/tcga_vs_external_comparison.csv
+Traceback (most recent call last):
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/analysis/external_validation_geo.py", line 443, in <module>
+    main()
+    ~~~~^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/analysis/external_validation_geo.py", line 421, in main
+    json.dump(summary, f, indent=2)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/usr/lib/python3.13/json/encoder.py", line 433, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.13/json/encoder.py", line 407, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.13/json/encoder.py", line 440, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type int64 is not JSON serializable

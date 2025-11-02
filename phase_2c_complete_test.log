@@ -1,0 +1,128 @@
+Input sequence provided is already in string format. No operation performed
+Input sequence provided is already in string format. No operation performed
+System has 32 CPU cores available
+
+================================================================================
+PARALLEL PARTIAL CORRELATION v3 - WITH TIMER2.0 IMMUNE CONFOUNDERS
+Using 32 CPU cores for acceleration
+================================================================================
+
+[LOAD] Loading expression data...
+  Expression: 1635 samples x 41498 variables
+
+[LOAD] Loading TIMER2.0 immune scores...
+  TIMER2.0: 1635 samples with immune scores
+
+[MERGE] Combining expression and immune data...
+  Common samples: 1635
+
+[GENE MAPPING] Converting gene symbols to Ensembl IDs...
+  SQSTM1 -> ENSG00000161011 (fallback)
+  CMTM6 -> ENSG00000091317
+  STUB1 -> ENSG00000103266
+  HIP1R -> ENSG00000130787
+
+  Successfully mapped 4/4 genes
+
+[CONFOUNDERS] Preparing confounder matrix...
+  Available confounders: 11/11
+  Confounders ready: 11 variables
+
+[ANALYZE] Calculating partial correlations (parallel mode)...
+  Analyzing 5 gene pairs
+  Each pair: 1,000 bootstrap iterations
+  Total computational load: 5000 = 5,000 iterations
+  Parallelization: 32 cores
+
+
+--- CMTM6 vs STUB1 ---
+  Analyzing: CMTM6 (ENSG00000091317) vs STUB1 (ENSG00000103266)
+  Simple correlation:
+    r = -0.178, P = 4.49e-13
+    Spearman rho = -0.164, P = 2.21e-11
+
+  Partial correlation (controlling for immune infiltration):
+    r = nan, P = nan
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 2.0s
+    95% CI = [nan, nan]
+    Attenuation: nan%
+
+--- CMTM6 vs SQSTM1 ---
+  Analyzing: CMTM6 (ENSG00000091317) vs SQSTM1 (ENSG00000161011)
+  Simple correlation:
+    r = -0.094, P = 1.51e-04
+    Spearman rho = -0.108, P = 1.27e-05
+
+  Partial correlation (controlling for immune infiltration):
+    r = nan, P = nan
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.6s
+    95% CI = [nan, nan]
+    Attenuation: nan%
+
+--- STUB1 vs SQSTM1 ---
+  Analyzing: STUB1 (ENSG00000103266) vs SQSTM1 (ENSG00000161011)
+  Simple correlation:
+    r = 0.305, P = 1.37e-36
+    Spearman rho = 0.228, P = 1.18e-20
+
+  Partial correlation (controlling for immune infiltration):
+    r = nan, P = nan
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.6s
+    95% CI = [nan, nan]
+    Attenuation: nan%
+
+--- HIP1R vs SQSTM1 ---
+  Analyzing: HIP1R (ENSG00000130787) vs SQSTM1 (ENSG00000161011)
+  Simple correlation:
+    r = 0.058, P = 1.93e-02
+    Spearman rho = 0.039, P = 1.11e-01
+
+  Partial correlation (controlling for immune infiltration):
+    r = nan, P = nan
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.7s
+    95% CI = [nan, nan]
+    Attenuation: nan%
+
+--- HIP1R vs STUB1 ---
+  Analyzing: HIP1R (ENSG00000130787) vs STUB1 (ENSG00000103266)
+  Simple correlation:
+    r = 0.196, P = 1.36e-15
+    Spearman rho = 0.125, P = 4.40e-07
+
+  Partial correlation (controlling for immune infiltration):
+    r = nan, P = nan
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.7s
+    95% CI = [nan, nan]
+    Attenuation: nan%
+
+[PERFORMANCE] Total analysis time: 4.6s
+  Average per gene pair: 0.9s
+
+[SAVE] Writing results...
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/partial_correlation_v3_timer2_parallel/partial_correlation_results_timer2_parallel.csv
+Traceback (most recent call last):
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/excellence_upgrade/stage3_v3_timer2_confounders_parallel.py", line 467, in <module>
+    json.dump(summary, f, indent=2)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/usr/lib/python3.13/json/encoder.py", line 433, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.13/json/encoder.py", line 407, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.13/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/usr/lib/python3.13/json/encoder.py", line 407, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.13/json/encoder.py", line 440, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type int64 is not JSON serializable

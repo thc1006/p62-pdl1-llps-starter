@@ -1,0 +1,208 @@
+[2025-11-02 15:17:33] [INFO] 
+================================================================================
+[2025-11-02 15:17:33] [INFO] MASTER EXECUTION PIPELINE - COMPLETE RESEARCH WORKFLOW
+[2025-11-02 15:17:33] [INFO] ================================================================================
+[2025-11-02 15:17:33] [INFO] Start time: 2025-11-02 15:17:33
+[2025-11-02 15:17:33] [INFO] Log file: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/execution_logs/master_execution_20251102_151733.log
+[2025-11-02 15:17:33] [INFO] 
+--------------------------------------------------------------------------------
+[2025-11-02 15:17:33] [INFO] PHASE OVERVIEW
+[2025-11-02 15:17:33] [INFO] --------------------------------------------------------------------------------
+[2025-11-02 15:17:33] [INFO]   1A: Setup Data Download Pipeline [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 5 min
+[2025-11-02 15:17:33] [INFO]   1B: Download Complete TCGA Data [OPTIONAL] [MANUAL]
+[2025-11-02 15:17:33] [INFO]        Time: 2-8 hours (depends on connection)
+[2025-11-02 15:17:33] [INFO]   1C: Process Expression Data [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 30-60 min
+[2025-11-02 15:17:33] [INFO]   1D: Process Clinical Data [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 10 min
+[2025-11-02 15:17:33] [INFO]   2A: Re-run Fixed Analysis with Real Data [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 5 min
+[2025-11-02 15:17:33] [INFO]   2B: TIMER2.0 Immune Deconvolution [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 15 min
+[2025-11-02 15:17:33] [INFO]   2C: Re-run Partial Correlation with TIMER2 Scores [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 3 min
+[2025-11-02 15:17:33] [INFO]   3A: Single-Cell Validation (TISCH2) [OPTIONAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 20 min
+[2025-11-02 15:17:33] [INFO]   3B: External Cohort Validation (GEO) [OPTIONAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 30 min
+[2025-11-02 15:17:33] [INFO]   3C: Sensitivity Analysis [OPTIONAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 10 min
+[2025-11-02 15:17:33] [INFO]   4A: Generate Publication-Quality Figures [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 15 min
+[2025-11-02 15:17:33] [INFO]   4B: Update Manuscript [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 5 min
+[2025-11-02 15:17:33] [INFO]   5A: Generate Final PDF [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 2 min
+[2025-11-02 15:17:33] [INFO]   5B: Prepare Supplementary Materials [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 5 min
+[2025-11-02 15:17:33] [INFO]   5C: Generate Submission Package [CRITICAL] 
+[2025-11-02 15:17:33] [INFO]        Time: 2 min
+[2025-11-02 15:17:33] [INFO] --------------------------------------------------------------------------------
+[2025-11-02 15:17:33] [INFO] 
+This will execute the complete research pipeline.
+[2025-11-02 15:17:33] [INFO] Estimated total time: 4-10 hours (mostly data download)
+[2025-11-02 15:17:33] [INFO] 
+[2025-11-02 15:17:33] [INFO] [AUTO-YES] Proceeding automatically...
+[2025-11-02 15:17:33] [INFO] ================================================================================
+[2025-11-02 15:17:33] [PHASE] PHASE 1A: Setup Data Download Pipeline
+[2025-11-02 15:17:33] [INFO] ================================================================================
+[2025-11-02 15:17:33] [INFO] Description: Query GDC and setup download manifest
+[2025-11-02 15:17:33] [INFO] Estimated time: 5 min
+[2025-11-02 15:17:33] [INFO] Executing: /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/01_download_tcga_complete.py
+[2025-11-02 15:17:38] [DEBUG] STDOUT:
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   ================================================================================
+[2025-11-02 15:17:38] [DEBUG]   TCGA COMPLETE DATA DOWNLOAD PIPELINE
+[2025-11-02 15:17:38] [DEBUG]   ================================================================================
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [STEP 1] Querying GDC for available data...
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   ================================================================================
+[2025-11-02 15:17:38] [DEBUG]   TCGA DATA AVAILABILITY SUMMARY
+[2025-11-02 15:17:38] [DEBUG]   ================================================================================
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   TCGA-LUAD: Lung Adenocarcinoma
+[2025-11-02 15:17:38] [DEBUG]   ----------------------------------------
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [QUERY] TCGA-LUAD - Transcriptome Profiling
+[2025-11-02 15:17:38] [DEBUG]     Found 601 files (2.37 GB)
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [QUERY] TCGA-LUAD - Clinical
+[2025-11-02 15:17:38] [DEBUG]     Found 623 files (0.02 GB)
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]     RNA-seq files: 601
+[2025-11-02 15:17:38] [DEBUG]     Clinical files: 623
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   TCGA-LUSC: Lung Squamous Cell Carcinoma
+[2025-11-02 15:17:38] [DEBUG]   ----------------------------------------
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [QUERY] TCGA-LUSC - Transcriptome Profiling
+[2025-11-02 15:17:38] [DEBUG]     Found 562 files (2.22 GB)
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [QUERY] TCGA-LUSC - Clinical
+[2025-11-02 15:17:38] [DEBUG]     Found 577 files (0.02 GB)
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]     RNA-seq files: 562
+[2025-11-02 15:17:38] [DEBUG]     Clinical files: 577
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   TCGA-SKCM: Skin Cutaneous Melanoma
+[2025-11-02 15:17:38] [DEBUG]   ----------------------------------------
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [QUERY] TCGA-SKCM - Transcriptome Profiling
+[2025-11-02 15:17:38] [DEBUG]     Found 473 files (1.86 GB)
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [QUERY] TCGA-SKCM - Clinical
+[2025-11-02 15:17:38] [DEBUG]     Found 499 files (0.02 GB)
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]     RNA-seq files: 473
+[2025-11-02 15:17:38] [DEBUG]     Clinical files: 499
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   ================================================================================
+[2025-11-02 15:17:38] [DEBUG]   
+[2025-11-02 15:17:38] [DEBUG]   [DATA EXISTS] All data already downloaded. Skipping download.
+[2025-11-02 15:17:38] [OK] Phase 1A completed successfully (4.9s)
+[2025-11-02 15:17:38] [INFO] ================================================================================
+[2025-11-02 15:17:38] [PHASE] PHASE 1B: Download Complete TCGA Data
+[2025-11-02 15:17:38] [INFO] ================================================================================
+[2025-11-02 15:17:38] [INFO] Description: Download RNA-seq + Clinical data (~50GB)
+[2025-11-02 15:17:38] [INFO] Estimated time: 2-8 hours (depends on connection)
+[2025-11-02 15:17:38] [WARN] This is a MANUAL phase
+[2025-11-02 15:17:38] [INFO] Instructions:
+[2025-11-02 15:17:38] [INFO]   1. Use gdc-client or direct HTTP download
+[2025-11-02 15:17:38] [INFO]   2. Download TCGA-LUAD, TCGA-LUSC, TCGA-SKCM
+[2025-11-02 15:17:38] [INFO]   3. Verify file integrity
+[2025-11-02 15:17:38] [WARN] 
+[AUTO-YES] Skipping manual phase (will need to run separately)
+[2025-11-02 15:17:38] [SKIP] Manual phase auto-skipped
+[2025-11-02 15:17:38] [INFO] ================================================================================
+[2025-11-02 15:17:38] [PHASE] PHASE 1C: Process Expression Data
+[2025-11-02 15:17:38] [INFO] ================================================================================
+[2025-11-02 15:17:38] [INFO] Description: Normalize, QC, combine all projects
+[2025-11-02 15:17:38] [INFO] Estimated time: 30-60 min
+[2025-11-02 15:17:38] [INFO] Executing: /home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/02_process_expression.py
+[2025-11-02 15:17:40] [DEBUG] STDOUT:
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]   ================================================================================
+[2025-11-02 15:17:40] [DEBUG]   TCGA EXPRESSION DATA PROCESSING PIPELINE
+[2025-11-02 15:17:40] [DEBUG]   ================================================================================
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]   [MAPPING] Getting Ensembl to Gene Symbol mapping...
+[2025-11-02 15:17:40] [DEBUG]     Downloading from GENCODE...
+[2025-11-02 15:17:40] [DEBUG]     [WARN] Mapping file not found
+[2025-11-02 15:17:40] [DEBUG]     Using gene IDs as-is
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]   [PROCESS] TCGA-LUAD
+[2025-11-02 15:17:40] [DEBUG]     Found 601 files
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 75eaaf2c-7cd9-416d-88c0-7c5502db9ab5.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 8f55fdd2-25cb-40dc-809e-2ddbdadd34c3.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 12beb3ab-f6e1-42b0-af74-1a8cbb3416c0.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read ec99ae0d-704e-481d-bc90-7b553075a845.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read d20f5121-5e33-4b35-8cdf-df2eb51a099d.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 07c8891d-1917-45f8-bd1d-4c59d1baafaa.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 57d89d75-a9bb-4bd3-af76-d29def9a9625.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 731c955b-e1e8-462a-9c94-64310f2d7eae.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read f0395da6-5f12-4a35-8aa6-0b1b47a2acba.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read a4a57e8f-cf4f-4322-b7fe-2336a58cd50f.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 80416b83-9ea2-4d33-8ba4-1fe9330d51f2.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 26fdaa75-cea5-4355-b3b1-6b5c2c75e542.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read d4422306-b68c-4687-9131-02a60a2d4c42.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read fddbde25-7d5c-496f-8f62-985dbda7e0fe.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read dd20e202-a63c-4281-85c7-f16096212a91.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 6531e137-3d23-44e7-af10-51e9cc517192.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read fec7a02d-1d67-412d-9d69-df7124864e7a.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read dd6e2735-7d83-4bc4-87b3-05a5d7f08caa.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG]     [ERROR] Failed to read 9bfd464b-419a-43c0-929a-c1d219713a6f.rna_seq.augmented_star_gene_counts.tsv: Error tokenizing data. C error: Expected 2 fields in line 2, saw 9
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [DEBUG] STDERR:
+[2025-11-02 15:17:40] [DEBUG]   Traceback (most recent call last):
+[2025-11-02 15:17:40] [DEBUG]     File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/02_process_expression.py", line 379, in <module>
+[2025-11-02 15:17:40] [DEBUG]       main()
+[2025-11-02 15:17:40] [DEBUG]       ~~~~^^
+[2025-11-02 15:17:40] [DEBUG]     File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/data_pipeline/02_process_expression.py", line 333, in main
+[2025-11-02 15:17:40] [DEBUG]       common_genes = set(all_projects_data[PROJECTS[0]].index)
+[2025-11-02 15:17:40] [DEBUG]                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+[2025-11-02 15:17:40] [DEBUG]   KeyError: 'TCGA-LUAD'
+[2025-11-02 15:17:40] [DEBUG]   
+[2025-11-02 15:17:40] [FAIL] Phase 1C FAILED (exit code 1)
+[2025-11-02 15:17:40] [CRITICAL] 
+Critical phase 1C FAILED - STOPPING PIPELINE
+[2025-11-02 15:17:40] [INFO] 
+================================================================================
+[2025-11-02 15:17:40] [INFO] EXECUTION COMPLETE
+[2025-11-02 15:17:40] [INFO] ================================================================================
+[2025-11-02 15:17:40] [INFO] Total runtime: 0.1 minutes
+[2025-11-02 15:17:40] [INFO] Completed: 1/15
+[2025-11-02 15:17:40] [INFO] Failed: 2
+[2025-11-02 15:17:40] [INFO] Skipped: 0
+[2025-11-02 15:17:40] [INFO] 
+Completed phases:
+[2025-11-02 15:17:40] [INFO]   [OK] 1A
+[2025-11-02 15:17:40] [INFO] 
+Failed phases:
+[2025-11-02 15:17:40] [INFO]   [FAIL] 1B
+[2025-11-02 15:17:40] [INFO]   [FAIL] 1C
+[2025-11-02 15:17:40] [INFO] 
+[SAVED] Execution report: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/execution_logs/execution_report_20251102_151733.json
+[2025-11-02 15:17:40] [INFO] ================================================================================
+[2025-11-02 15:17:40] [WARN] 
+PARTIAL SUCCESS: Some phases incomplete
+[2025-11-02 15:17:40] [INFO] Review log file for details

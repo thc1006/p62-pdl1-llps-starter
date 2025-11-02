@@ -1,0 +1,101 @@
+Installing package into ‘/home/thc1006/R/library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘textshaping’, ‘ragg’
+
+trying URL 'https://cloud.r-project.org/src/contrib/textshaping_1.0.4.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ragg_1.5.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/tidyverse_2.0.0.tar.gz'
+* installing *source* package ‘textshaping’ ...
+** this is package ‘textshaping’ version ‘1.0.4’
+** package ‘textshaping’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=-I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi 
+Using PKG_LIBS=-lharfbuzz -lfreetype -lfribidi 
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+rm -f textshaping.so cpp11.o face_feature.o hb_shaper.o init.o string_bidi.o string_metrics.o string_shape.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi  -I'/home/thc1006/R/library/cpp11/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi  -I'/home/thc1006/R/library/cpp11/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c face_feature.cpp -o face_feature.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi  -I'/home/thc1006/R/library/cpp11/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c hb_shaper.cpp -o hb_shaper.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi  -I'/home/thc1006/R/library/cpp11/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c init.cpp -o init.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi  -I'/home/thc1006/R/library/cpp11/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c string_bidi.cpp -o string_bidi.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi  -I'/home/thc1006/R/library/cpp11/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c string_metrics.cpp -o string_metrics.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/fribidi  -I'/home/thc1006/R/library/cpp11/include' -I'/home/thc1006/R/library/systemfonts/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c string_shape.cpp -o string_shape.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o textshaping.so cpp11.o face_feature.o hb_shaper.o init.o string_bidi.o string_metrics.o string_shape.o -lharfbuzz -lfreetype -lfribidi -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-textshaping/00new/textshaping/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (textshaping)
+* installing *source* package ‘ragg’ ...
+** this is package ‘ragg’ version ‘1.5.0’
+** package ‘ragg’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=-I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp 
+Using PKG_LIBS=-lfreetype -lpng16 -ltiff -ljpeg -lwebp -lwebpmux 
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c capture_dev.cpp -o capture_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c init.cpp -o init.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c jpeg_dev.cpp -o jpeg_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c png_dev.cpp -o png_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c ppm_dev.cpp -o ppm_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c record_dev.cpp -o record_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c tiff_dev.cpp -o tiff_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c webp_anim_dev.cpp -o webp_anim_dev.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c webp_dev.cpp -o webp_dev.o
+In file included from webp_dev.cpp:3:
+AggDeviceWebP.h: In member function ‘bool AggDeviceWebP<PIXFMT>::savePage()’:
+AggDeviceWebP.h:42:59: warning: ignoring attributes on template argument ‘int (*)(FILE*)’ [-Wignored-attributes]
+   42 |     auto fd = std::unique_ptr<FILE, decltype(&std::fclose)>(
+      |                                                           ^
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c agg/src/agg_curves.cpp -o agg/src/agg_curves.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c agg/src/agg_font_freetype.cpp -o agg/src/agg_font_freetype.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c agg/src/agg_image_filters.cpp -o agg/src/agg_image_filters.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c agg/src/agg_trans_affine.cpp -o agg/src/agg_trans_affine.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c agg/src/agg_vcgen_dash.cpp -o agg/src/agg_vcgen_dash.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/home/thc1006/R/library/systemfonts/include' -I'/home/thc1006/R/library/textshaping/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c agg/src/agg_vcgen_stroke.cpp -o agg/src/agg_vcgen_stroke.o
+ar rcs agg/libstatagg.a agg/src/agg_curves.o agg/src/agg_font_freetype.o agg/src/agg_image_filters.o agg/src/agg_trans_affine.o agg/src/agg_vcgen_dash.o agg/src/agg_vcgen_stroke.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o ragg.so capture_dev.o init.o jpeg_dev.o png_dev.o ppm_dev.o record_dev.o tiff_dev.o webp_anim_dev.o webp_dev.o -Lagg -lstatagg -lfreetype -lpng16 -ltiff -ljpeg -lwebp -lwebpmux -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-ragg/00new/ragg/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ragg)
+* installing *source* package ‘tidyverse’ ...
+** this is package ‘tidyverse’ version ‘2.0.0’
+** package ‘tidyverse’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tidyverse)
+
+The downloaded source packages are in
+	‘/tmp/Rtmph7jY93/downloaded_packages’

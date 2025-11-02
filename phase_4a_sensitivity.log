@@ -1,0 +1,53 @@
+
+================================================================================
+SENSITIVITY ANALYSIS PIPELINE
+================================================================================
+
+[LOAD] Loading expression data...
+  Expression: 1635 samples x 41497 genes
+
+[PER-CANCER] Analyzing by cancer type...
+
+  --- LUAD ---
+    N samples: 601
+
+  --- LUSC ---
+    N samples: 562
+
+  --- SKCM ---
+    N samples: 472
+
+[OUTLIER] Analyzing with zscore outlier exclusion...
+  Removed 1635 outlier samples (z-score > 3)
+
+[OUTLIER] Analyzing with iqr outlier exclusion...
+  Removed 1635 outlier samples (IQR method)
+
+[OUTLIER] Analyzing with robust outlier exclusion...
+  Removed 1635 outlier samples (robust scaling)
+
+[BOOTSTRAP] Testing stability with 1000 resamples...
+
+[METHODS] Testing alternative correlation methods...
+
+[SAVE] Writing results...
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/sensitivity_analysis/per_cancer_type_results.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/sensitivity_analysis/outlier_exclusion_results.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/sensitivity_analysis/bootstrap_stability_results.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/sensitivity_analysis/methods_comparison_results.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/sensitivity_analysis/sensitivity_analysis_summary.json
+
+================================================================================
+SENSITIVITY ANALYSIS COMPLETE
+================================================================================
+
+Key findings:
+
+1. Per-cancer type consistency:
+
+2. Bootstrap stability:
+
+================================================================================
+Next step:
+  Run: python scripts/figures/generate_all_figures.py
+================================================================================

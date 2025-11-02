@@ -1,0 +1,88 @@
+
+================================================================================
+SINGLE-CELL VALIDATION PIPELINE
+================================================================================
+
+[STEP 1] Querying TISCH2 databases...
+
+[QUERY] TISCH2 dataset: NSCLC_GSE127465
+  [WARN] API returned status 404
+
+[QUERY] TISCH2 dataset: Melanoma_GSE72056
+  [WARN] API returned status 404
+
+[QUERY] TISCH2 dataset: LUAD_GSE131907
+  [WARN] API returned status 404
+
+[STEP 2] Using simulated single-cell data for demonstration...
+  (Replace with actual TISCH2 download in production)
+
+[SIMULATE] Creating synthetic single-cell data...
+  Tumor cells: 500
+  Immune cells: 500
+  [OK] Created 1000 cells
+
+[STEP 3] Analyzing correlations by cell type...
+
+[ANALYZE] Tumor cells...
+  N cells: 500
+  CMTM6-STUB1:
+    r = -0.818, P = 5.92e-122
+    rho = -0.788, P = 3.60e-107
+  CMTM6-SQSTM1:
+    r = 0.846, P = 3.51e-138
+    rho = 0.836, P = 7.52e-132
+  STUB1-SQSTM1:
+    r = -0.699, P = 1.89e-74
+    rho = -0.681, P = 1.74e-69
+  HIP1R-SQSTM1:
+    r = 0.675, P = 1.08e-67
+    rho = 0.667, P = 1.43e-65
+  HIP1R-STUB1:
+    r = -0.514, P = 4.63e-35
+    rho = -0.525, P = 9.30e-37
+
+[ANALYZE] Immune cells...
+  N cells: 500
+  CMTM6-STUB1:
+    r = -0.359, P = 1.21e-16
+    rho = -0.363, P = 5.35e-17
+  CMTM6-SQSTM1:
+    r = 0.253, P = 9.20e-09
+    rho = 0.255, P = 7.15e-09
+  STUB1-SQSTM1:
+    r = -0.115, P = 1.02e-02
+    rho = -0.141, P = 1.61e-03
+  HIP1R-SQSTM1:
+    r = 0.043, P = 3.42e-01
+    rho = 0.048, P = 2.82e-01
+  HIP1R-STUB1:
+    r = 0.005, P = 9.06e-01
+    rho = 0.021, P = 6.41e-01
+
+[STEP 4] Comparing with bulk RNA-seq results...
+
+[COMPARE] Single-cell vs bulk RNA-seq...
+Traceback (most recent call last):
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/analysis/single_cell_validation.py", line 336, in <module>
+    main()
+    ~~~~^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/analysis/single_cell_validation.py", line 290, in main
+    comparison = compare_with_bulk(sc_results, bulk_file)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/analysis/single_cell_validation.py", line 228, in compare_with_bulk
+    bulk_df = pd.read_csv(bulk_file)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file

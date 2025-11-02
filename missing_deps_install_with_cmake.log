@@ -1,0 +1,757 @@
+
+================================================================================
+INSTALLING 4 MISSING IOBR DEPENDENCIES
+================================================================================
+
+[INSTALL] Installing 4 missing dependencies...
+
+[ggpubr] Installing...
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: https://cloud.r-project.org/
+Bioconductor version 3.22 (BiocManager 1.30.26), R 4.5.0 (2025-04-11)
+Installing package(s) 'ggpubr'
+also installing the dependencies ‘nloptr’, ‘pbkrtest’, ‘lme4’, ‘car’, ‘rstatix’
+
+trying URL 'https://cloud.r-project.org/src/contrib/nloptr_2.2.1.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/pbkrtest_0.5.5.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/lme4_1.1-37.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/car_3.1-3.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/rstatix_0.7.3.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggpubr_0.6.2.tar.gz'
+* installing *source* package ‘nloptr’ ...
+** this is package ‘nloptr’ version ‘2.2.1’
+** package ‘nloptr’ successfully unpacked and MD5 sums checked
+** using staged installation
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether g++ -std=gnu++17 accepts -g... yes
+checking for g++ -std=gnu++17 option to enable C++11 features... none needed
+checking how to run the C++ preprocessor... g++ -std=gnu++17 -E
+checking whether the compiler supports GNU C++... (cached) yes
+checking whether g++ -std=gnu++17 accepts -g... (cached) yes
+checking for g++ -std=gnu++17 option to enable C++11 features... (cached) none needed
+checking for pkg-config... /usr/bin/pkg-config
+checking if pkg-config knows NLopt... no
+checking for cmake... /usr/bin/cmake
+using cmake via /usr/bin/cmake
+using NLopt via local cmake build on x86_64
+set CC=gcc -std=gnu23
+set CFLAGS= -fpic -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2
+set CXX=g++
+set CXXFLAGS=-std=gnu++11 -fpic -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2
+set LDFLAGS=-Wl,-z,relro
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- NLopt version 2.10.0
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for time.h
+-- Looking for time.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for getpid
+-- Looking for getpid - found
+-- Looking for syscall
+-- Looking for syscall - found
+-- Looking for isinf
+-- Looking for isinf - found
+-- Looking for isnan
+-- Looking for isnan - found
+-- Looking for gettimeofday
+-- Looking for gettimeofday - found
+-- Looking for qsort_r
+-- Looking for qsort_r - found
+-- Looking for time
+-- Looking for time - found
+-- Looking for copysign
+-- Looking for copysign - found
+-- Looking for getopt
+-- Looking for getopt - found
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of uint32_t
+-- Check size of uint32_t - done
+-- Check size of unsigned int
+-- Check size of unsigned int - done
+-- Check size of unsigned long
+-- Check size of unsigned long - done
+-- Looking for sqrt in m
+-- Looking for sqrt in m - found
+-- Looking for fpclassify
+-- Looking for fpclassify - TRUE
+-- Performing Test HAVE_THREAD_LOCAL_STORAGE
+-- Performing Test HAVE_THREAD_LOCAL_STORAGE - Success
+-- Performing Test HAVE_THREAD_LOCAL_STORAGE
+-- Performing Test HAVE_THREAD_LOCAL_STORAGE - Failed
+-- Looking for __cplusplus
+-- Looking for __cplusplus - found
+-- Could NOT find JNI (missing: JAVA_INCLUDE_PATH JAVA_INCLUDE_PATH2 JVM) 
+-- Could NOT find Java (missing: Java_JAVA_EXECUTABLE Java_JAR_EXECUTABLE Java_JAVAC_EXECUTABLE Java_JAVAH_EXECUTABLE Java_JAVADOC_EXECUTABLE) (Required is at least version "1.5")
+-- Configuring done (3.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt-build
+[  2%] Generating nlopt.hpp
+[  2%] Built target generate-cpp
+[  4%] Building C object CMakeFiles/nlopt.dir/src/algs/direct/direct_wrap.c.o
+[  6%] Building C object CMakeFiles/nlopt.dir/src/algs/direct/DIRect.c.o
+[  8%] Building C object CMakeFiles/nlopt.dir/src/algs/direct/DIRserial.c.o
+[ 10%] Building C object CMakeFiles/nlopt.dir/src/algs/direct/DIRsubrout.c.o
+[ 12%] Building C object CMakeFiles/nlopt.dir/src/algs/cdirect/cdirect.c.o
+[ 14%] Building C object CMakeFiles/nlopt.dir/src/algs/cdirect/hybrid.c.o
+[ 16%] Building C object CMakeFiles/nlopt.dir/src/algs/praxis/praxis.c.o
+[ 18%] Building C object CMakeFiles/nlopt.dir/src/algs/crs/crs.c.o
+[ 20%] Building C object CMakeFiles/nlopt.dir/src/algs/mlsl/mlsl.c.o
+[ 22%] Building C object CMakeFiles/nlopt.dir/src/algs/mma/mma.c.o
+[ 24%] Building C object CMakeFiles/nlopt.dir/src/algs/mma/ccsa_quadratic.c.o
+[ 26%] Building C object CMakeFiles/nlopt.dir/src/algs/cobyla/cobyla.c.o
+[ 28%] Building C object CMakeFiles/nlopt.dir/src/algs/newuoa/newuoa.c.o
+[ 30%] Building C object CMakeFiles/nlopt.dir/src/algs/neldermead/nldrmd.c.o
+[ 32%] Building C object CMakeFiles/nlopt.dir/src/algs/neldermead/sbplx.c.o
+[ 34%] Building C object CMakeFiles/nlopt.dir/src/algs/auglag/auglag.c.o
+[ 36%] Building C object CMakeFiles/nlopt.dir/src/algs/bobyqa/bobyqa.c.o
+[ 38%] Building C object CMakeFiles/nlopt.dir/src/algs/isres/isres.c.o
+[ 40%] Building C object CMakeFiles/nlopt.dir/src/algs/slsqp/slsqp.c.o
+[ 42%] Building C object CMakeFiles/nlopt.dir/src/algs/esch/esch.c.o
+[ 44%] Building C object CMakeFiles/nlopt.dir/src/api/general.c.o
+[ 46%] Building C object CMakeFiles/nlopt.dir/src/api/options.c.o
+[ 48%] Building C object CMakeFiles/nlopt.dir/src/api/optimize.c.o
+[ 51%] Building C object CMakeFiles/nlopt.dir/src/api/deprecated.c.o
+[ 53%] Building C object CMakeFiles/nlopt.dir/src/api/f77api.c.o
+[ 55%] Building C object CMakeFiles/nlopt.dir/src/util/mt19937ar.c.o
+[ 57%] Building C object CMakeFiles/nlopt.dir/src/util/sobolseq.c.o
+[ 59%] Building C object CMakeFiles/nlopt.dir/src/util/timer.c.o
+[ 61%] Building C object CMakeFiles/nlopt.dir/src/util/stop.c.o
+[ 63%] Building C object CMakeFiles/nlopt.dir/src/util/redblack.c.o
+[ 65%] Building C object CMakeFiles/nlopt.dir/src/util/qsort_r.c.o
+[ 67%] Building C object CMakeFiles/nlopt.dir/src/util/rescale.c.o
+[ 69%] Building C object CMakeFiles/nlopt.dir/src/algs/luksan/plis.c.o
+[ 71%] Building C object CMakeFiles/nlopt.dir/src/algs/luksan/plip.c.o
+[ 73%] Building C object CMakeFiles/nlopt.dir/src/algs/luksan/pnet.c.o
+[ 75%] Building C object CMakeFiles/nlopt.dir/src/algs/luksan/mssubs.c.o
+[ 77%] Building C object CMakeFiles/nlopt.dir/src/algs/luksan/pssubs.c.o
+[ 79%] Building CXX object CMakeFiles/nlopt.dir/src/algs/stogo/global.cc.o
+[ 81%] Building CXX object CMakeFiles/nlopt.dir/src/algs/stogo/linalg.cc.o
+[ 83%] Building CXX object CMakeFiles/nlopt.dir/src/algs/stogo/local.cc.o
+[ 85%] Building CXX object CMakeFiles/nlopt.dir/src/algs/stogo/stogo.cc.o
+[ 87%] Building CXX object CMakeFiles/nlopt.dir/src/algs/stogo/tools.cc.o
+[ 89%] Building CXX object CMakeFiles/nlopt.dir/src/algs/ags/evolvent.cc.o
+[ 91%] Building CXX object CMakeFiles/nlopt.dir/src/algs/ags/solver.cc.o
+[ 93%] Building CXX object CMakeFiles/nlopt.dir/src/algs/ags/local_optimizer.cc.o
+[ 95%] Building CXX object CMakeFiles/nlopt.dir/src/algs/ags/ags.cc.o
+[ 97%] Linking CXX static library libnlopt.a
+[100%] Built target nlopt
+[  2%] Built target generate-cpp
+[100%] Built target nlopt
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/lib/pkgconfig/nlopt.pc
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/include/nlopt.h
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/include/nlopt.hpp
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/lib/libnlopt.a
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/share/man/man3/nlopt.3
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/share/man/man3/nlopt_minimize.3
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/share/man/man3/nlopt_minimize_constrained.3
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/lib/cmake/nlopt/NLoptLibraryDepends.cmake
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/lib/cmake/nlopt/NLoptLibraryDepends-release.cmake
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/lib/cmake/nlopt/NLoptConfig.cmake
+-- Installing: /tmp/RtmpZZKfhN/R.INSTALL61e2b191d6558/nloptr/src/nlopt/lib/cmake/nlopt/NLoptConfigVersion.cmake
+Moving nlopt/lib to nlopt/lib
+mv: cannot move 'nlopt/lib' to a subdirectory of itself, 'nlopt/lib/lib'
+Copying headers found in src/nlopt/include into inst/include
+configure: creating ./config.status
+config.status: creating src/Makevars
+** libs
+using C compiler: ‘gcc (Debian 14.2.0-19) 14.2.0’
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG -Inlopt/include      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c dummy.cpp -o dummy.o
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG -Inlopt/include      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c init_nloptr.c -o init_nloptr.o
+gcc -std=gnu23 -I"/usr/share/R/include" -DNDEBUG -Inlopt/include      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c nloptr.c -o nloptr.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o nloptr.so dummy.o init_nloptr.o nloptr.o -llapack -lblas -lgfortran -lm -lquadmath nlopt/lib/libnlopt.a -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-nloptr/00new/nloptr/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (nloptr)
+* installing *source* package ‘lme4’ ...
+** this is package ‘lme4’ version ‘1.1-37’
+** package ‘lme4’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/RcppEigen/include' -I'/usr/lib/R/library/Matrix/include'    -DNDEBUG -DEIGEN_DONT_VECTORIZE -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c external.cpp -o external.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/RcppEigen/include' -I'/usr/lib/R/library/Matrix/include'    -DNDEBUG -DEIGEN_DONT_VECTORIZE -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c glmFamily.cpp -o glmFamily.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/RcppEigen/include' -I'/usr/lib/R/library/Matrix/include'    -DNDEBUG -DEIGEN_DONT_VECTORIZE -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c optimizer.cpp -o optimizer.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/RcppEigen/include' -I'/usr/lib/R/library/Matrix/include'    -DNDEBUG -DEIGEN_DONT_VECTORIZE -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c predModule.cpp -o predModule.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/RcppEigen/include' -I'/usr/lib/R/library/Matrix/include'    -DNDEBUG -DEIGEN_DONT_VECTORIZE -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c respModule.cpp -o respModule.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o lme4.so external.o glmFamily.o optimizer.o predModule.o respModule.o -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-lme4/00new/lme4/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (lme4)
+* installing *source* package ‘pbkrtest’ ...
+** this is package ‘pbkrtest’ version ‘0.5.5’
+** package ‘pbkrtest’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (pbkrtest)
+* installing *source* package ‘car’ ...
+** this is package ‘car’ version ‘3.1-3’
+** package ‘car’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (car)
+* installing *source* package ‘rstatix’ ...
+** this is package ‘rstatix’ version ‘0.7.3’
+** package ‘rstatix’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rstatix)
+* installing *source* package ‘ggpubr’ ...
+** this is package ‘ggpubr’ version ‘0.6.2’
+** package ‘ggpubr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggpubr)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9ySzhM/downloaded_packages’
+✅ ggpubr installed
+
+[survminer] Installing...
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: https://cloud.r-project.org/
+Bioconductor version 3.22 (BiocManager 1.30.26), R 4.5.0 (2025-04-11)
+Installing package(s) 'survminer'
+trying URL 'https://cloud.r-project.org/src/contrib/survminer_0.5.1.tar.gz'
+Content type 'application/x-gzip' length 3575176 bytes (3.4 MB)
+==================================================
+downloaded 3.4 MB
+
+* installing *source* package ‘survminer’ ...
+** this is package ‘survminer’ version ‘0.5.1’
+** package ‘survminer’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (survminer)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9ySzhM/downloaded_packages’
+✅ survminer installed
+
+[clusterProfiler] Installing...
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: https://cloud.r-project.org/
+Bioconductor version 3.22 (BiocManager 1.30.26), R 4.5.0 (2025-04-11)
+Installing package(s) 'clusterProfiler'
+also installing the dependencies ‘fontquiver’, ‘systemfonts’, ‘gdtools’, ‘ggplotify’, ‘ggforce’, ‘tidytree’, ‘treeio’, ‘ggiraph’, ‘R.oo’, ‘fgsea’, ‘aplot’, ‘ggfun’, ‘ggnewscale’, ‘ggtangle’, ‘scatterpie’, ‘ggtree’, ‘R.utils’, ‘DOSE’, ‘enrichplot’, ‘GOSemSim’, ‘gson’, ‘qvalue’, ‘yulab.utils’
+
+trying URL 'https://cloud.r-project.org/src/contrib/fontquiver_0.2.1.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/systemfonts_1.3.1.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/gdtools_0.4.4.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggplotify_0.1.3.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggforce_0.5.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/tidytree_0.4.6.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/treeio_1.34.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggiraph_0.9.2.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/R.oo_1.27.1.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/fgsea_1.36.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/aplot_0.2.9.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggfun_0.2.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggnewscale_0.5.2.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/ggtangle_0.0.7.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/scatterpie_0.2.6.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/ggtree_4.0.1.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/R.utils_2.13.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/DOSE_4.4.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/enrichplot_1.30.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/GOSemSim_2.36.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/gson_0.1.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/qvalue_2.42.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/yulab.utils_0.2.1.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/clusterProfiler_4.18.0.tar.gz'
+* installing *source* package ‘fontquiver’ ...
+** this is package ‘fontquiver’ version ‘0.2.1’
+** package ‘fontquiver’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (fontquiver)
+* installing *source* package ‘systemfonts’ ...
+** this is package ‘systemfonts’ version ‘1.3.1’
+** package ‘systemfonts’ successfully unpacked and MD5 sums checked
+** using staged installation
+Package fontconfig was not found in the pkg-config search path.
+Perhaps you should add the directory containing `fontconfig.pc'
+to the PKG_CONFIG_PATH environment variable
+Package 'fontconfig', required by 'virtual:world', not found
+Package 'freetype2', required by 'virtual:world', not found
+Using PKG_CFLAGS=
+Using PKG_LIBS=-lfontconfig -lfreetype
+--------------------------- [ANTICONF] --------------------------------
+Configuration failed to find the fontconfig freetype2 library. Try installing:
+ * deb: libfontconfig1-dev (Debian, Ubuntu, etc)
+ * rpm: fontconfig-devel (Fedora, EPEL)
+ * csw: fontconfig_dev (Solaris)
+ * brew: freetype (OSX)
+If fontconfig freetype2 is already installed, check that 'pkg-config' is in your
+PATH and PKG_CONFIG_PATH contains a fontconfig freetype2.pc file. If pkg-config
+is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+-------------------------- [ERROR MESSAGE] ---------------------------
+<stdin>:1:10: fatal error: fontconfig/fontconfig.h: No such file or directory
+compilation terminated.
+--------------------------------------------------------------------
+ERROR: configuration failed for package ‘systemfonts’
+* removing ‘/home/thc1006/R/library/systemfonts’
+* installing *source* package ‘R.oo’ ...
+** this is package ‘R.oo’ version ‘1.27.1’
+** package ‘R.oo’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+Warning in setGenericS3.default(name, export = exportGeneric, envir = envir,  :
+  Renamed the preexisting function getClasses to getClasses.default, which was defined in environment R.oo.
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (R.oo)
+* installing *source* package ‘fgsea’ ...
+** this is package ‘fgsea’ version ‘1.36.0’
+** package ‘fgsea’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c ScoreCalculation.cpp -o ScoreCalculation.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c ScoreRuler.cpp -o ScoreRuler.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c esCalculation.cpp -o esCalculation.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c fastGSEA.cpp -o fastGSEA.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c fgseaMultilevel.cpp -o fgseaMultilevel.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c fgseaMultilevelSupplement.cpp -o fgseaMultilevelSupplement.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c geseca.cpp -o geseca.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include' -I'/home/thc1006/R/library/BH/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c util.cpp -o util.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o fgsea.so RcppExports.o ScoreCalculation.o ScoreRuler.o esCalculation.o fastGSEA.o fgseaMultilevel.o fgseaMultilevelSupplement.o geseca.o util.o -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-fgsea/00new/fgsea/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (fgsea)
+ERROR: failed to lock directory ‘/home/thc1006/R/library’ for modifying
+Try removing ‘/home/thc1006/R/library/00LOCK-ggnewscale’
+* installing *source* package ‘gson’ ...
+** this is package ‘gson’ version ‘0.1.0’
+** package ‘gson’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gson)
+* installing *source* package ‘qvalue’ ...
+** this is package ‘qvalue’ version ‘2.42.0’
+** package ‘qvalue’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (qvalue)
+* installing *source* package ‘yulab.utils’ ...
+** this is package ‘yulab.utils’ version ‘0.2.1’
+** package ‘yulab.utils’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (yulab.utils)
+ERROR: dependency ‘systemfonts’ is not available for package ‘gdtools’
+Perhaps try a variation of:
+install.packages('systemfonts')
+* removing ‘/home/thc1006/R/library/gdtools’
+* installing *source* package ‘ggplotify’ ...
+** this is package ‘ggplotify’ version ‘0.1.3’
+** package ‘ggplotify’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggplotify)
+ERROR: dependency ‘systemfonts’ is not available for package ‘ggforce’
+Perhaps try a variation of:
+install.packages('systemfonts')
+* removing ‘/home/thc1006/R/library/ggforce’
+* installing *source* package ‘tidytree’ ...
+** this is package ‘tidytree’ version ‘0.4.6’
+** package ‘tidytree’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tidytree)
+* installing *source* package ‘ggfun’ ...
+** this is package ‘ggfun’ version ‘0.2.0’
+** package ‘ggfun’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggfun)
+* installing *source* package ‘R.utils’ ...
+** this is package ‘R.utils’ version ‘2.13.0’
+** package ‘R.utils’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+Warning in setGenericS3.default(name, export = exportGeneric, envir = envir,  :
+  Renamed the preexisting function warnings to warnings.default, which was defined in environment R.utils.
+Warning in setGenericS3.default("use") :
+  Renamed the preexisting function use to use.default, which was defined in environment R.utils.
+Warning in setMethodS3.default("use", "default", function(pkg = "R.utils",  :
+  Method already existed and was overwritten: use.default
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (R.utils)
+* installing *source* package ‘treeio’ ...
+** this is package ‘treeio’ version ‘1.34.0’
+** package ‘treeio’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (treeio)
+ERROR: dependencies ‘gdtools’, ‘systemfonts’ are not available for package ‘ggiraph’
+Perhaps try a variation of:
+install.packages(c('gdtools', 'systemfonts'))
+* removing ‘/home/thc1006/R/library/ggiraph’
+* installing *source* package ‘aplot’ ...
+** this is package ‘aplot’ version ‘0.2.9’
+** package ‘aplot’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (aplot)
+* installing *source* package ‘ggtangle’ ...
+** this is package ‘ggtangle’ version ‘0.0.7’
+** package ‘ggtangle’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggtangle)
+ERROR: dependency ‘ggforce’ is not available for package ‘scatterpie’
+Perhaps try a variation of:
+install.packages('ggforce')
+* removing ‘/home/thc1006/R/library/scatterpie’
+* installing *source* package ‘GOSemSim’ ...
+** this is package ‘GOSemSim’ version ‘2.36.0’
+** package ‘GOSemSim’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Debian 14.2.0-19) 14.2.0’
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c ICmethod.cpp -o ICmethod.o
+g++ -std=gnu++17 -I"/usr/share/R/include" -DNDEBUG  -I'/home/thc1006/R/library/Rcpp/include'     -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.5.0=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++17 -shared -L/usr/lib/R/lib -Wl,-z,relro -o GOSemSim.so ICmethod.o RcppExports.o -L/usr/lib/R/lib -lR
+installing to /home/thc1006/R/library/00LOCK-GOSemSim/00new/GOSemSim/libs
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (GOSemSim)
+ERROR: dependency ‘ggiraph’ is not available for package ‘ggtree’
+Perhaps try a variation of:
+install.packages('ggiraph')
+* removing ‘/home/thc1006/R/library/ggtree’
+* installing *source* package ‘DOSE’ ...
+** this is package ‘DOSE’ version ‘4.4.0’
+** package ‘DOSE’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (DOSE)
+ERROR: dependencies ‘ggnewscale’, ‘scatterpie’, ‘ggtree’ are not available for package ‘enrichplot’
+Perhaps try a variation of:
+install.packages(c('ggnewscale', 'scatterpie', 'ggtree'))
+* removing ‘/home/thc1006/R/library/enrichplot’
+ERROR: dependency ‘enrichplot’ is not available for package ‘clusterProfiler’
+Perhaps try a variation of:
+install.packages('enrichplot')
+* removing ‘/home/thc1006/R/library/clusterProfiler’
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9ySzhM/downloaded_packages’
+✅ clusterProfiler installed
+
+[GSVA] Installing...
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: https://cloud.r-project.org/
+Bioconductor version 3.22 (BiocManager 1.30.26), R 4.5.0 (2025-04-11)
+Installing package(s) 'GSVA'
+also installing the dependencies ‘magick’, ‘SpatialExperiment’
+
+trying URL 'https://cloud.r-project.org/src/contrib/magick_2.9.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/SpatialExperiment_1.20.0.tar.gz'
+trying URL 'https://bioconductor.org/packages/3.22/bioc/src/contrib/GSVA_2.4.0.tar.gz'
+* installing *source* package ‘magick’ ...
+** this is package ‘magick’ version ‘2.9.0’
+** package ‘magick’ successfully unpacked and MD5 sums checked
+** using staged installation
+Package Magick++ was not found in the pkg-config search path.
+Perhaps you should add the directory containing `Magick++.pc'
+to the PKG_CONFIG_PATH environment variable
+Package 'Magick++', required by 'virtual:world', not found
+Using PKG_CFLAGS=
+Using PKG_LIBS=-lMagick++-6.Q16 -lMagickWand-6.Q16 -lMagickCore-6.Q16
+--------------------------- [ANTICONF] --------------------------------
+Configuration failed to find the Magick++ library. Try installing:
+ - deb: libmagick++-dev (Debian, Ubuntu)
+ - rpm: ImageMagick-c++-devel (Fedora, CentOS, RHEL)
+ - brew: imagemagick or imagemagick@6 (MacOS)
+If Magick++ is already installed, check that 'pkg-config' is in your
+PATH and PKG_CONFIG_PATH contains a Magick++.pc file. If pkg-config
+is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+-------------------------- [ERROR MESSAGE] ---------------------------
+<stdin>:1:10: fatal error: Magick++.h: No such file or directory
+compilation terminated.
+--------------------------------------------------------------------
+ERROR: configuration failed for package ‘magick’
+* removing ‘/home/thc1006/R/library/magick’
+ERROR: dependency ‘magick’ is not available for package ‘SpatialExperiment’
+Perhaps try a variation of:
+install.packages('magick')
+* removing ‘/home/thc1006/R/library/SpatialExperiment’
+ERROR: dependency ‘SpatialExperiment’ is not available for package ‘GSVA’
+Perhaps try a variation of:
+install.packages('SpatialExperiment')
+* removing ‘/home/thc1006/R/library/GSVA’
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9ySzhM/downloaded_packages’
+✅ GSVA installed
+
+There were 12 warnings (use warnings() to see them)
+[FINAL ATTEMPT] Installing IOBR from GitHub...
+Downloading GitHub repo IOBR/IOBR@HEAD
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/tmp/Rtmp9ySzhM/remotes61de85c22da87/IOBR-IOBR-7269b94/DESCRIPTION’ ... OK
+* preparing ‘IOBR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘IOBR_0.99.99.tar.gz’
+
+Installing package into ‘/home/thc1006/R/library’
+(as ‘lib’ is unspecified)
+ERROR: dependencies ‘clusterProfiler’, ‘GSVA’ are not available for package ‘IOBR’
+Perhaps try a variation of:
+install.packages(c('clusterProfiler', 'GSVA'))
+* removing ‘/home/thc1006/R/library/IOBR’
+
+❌ IOBR still failed
+Error: Error in library(IOBR): there is no package called ‘IOBR’
+ 
+Warning message:
+In i.p(...) :
+  installation of package ‘/tmp/Rtmp9ySzhM/file61de87b05b39f/IOBR_0.99.99.tar.gz’ had non-zero exit status

@@ -66,7 +66,7 @@ def generate_cptac_simulation():
     print("\n  Generating realistic CPTAC simulation...")
 
     # Load mRNA data as reference
-    mrna_file = Path("outputs/tcga_full_cohort/expression_matrix.csv")
+    mrna_file = Path("outputs/tcga_full_cohort_real/expression_matrix_full_real.csv")
     mrna_df = pd.read_csv(mrna_file)
 
     # Sample subset (CPTAC has ~220 samples)

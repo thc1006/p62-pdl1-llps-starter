@@ -1,0 +1,159 @@
+Input sequence provided is already in string format. No operation performed
+Input sequence provided is already in string format. No operation performed
+System has 32 CPU cores available
+
+================================================================================
+PARALLEL PARTIAL CORRELATION v3 - WITH TIMER2.0 IMMUNE CONFOUNDERS
+Using 32 CPU cores for acceleration
+================================================================================
+
+[LOAD] Loading expression data...
+  Expression: 1635 samples x 41498 variables
+
+[LOAD] Loading TIMER2.0 immune scores...
+  TIMER2.0: 1635 samples with immune scores
+
+[MERGE] Combining expression and immune data...
+  Common samples: 1635
+
+[GENE MAPPING] Converting gene symbols to Ensembl IDs...
+  CMTM6 -> ENSG00000091317
+  HIP1R -> ENSG00000130787
+  STUB1 -> ENSG00000103266
+  SQSTM1 -> ENSG00000161011 (fallback)
+
+  Successfully mapped 4/4 genes
+
+[CONFOUNDERS] Preparing confounder matrix...
+  Available confounders: 11/11
+  [WARNING] Removing confounder 'GEP_score' (all NaN)
+  Confounders ready: 10 variables
+
+[ANALYZE] Calculating partial correlations (parallel mode)...
+  Analyzing 5 gene pairs
+  Each pair: 1,000 bootstrap iterations
+  Total computational load: 5000 = 5,000 iterations
+  Parallelization: 32 cores
+
+
+--- CMTM6 vs STUB1 ---
+  Analyzing: CMTM6 (ENSG00000091317) vs STUB1 (ENSG00000103266)
+  Simple correlation:
+    r = -0.178, P = 4.49e-13
+    Spearman rho = -0.164, P = 2.21e-11
+
+  Partial correlation (controlling for immune infiltration):
+    r = -0.122, P = 7.25e-07
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 2.1s
+    95% CI = [-0.172, -0.071]
+    Attenuation: 31.3%
+
+--- CMTM6 vs SQSTM1 ---
+  Analyzing: CMTM6 (ENSG00000091317) vs SQSTM1 (ENSG00000161011)
+  Simple correlation:
+    r = -0.094, P = 1.51e-04
+    Spearman rho = -0.108, P = 1.27e-05
+
+  Partial correlation (controlling for immune infiltration):
+    r = -0.101, P = 4.54e-05
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.7s
+    95% CI = [-0.150, -0.052]
+    Attenuation: -7.6%
+
+--- STUB1 vs SQSTM1 ---
+  Analyzing: STUB1 (ENSG00000103266) vs SQSTM1 (ENSG00000161011)
+  Simple correlation:
+    r = 0.305, P = 1.37e-36
+    Spearman rho = 0.228, P = 1.18e-20
+
+  Partial correlation (controlling for immune infiltration):
+    r = 0.254, P = 1.78e-25
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.7s
+    95% CI = [0.201, 0.306]
+    Attenuation: 16.8%
+
+--- HIP1R vs SQSTM1 ---
+  Analyzing: HIP1R (ENSG00000130787) vs SQSTM1 (ENSG00000161011)
+  Simple correlation:
+    r = 0.058, P = 1.93e-02
+    Spearman rho = 0.039, P = 1.11e-01
+
+  Partial correlation (controlling for immune infiltration):
+    r = 0.064, P = 1.00e-02
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.8s
+    95% CI = [0.015, 0.110]
+    Attenuation: -10.0%
+
+--- HIP1R vs STUB1 ---
+  Analyzing: HIP1R (ENSG00000130787) vs STUB1 (ENSG00000103266)
+  Simple correlation:
+    r = 0.196, P = 1.36e-15
+    Spearman rho = 0.125, P = 4.40e-07
+
+  Partial correlation (controlling for immune infiltration):
+    r = 0.122, P = 7.94e-07
+  Parallel bootstrap 95% CI:
+      Running 1000 bootstrap iterations on 32 cores... done in 0.7s
+    95% CI = [0.068, 0.172]
+    Attenuation: 37.8%
+
+[PERFORMANCE] Total analysis time: 5.1s
+  Average per gene pair: 1.0s
+
+[SAVE] Writing results...
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/partial_correlation_v3_timer2_parallel/partial_correlation_results_timer2_parallel.csv
+  Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/partial_correlation_v3_timer2_parallel/partial_correlation_summary_timer2_parallel.json
+
+[COMPARE] Comparing with v2 fallback method...
+  v2 results not found, skipping comparison
+
+================================================================================
+PARALLEL PARTIAL CORRELATION v3 COMPLETE
+================================================================================
+
+Performance summary:
+  CPU cores used: 32
+  Total iterations: 5,000
+  Total time: 5.1s
+  Throughput: 988 iterations/second
+
+Key findings:
+
+CMTM6-STUB1:
+  Simple r = -0.178 (P=4.49e-13)
+  Partial r = -0.122 (P=7.25e-07)
+  95% CI = [-0.172, -0.071]
+  Attenuation = 31.3%
+
+CMTM6-SQSTM1:
+  Simple r = -0.094 (P=1.51e-04)
+  Partial r = -0.101 (P=4.54e-05)
+  95% CI = [-0.150, -0.052]
+  Attenuation = -7.6%
+
+STUB1-SQSTM1:
+  Simple r = 0.305 (P=1.37e-36)
+  Partial r = 0.254 (P=1.78e-25)
+  95% CI = [0.201, 0.306]
+  Attenuation = 16.8%
+
+HIP1R-SQSTM1:
+  Simple r = 0.058 (P=1.93e-02)
+  Partial r = 0.064 (P=1.00e-02)
+  95% CI = [0.015, 0.110]
+  Attenuation = -10.0%
+
+HIP1R-STUB1:
+  Simple r = 0.196 (P=1.36e-15)
+  Partial r = 0.122 (P=7.94e-07)
+  95% CI = [0.068, 0.172]
+  Attenuation = 37.8%
+
+================================================================================
+Next step:
+  Review results and proceed to single-cell validation
+================================================================================

@@ -1,0 +1,44 @@
+==========================================================================
+  IOBR v0.99.99  Immuno-Oncology Biological Research 
+  For Tutorial: https://iobr.github.io/book/
+  For Help: https://github.com/IOBR/IOBR/issues
+
+ If you use IOBR in published research, please cite:
+ DQ Zeng, YR Fang, ..., GC Yu*, WJ Liao*, 
+ Enhancing immuno-oncology investigations through multidimensional decoding 
+ of tumor microenvironment with IOBR 2.0. Cell Rep Methods 4, 100910 (2024). 
+ &  
+ YR Fang, ..., WJ Liao*, DQ Zeng*, 
+ Systematic Investigation of Tumor Microenvironment and 
+ Antitumor Immunity With IOBR, Med Research (2025). 
+ https://onlinelibrary.wiley.com/doi/epdf/10.1002/mdr2.70001 
+==========================================================================
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+==============================================================================
+TIMER2.0 IMMUNE DECONVOLUTION PIPELINE
+==============================================================================
+
+[LOAD] Reading expression matrix...
+  Loaded: 1635 samples x 41499 variables
+
+[PREPARE] Formatting expression matrix for TIMER2.0...
+  Matrix: 41497 genes x 1635 samples
+
+[ANNOTATE] Converting Ensembl IDs to gene symbols...
+  Detected Ensembl IDs, converting to gene symbols...
+  [WARN] Annotation failed: undefined columns selected
+  Attempting alternative annotation method...
+Error in `[.data.frame`(annotation, , c("probe_id", "symbol")) : 
+  undefined columns selected
+Calls: tryCatch ... tryCatchOne -> <Anonymous> -> anno_eset -> [ -> [.data.frame
+Execution halted
