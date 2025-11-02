@@ -171,6 +171,13 @@ tryCatch({
   timer_df <- timer_df %>%
     left_join(cancer_type_df, by = "sample_id")
 
+  # IOBR v0.99.99 returns column names with "_TIMER" suffix
+  # Rename to standard format for downstream calculations
+  colnames(timer_df) <- gsub("_TIMER$", "", colnames(timer_df))
+  colnames(timer_df) <- gsub("^T_cell_CD4$", "T_cell.CD4", colnames(timer_df))
+  colnames(timer_df) <- gsub("^T_cell_CD8$", "T_cell.CD8", colnames(timer_df))
+  colnames(timer_df) <- gsub("^DC$", "Myeloid.dendritic", colnames(timer_df))
+
   cat(sprintf("  Cell types quantified: %d\n", ncol(timer_df) - 2))
 
   # Summary statistics
