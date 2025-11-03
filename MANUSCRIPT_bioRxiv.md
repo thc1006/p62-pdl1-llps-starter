@@ -2,14 +2,13 @@
 
 ## Authors
 
-Hsiu-Chi Tsai<sup>1</sup>
+Hsiu-Chi Tsai<sup>1,*</sup>
 
 ## Affiliations
 
 <sup>1</sup> National Yang Ming Chiao Tung University, Hsinchu, Taiwan
 
-**Corresponding Author:**
-Hsiu-Chi Tsai, ctsai1006@cs.nctu.edu.tw, National Yang Ming Chiao Tung University
+<sup>*</sup> Contact: hctsai1006@cs.nctu.edu.tw
 
 ---
 
