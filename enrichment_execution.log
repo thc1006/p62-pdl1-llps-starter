@@ -1,0 +1,32 @@
+======================================================================
+GO/KEGG FUNCTIONAL ENRICHMENT ANALYSIS
+======================================================================
+
+[STEP 1] Loading TCGA expression data...
+Traceback (most recent call last):
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/enrichment/go_kegg_enrichment.py", line 33, in <module>
+    expr_df = pd.read_csv(expr_file, index_col=0)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/tcga_expression_matrix.csv'

@@ -1,0 +1,16 @@
+📄 Reading manuscript from: /home/thc1006/dev/p62-pdl1-llps-starter/MANUSCRIPT_bioRxiv.md
+🔄 Converting Markdown to HTML...
+📝 Applying professional formatting...
+🖨️  Generating PDF with WeasyPrint...
+✅ PDF generated successfully!
+📊 Output file: /home/thc1006/dev/p62-pdl1-llps-starter/MANUSCRIPT_bioRxiv_SUBMISSION.pdf
+📦 File size: 0.10 MB
+
+🎉 Your manuscript is ready for bioRxiv submission!
+
+📋 Next steps:
+  1. Review the PDF to ensure proper formatting
+  2. Add author information (names, affiliations, email)
+  3. Replace placeholder text with actual data
+  4. Add any missing figures/tables
+  5. Upload to bioRxiv at https://www.biorxiv.org/submit-a-manuscript
