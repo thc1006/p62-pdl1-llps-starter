@@ -1,0 +1,51 @@
+================================================================================
+COMPREHENSIVE FIGURE GENERATION FOR BIORXIV SUBMISSION
+================================================================================
+
+[1/10] Loading data files...
+  Loading expression matrix... ✓ (1635 genes × 41498 samples)
+  ✓ Clinical data: 1307 samples
+  ✓ TIMER2 scores: (1635, 13)
+  ✓ Partial correlations: 5 rows
+  ✓ Cox regression: 8 rows
+  ✗ Error loading sensitivity: No columns to parse from file
+
+[2/10] Generating Figure 1: Pipeline flowchart...
+  ✓ Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/Figure1_pipeline_flowchart.png
+
+[3/10] Generating Figure 2: Correlation analysis...
+  ✓ Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/Figure2_correlations.png
+
+[4/10] Generating Figure 3: Immune environment...
+Traceback (most recent call last):
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/visualization/generate_all_figures.py", line 569, in <module>
+    main()
+    ~~~~^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/visualization/generate_all_figures.py", line 546, in main
+    generate_figure3_immune(data)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/scripts/visualization/generate_all_figures.py", line 338, in generate_figure3_immune
+    timer_clinical = data['timer2'].join(data['clinical'][['cancer_type']], how='inner')
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/frame.py", line 10784, in join
+    return merge(
+        self,
+    ...<7 lines>...
+        validate=validate,
+    )
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/reshape/merge.py", line 184, in merge
+    return op.get_result(copy=copy)
+           ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/reshape/merge.py", line 888, in get_result
+    result = self._reindex_and_concat(
+        join_index, left_indexer, right_indexer, copy=copy
+    )
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/reshape/merge.py", line 840, in _reindex_and_concat
+    llabels, rlabels = _items_overlap_with_suffix(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.left._info_axis, self.right._info_axis, self.suffixes
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/thc1006/dev/p62-pdl1-llps-starter/venv/lib/python3.13/site-packages/pandas/core/reshape/merge.py", line 2721, in _items_overlap_with_suffix
+    raise ValueError(f"columns overlap but no suffix specified: {to_rename}")
+ValueError: columns overlap but no suffix specified: Index(['cancer_type'], dtype='object')

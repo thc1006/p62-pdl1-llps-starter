@@ -1,0 +1,45 @@
+================================================================================
+COMPREHENSIVE FIGURE GENERATION FOR BIORXIV SUBMISSION
+================================================================================
+
+[1/10] Loading data files...
+  Loading expression matrix... ✓ (1635 genes × 41498 samples)
+  ✓ Clinical data: 1307 samples
+  ✓ TIMER2 scores: (1635, 13)
+  ✓ Partial correlations: 5 rows
+  ✓ Cox regression: 8 rows
+  ✗ Error loading sensitivity: No columns to parse from file
+
+[2/10] Generating Figure 1: Pipeline flowchart...
+  ✓ Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/Figure1_pipeline_flowchart.png
+
+[3/10] Generating Figure 2: Correlation analysis...
+  ✓ Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/Figure2_correlations.png
+
+[4/10] Generating Figure 3: Immune environment...
+  ✓ Saved: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/Figure3_immune_environment.png
+
+[5/10] Figure 4: Cox regression (already exists)...
+  ✓ Copied to: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/Figure4_survival_analysis.png
+
+[6/10] Generating Supplementary Figures...
+  Generating Figure S1: Study design flowchart...
+  Generating Figure S2: Sample characteristics...
+  Generating Figure S3: Gene expression distributions...
+  ✓ Generated key supplementary figures
+
+[7/10] Generating summary report...
+  ✓ Summary report: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/FIGURE_GENERATION_REPORT.md
+
+================================================================================
+FIGURE GENERATION COMPLETE!
+Total figures generated: 6
+Output directory: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures
+================================================================================
+
+Next steps:
+1. Review all generated figures
+2. Convert SUPPLEMENTARY_MATERIALS.md to PDF
+3. Package supplementary data files
+4. Submit to bioRxiv!
+
