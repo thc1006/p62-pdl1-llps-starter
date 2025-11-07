@@ -11,13 +11,14 @@
 \definecolor{validcolor}{RGB}{155, 89, 182}     % Purple
 \definecolor{resultcolor}{RGB}{22, 160, 133}    % Teal
 
-% Define styles - REDUCED size for better page layout
+% Define styles - FIXED VERSION
 \tikzstyle{modulebox} = [
     rectangle,
     rounded corners=5pt,
-    minimum width=11cm,
-    minimum height=1.6cm,
-    text centered,
+    minimum width=12cm,
+    text width=11.5cm,
+    minimum height=1.8cm,
+    align=center,
     draw=black,
     line width=1.5pt,
     drop shadow,
@@ -28,9 +29,10 @@
 \tikzstyle{trackbox} = [
     rectangle,
     rounded corners=4pt,
-    minimum width=3.3cm,
-    minimum height=2.2cm,
-    text centered,
+    minimum width=3.5cm,
+    text width=3.2cm,
+    minimum height=2.8cm,
+    align=center,
     draw=black,
     line width=1.2pt,
     drop shadow={opacity=0.3},
@@ -47,9 +49,10 @@
 \tikzstyle{finalbox} = [
     rectangle,
     rounded corners=3pt,
-    minimum width=12cm,
-    minimum height=0.8cm,
-    text centered,
+    minimum width=10cm,
+    text width=9.5cm,
+    minimum height=0.9cm,
+    align=center,
     draw=resultcolor,
     line width=2pt,
     fill=resultcolor!20
@@ -57,94 +60,78 @@
 
 \begin{document}
 
-\begin{tikzpicture}[node distance=1.4cm, font=\sffamily, scale=0.85, transform shape]
+\begin{tikzpicture}[node distance=1.5cm, font=\sffamily, scale=0.9, transform shape]
 
-% Title - Reduced size
-\node[font=\Large\bfseries] (title) at (0, 9.5) {Four-Dimensional Integrative Pipeline};
+% Title
+\node[font=\Large\bfseries] (title) at (0, 10) {Four-Dimensional Integrative Pipeline};
 
-% Module 1: Data Acquisition - SIMPLIFIED & REDUCED SIZE
-\node[modulebox, fill=datacolor, draw=datacolor] (module1) at (0, 7.8) {};
-\node[anchor=north, font=\Large\bfseries, color=datacolor!80!black] at (module1.north) [yshift=-8pt] {(1) DATA ACQUISITION};
-\node[anchor=center, font=\normalsize] at (module1.center) [yshift=-12pt] {
-    \begin{tabular}{c}
-    \textbf{TCGA: 1,635 samples, 3 cancer types} \\[3pt]
-    41,497 genes \,•\, ComBat correction
-    \end{tabular}
+% Module 1: Data Acquisition - UNIFIED FORMAT
+\node[modulebox, fill=datacolor, draw=datacolor] (module1) at (0, 8.2) {
+    \vspace{6pt}
+    {\large\bfseries\color{datacolor!80!black} (1) DATA ACQUISITION}\\[8pt]
+    {\small\textbf{TCGA: 1,635 samples, 3 types}}\\[3pt]
+    {\small 41,497 genes • ComBat batch correction}
 };
 
 % Arrow 1
-\draw[arrow] (module1.south) -- ++(0, -0.8);
+\draw[arrow] (module1.south) -- ++(0, -0.9);
 
-% Module 2: Immune Deconvolution - SIMPLIFIED & REDUCED SIZE
-\node[modulebox, fill=immunecolor, draw=immunecolor] (module2) at (0, 5.2) {};
-\node[anchor=north, font=\Large\bfseries, color=immunecolor!80!black] at (module2.north) [yshift=-8pt] {(2) IMMUNE DECONVOLUTION};
-\node[anchor=center, font=\normalsize] at (module2.center) [yshift=-12pt] {
-    \begin{tabular}{c}
-    \textbf{TIMER2.0: 6 immune cell types} \\[3pt]
-    B, CD4+T, CD8+T, Neutrophils, Macrophages, DC
-    \end{tabular}
+% Module 2: Immune Deconvolution - UNIFIED FORMAT
+\node[modulebox, fill=immunecolor, draw=immunecolor] (module2) at (0, 5.5) {
+    \vspace{6pt}
+    {\large\bfseries\color{immunecolor!80!black} (2) IMMUNE DECONVOLUTION}\\[8pt]
+    {\small\textbf{TIMER2.0: 6 immune cell types}}\\[3pt]
+    {\small B, CD4+T, CD8+T, Neutrophil, Macrophage, DC}
 };
 
 % Arrow 2
-\draw[arrow] (module2.south) -- ++(0, -0.8);
+\draw[arrow] (module2.south) -- ++(0, -0.9);
 
-% Module 3 Title - Reduced size
-\node[font=\Large\bfseries, color=analysiscolor!80!black] (module3title) at (0, 3.2) {(3) STATISTICAL ANALYSIS};
+% Module 3 Title
+\node[font=\large\bfseries, color=analysiscolor!80!black] (module3title) at (0, 3.3) {(3) STATISTICAL ANALYSIS};
 
-% Track A - Reduced size
-\node[trackbox, draw=analysiscolor, below=0.6cm of module3title, xshift=-4cm] (trackA) {};
-\node[anchor=center, font=\normalsize] at (trackA.center) {
-    \begin{tabular}{c}
-    {\Large\bfseries Correlation} \\[8pt]
-    \textit{Spearman} \\[8pt]
-    {\huge\bfseries\color{analysiscolor!90!black} $\rho = 0.42$} \\[6pt]
-    {\normalsize CD274-CMTM6}
-    \end{tabular}
+% Track A - Correlation
+\node[trackbox, draw=analysiscolor, below=0.7cm of module3title, xshift=-4.3cm] (trackA) {
+    {\large\bfseries Correlation}\\[6pt]
+    {\small\itshape Spearman}\\[6pt]
+    {\LARGE\bfseries\color{analysiscolor!90!black} $\rho = 0.42$}\\[6pt]
+    {\footnotesize CD274-CMTM6}
 };
 
-% Track B - Reduced size
-\node[trackbox, draw=analysiscolor, right=0.5cm of trackA] (trackB) {};
-\node[anchor=center, font=\normalsize] at (trackB.center) {
-    \begin{tabular}{c}
-    {\Large\bfseries Partial} \\[8pt]
-    \textit{6 covariates} \\[8pt]
-    {\huge\bfseries\color{analysiscolor!90!black} $\rho = 0.31$} \\[6pt]
-    {\normalsize 74\% retained}
-    \end{tabular}
+% Track B - Partial Correlation
+\node[trackbox, draw=analysiscolor, right=0.6cm of trackA] (trackB) {
+    {\large\bfseries Partial}\\[6pt]
+    {\small\itshape 6 covariates}\\[6pt]
+    {\LARGE\bfseries\color{analysiscolor!90!black} $\rho = 0.31$}\\[6pt]
+    {\footnotesize 74\% retained}
 };
 
-% Track C - Reduced size
-\node[trackbox, draw=analysiscolor, right=0.5cm of trackB] (trackC) {};
-\node[anchor=center, font=\normalsize] at (trackC.center) {
-    \begin{tabular}{c}
-    {\Large\bfseries Survival} \\[8pt]
-    \textit{Cox Model} \\[8pt]
-    {\huge\bfseries\color{analysiscolor!90!black} 0.72} \\[6pt]
-    {\normalsize C-index}
-    \end{tabular}
+% Track C - Survival
+\node[trackbox, draw=analysiscolor, right=0.6cm of trackB] (trackC) {
+    {\large\bfseries Survival}\\[6pt]
+    {\small\itshape Cox Model}\\[6pt]
+    {\LARGE\bfseries\color{analysiscolor!90!black} 0.72}\\[6pt]
+    {\footnotesize C-index}
 };
 
 % Arrow 3
-\draw[arrow] (trackB.south) -- ++(0, -0.8);
+\draw[arrow] (trackB.south) -- ++(0, -0.9);
 
-% Module 4: Sensitivity Analysis - Reduced size
-\node[modulebox, fill=validcolor, draw=validcolor, below=1.5cm of trackB, minimum height=2.2cm] (module4) {};
-\node[anchor=north, font=\Large\bfseries, color=validcolor!80!black] at (module4.north) [yshift=-8pt] {(4) SENSITIVITY VALIDATION};
-\node[anchor=center, font=\normalsize] at (module4.center) [yshift=-10pt] {
-    \begin{tabular}{c}
-    \textbf{Bootstrap (1,000 iter) \,•\, Outlier tests \,•\, Stratification} \\[6pt]
-    LUAD (n=601) \,|\, LUSC (n=562) \,|\, SKCM (n=472) \\[6pt]
-    {\normalsize\bfseries Consistency $>$95\% across all tests}
-    \end{tabular}
+% Module 4: Sensitivity Analysis - FIXED: Proper text width and line breaks
+\node[modulebox, fill=validcolor, draw=validcolor, below=1.6cm of trackB, minimum height=2.8cm, text width=11.5cm] (module4) {
+    \vspace{6pt}
+    {\large\bfseries\color{validcolor!80!black} (4) SENSITIVITY VALIDATION}\\[8pt]
+    {\small\textbf{Bootstrap (1,000) • Outlier tests • Stratification}}\\[4pt]
+    {\small LUAD (n=601) — LUSC (n=562) — SKCM (n=472)}\\[4pt]
+    {\small\bfseries Consistency $>$95\% across all tests}
 };
 
 % Arrow to final result
-\draw[arrow] (module4.south) -- ++(0, -0.6);
+\draw[arrow] (module4.south) -- ++(0, -0.7);
 
-% Final Result Box - with arrow connection and proper styling
-\node[modulebox, fill=resultcolor, draw=resultcolor, below=0.9cm of module4, minimum height=1cm, minimum width=9cm] (result) {};
-\node[anchor=center, font=\Large\bfseries, color=resultcolor!90!black] at (result.center) {
-    ROBUST, VALIDATED FINDINGS
+% Final Result Box - FIXED: White text for better contrast
+\node[finalbox, fill=resultcolor, draw=resultcolor, below=1cm of module4] (result) {
+    {\Large\bfseries\color{white} ROBUST, VALIDATED FINDINGS}
 };
 
 \end{tikzpicture}

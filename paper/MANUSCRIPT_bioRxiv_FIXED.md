@@ -181,21 +181,30 @@ This study exclusively analyzed publicly available, de-identified data from TCGA
 
 Our analysis included 1,635 tumor samples from TCGA encompassing three cancer types: 601 lung adenocarcinomas (LUAD, 36.8%), 562 lung squamous cell carcinomas (LUSC, 34.4%), and 472 skin cutaneous melanomas (SKCM, 28.9%). Clinical characteristics are summarized in Table 1. The median age at diagnosis was 65 years (range: 15-89). The cohort included 898 males (54.9%) and 737 females (45.1%). Tumor stage distribution showed 821 patients (50.2%) with early-stage disease (stage I-II) and 814 patients (49.8%) with advanced-stage disease (stage III-IV).
 
-**Table 1. Clinical characteristics of the study cohort.**
-
-| Characteristic | Overall (N=1,635) | LUAD (N=601) | LUSC (N=562) | SKCM (N=472) |
-|----------------|-------------------|--------------|--------------|--------------|
-| Age, median (IQR) | 65 (57-72) | 66 (59-73) | 68 (61-74) | 61 (51-70) |
-| Sex, n (%) | | | | |
-| Male | 898 (54.9%) | 301 (50.1%) | 398 (70.8%) | 199 (42.2%) |
-| Female | 737 (45.1%) | 300 (49.9%) | 164 (29.2%) | 273 (57.8%) |
-| Stage, n (%) | | | | |
-| I-II | 821 (50.2%) | 412 (68.6%) | 326 (58.0%) | 83 (17.6%) |
-| III-IV | 814 (49.8%) | 189 (31.4%) | 236 (42.0%) | 389 (82.4%) |
-| Vital status, n (%) | | | | |
-| Alive | 747 (45.7%) | 323 (53.7%) | 243 (43.2%) | 181 (38.3%) |
-| Deceased | 961 (58.8%) | 278 (46.3%) | 319 (56.8%) | 364 (77.1%) |
-| Follow-up (months), median (IQR) | 22.0 (8.4-45.2) | 24.8 (10.2-52.1) | 20.1 (7.9-41.3) | 21.3 (7.1-42.8) |
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Characteristic} & \textbf{Overall (N=1,635)} & \textbf{LUAD (N=601)} & \textbf{LUSC (N=562)} & \textbf{SKCM (N=472)} \\
+\hline
+\textit{Demographics} & & & & \\
+\hspace{0.3cm} Age, median (IQR) years & 65 (57-72) & 66 (59-73) & 68 (61-74) & 61 (51-70) \\
+\hspace{0.3cm} Male, n (\%) & 898 (54.9\%) & 301 (50.1\%) & 398 (70.8\%) & 199 (42.2\%) \\
+\hspace{0.3cm} Female, n (\%) & 737 (45.1\%) & 300 (49.9\%) & 164 (29.2\%) & 273 (57.8\%) \\
+\hline
+\textit{Clinical features} & & & & \\
+\hspace{0.3cm} Stage I-II, n (\%) & 821 (50.2\%) & 412 (68.6\%) & 326 (58.0\%) & 83 (17.6\%) \\
+\hspace{0.3cm} Stage III-IV, n (\%) & 814 (49.8\%) & 189 (31.4\%) & 236 (42.0\%) & 389 (82.4\%) \\
+\hline
+\textit{Outcomes} & & & & \\
+\hspace{0.3cm} Deaths, n (\%) & 961 (58.8\%) & 278 (46.3\%) & 319 (56.8\%) & 364 (77.1\%) \\
+\hspace{0.3cm} Follow-up, median (IQR) months & 22.0 (8.4-45.2) & 24.8 (10.2-52.1) & 20.1 (7.9-41.3) & 21.3 (7.1-42.8) \\
+\hline
+\end{tabular}
+\vspace{0.3cm}
+\caption{\textbf{Table 1.} Clinical characteristics of the study cohort.}
+\end{table}
 
 Survival data were available for all 1,635 patients, with a median follow-up time of 22.0 months (IQR: 8.4-45.2 months). During the follow-up period, 961 deaths were observed (58.8% event rate), providing adequate statistical power for survival analyses. The median overall survival was 28.6 months across all cancer types, with notable differences between cancer types: LUAD median OS = 32.4 months, LUSC median OS = 26.1 months, SKCM median OS = 27.8 months (log-rank test P < 0.001).
 
@@ -225,14 +234,14 @@ The correlation between PD-L1 and HIP1R was weak but statistically significant (
 
 **Figure 2. Correlations between PD-L1 and LLPS-associated proteins.** (A) Heatmap showing Spearman correlation coefficients between all five genes (CD274, CMTM6, STUB1, HIP1R, SQSTM1) across 1,635 samples. Color intensity indicates correlation strength (red = positive, blue = negative). Asterisks indicate FDR-corrected significance: *FDR < 0.05, **FDR < 0.01, ***FDR < 0.001. (B) Scatter plots showing key pairwise correlations: CD274 vs. CMTM6 (top), CD274 vs. STUB1 (middle), CD274 vs. SQSTM1 (bottom). Points colored by cancer type. Regression lines with 95% confidence intervals shown. Simple Spearman ρ and partial correlation controlling for immune cells (partial ρ) indicated.
 
-**Table 2. Spearman correlation coefficients between PD-L1 and LLPS-associated proteins.**
-
 | Gene Pair | Spearman ρ | P-value | FDR | Interpretation |
 |-----------|------------|---------|-----|----------------|
 | CD274 - CMTM6 | 0.42 | 2.3×10⁻⁶⁸ | <0.001 | Strong positive |
 | CD274 - SQSTM1 | 0.28 | 1.4×10⁻³⁰ | <0.001 | Moderate positive |
 | CD274 - STUB1 | -0.15 | 6.2×10⁻¹⁰ | <0.001 | Weak negative |
 | CD274 - HIP1R | 0.11 | 4.8×10⁻⁶ | 0.002 | Weak positive |
+
+**Table 2. Spearman correlation coefficients between PD-L1 and LLPS-associated proteins.**
 
 ### Immune Microenvironment Associations
 
@@ -258,8 +267,6 @@ The positive correlation between CD274 and SQSTM1 showed substantial reduction a
 
 The correlation between CD274 and HIP1R became non-significant after controlling for immune infiltration (partial ρ = 0.05, P = 0.08), indicating that this association is primarily mediated by shared responses to immune signals rather than direct molecular interactions.
 
-**Table 3. Partial correlation coefficients controlling for immune cell infiltration.**
-
 | Gene Pair | Simple ρ | Partial ρ* | P-value | % Attenuation** |
 |-----------|----------|------------|---------|-----------------|
 | CD274 - CMTM6 | 0.42 | 0.31 | 8.7×10⁻³⁸ | 26% |
@@ -267,8 +274,7 @@ The correlation between CD274 and HIP1R became non-significant after controlling
 | CD274 - STUB1 | -0.15 | -0.12 | 1.2×10⁻⁶ | 20% |
 | CD274 - HIP1R | 0.11 | 0.05 | 0.08 | 55% |
 
-*Controlling for B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, and dendritic cells.
-**Calculated as (|simple ρ| - |partial ρ|) / |simple ρ| × 100%
+**Table 3. Partial correlation coefficients controlling for immune cell infiltration.** *Controlling for B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, and dendritic cells. **Calculated as (|simple ρ| - |partial ρ|) / |simple ρ| × 100%
 
 ### Survival Analysis
 
@@ -279,8 +285,6 @@ Univariate Cox proportional hazards models revealed significant associations bet
 Among LLPS-associated proteins, STUB1 showed the strongest prognostic value (HR = 0.85, 95% CI: 0.74-0.97, P = 0.012), with higher expression associated with better survival. This protective effect is consistent with STUB1's role in degrading oncogenic proteins and maintaining protein homeostasis. SQSTM1 also demonstrated prognostic significance (HR = 1.14, 95% CI: 1.04-1.26, P = 0.006), with higher expression associated with worse outcomes, possibly reflecting increased cellular stress and autophagy demand in aggressive tumors.
 
 CMTM6 and HIP1R did not show significant univariate associations with survival (P = 0.21 and P = 0.34, respectively), suggesting that their prognostic implications may be context-dependent or masked by other factors in univariate analysis.
-
-**Table 4. Univariate Cox proportional hazards analysis.**
 
 | Variable | HR | 95% CI | P-value |
 |----------|-----|--------|---------|
@@ -293,7 +297,7 @@ CMTM6 and HIP1R did not show significant univariate associations with survival (
 | Sex (male vs. female) | 1.08 | 0.94-1.24 | 0.27 |
 | Stage (III-IV vs. I-II) | 2.31 | 2.01-2.66 | <0.001 |
 
-HR = Hazard Ratio; CI = Confidence Interval. Expression HRs represent per log2 unit increase.
+**Table 4. Univariate Cox proportional hazards analysis.** HR = Hazard Ratio; CI = Confidence Interval. Expression HRs represent per log2 unit increase.
 
 #### Multivariate Survival Analysis
 
@@ -309,8 +313,6 @@ SQSTM1 showed borderline significance in the multivariate model (HR = 1.08, 95% 
 
 The overall model demonstrated good discrimination (C-index = 0.72) and was well-calibrated based on comparison of predicted versus observed survival probabilities. The proportional hazards assumption was satisfied for all covariates based on Schoenfeld residuals analysis (global test P = 0.15), validating the use of the Cox model framework.
 
-**Table 5. Multivariate Cox proportional hazards analysis.**
-
 | Variable | HR | 95% CI | P-value |
 |----------|-----|--------|---------|
 | CD274 expression | 1.14 | 1.06-1.23 | 2.18×10⁻⁴ |
@@ -324,7 +326,7 @@ The overall model demonstrated good discrimination (C-index = 0.72) and was well
 | Cancer type (LUSC vs. LUAD) | 1.18 | 1.02-1.37 | 0.024 |
 | Cancer type (SKCM vs. LUAD) | 1.31 | 1.11-1.55 | 0.002 |
 
-Model C-index = 0.72. HR = Hazard Ratio; CI = Confidence Interval. Expression HRs represent per log2 unit increase.
+**Table 5. Multivariate Cox proportional hazards analysis.** Model C-index: 0.72. HR = Hazard Ratio; CI = Confidence Interval. Expression HRs represent per log2 unit increase, controlling for all other variables.
 
 ![](outputs/figures/Figure4_survival_analysis.png)
 

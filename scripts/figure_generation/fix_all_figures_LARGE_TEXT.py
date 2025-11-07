@@ -219,20 +219,20 @@ def figureS1_stratification():
     simple_edge = '#2c3e50'  # 深灰色邊框
     simple_fill = '#f8f9fa'  # 淺灰色填充
 
-    # LUAD box - 簡潔設計
-    rect1 = mpatches.FancyBboxPatch((0.5, 6), 3.5, 2.8, boxstyle="round,pad=0.15",
+    # LUAD box - 簡潔設計（增加間距）
+    rect1 = mpatches.FancyBboxPatch((0.5, 6), 3.2, 2.8, boxstyle="round,pad=0.15",
                                      edgecolor=simple_edge, facecolor=simple_fill, linewidth=2.5)
     ax.add_patch(rect1)
-    ax.text(2.25, 8.3, 'LUAD', ha='center', fontsize=20, fontweight='bold', color='black')
-    ax.text(2.25, 7.8, 'n = 601', ha='center', fontsize=16, color='#555')
-    ax.text(2.25, 7.3, 'CD274-CMTM6:', ha='center', fontsize=16, fontweight='bold')
-    ax.text(2.25, 6.9, 'Simple ρ = 0.42', ha='center', fontsize=15)
-    ax.text(2.25, 6.5, 'Partial ρ = 0.31', ha='center', fontsize=15)
-    ax.text(2.25, 6.1, '✓ Significant', ha='center', fontsize=15,
+    ax.text(2.1, 8.3, 'LUAD', ha='center', fontsize=20, fontweight='bold', color='black')
+    ax.text(2.1, 7.8, 'n = 601', ha='center', fontsize=16, color='#555')
+    ax.text(2.1, 7.3, 'CD274-CMTM6:', ha='center', fontsize=16, fontweight='bold')
+    ax.text(2.1, 6.9, 'Simple ρ = 0.42', ha='center', fontsize=15)
+    ax.text(2.1, 6.5, 'Partial ρ = 0.31', ha='center', fontsize=15)
+    ax.text(2.1, 6.1, '✓ Significant', ha='center', fontsize=15,
             color='#27ae60', fontweight='bold')
 
-    # LUSC box - 簡潔設計
-    rect2 = mpatches.FancyBboxPatch((4.25, 6), 3.5, 2.8, boxstyle="round,pad=0.15",
+    # LUSC box - 簡潔設計（增加間距）
+    rect2 = mpatches.FancyBboxPatch((4.4, 6), 3.2, 2.8, boxstyle="round,pad=0.15",
                                      edgecolor=simple_edge, facecolor=simple_fill, linewidth=2.5)
     ax.add_patch(rect2)
     ax.text(6, 8.3, 'LUSC', ha='center', fontsize=20, fontweight='bold', color='black')
@@ -243,16 +243,16 @@ def figureS1_stratification():
     ax.text(6, 6.1, '✓ Significant', ha='center', fontsize=15,
             color='#27ae60', fontweight='bold')
 
-    # SKCM box - 簡潔設計
-    rect3 = mpatches.FancyBboxPatch((8, 6), 3.5, 2.8, boxstyle="round,pad=0.15",
+    # SKCM box - 簡潔設計（增加間距）
+    rect3 = mpatches.FancyBboxPatch((8.3, 6), 3.2, 2.8, boxstyle="round,pad=0.15",
                                      edgecolor=simple_edge, facecolor=simple_fill, linewidth=2.5)
     ax.add_patch(rect3)
-    ax.text(9.75, 8.3, 'SKCM', ha='center', fontsize=20, fontweight='bold', color='black')
-    ax.text(9.75, 7.8, 'n = 472', ha='center', fontsize=16, color='#555')
-    ax.text(9.75, 7.3, 'CD274-CMTM6:', ha='center', fontsize=16, fontweight='bold')
-    ax.text(9.75, 6.9, 'Simple ρ = 0.45', ha='center', fontsize=15)
-    ax.text(9.75, 6.5, 'Partial ρ = 0.33', ha='center', fontsize=15)
-    ax.text(9.75, 6.1, '✓ Significant', ha='center', fontsize=15,
+    ax.text(9.9, 8.3, 'SKCM', ha='center', fontsize=20, fontweight='bold', color='black')
+    ax.text(9.9, 7.8, 'n = 472', ha='center', fontsize=16, color='#555')
+    ax.text(9.9, 7.3, 'CD274-CMTM6:', ha='center', fontsize=16, fontweight='bold')
+    ax.text(9.9, 6.9, 'Simple ρ = 0.45', ha='center', fontsize=15)
+    ax.text(9.9, 6.5, 'Partial ρ = 0.33', ha='center', fontsize=15)
+    ax.text(9.9, 6.1, '✓ Significant', ha='center', fontsize=15,
             color='#27ae60', fontweight='bold')
 
     # Conclusion box - 簡潔設計（稍微深一點的灰色）

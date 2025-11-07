@@ -8,6 +8,8 @@ fontsize: 11pt
 linestretch: 1.5
 numbersections: false
 mainfont: "DejaVu Sans"
+header-includes:
+  - \usepackage{graphicx}
 ---
 
 ## Authors
@@ -203,9 +205,18 @@ Survival data were available for all 1,635 patients, with a median follow-up tim
 
 We first examined the expression distributions of CD274 (PD-L1) and the four LLPS-associated regulatory proteins across all samples (Figure 1A). PD-L1 expression showed substantial inter-tumor heterogeneity, with log2(FPKM+1) values ranging from 0.2 to 8.9 (median: 3.2, IQR: 2.1-4.6). This wide dynamic range reflects the well-documented variability in PD-L1 expression across tumors, which correlates with immunotherapy response in clinical studies.
 
-![](outputs/figures/Figure1_pipeline_flowchart.png)
+\begin{center}
+\includegraphics[width=0.9\textwidth]{outputs/figures/Figure1_pipeline_flowchart.png}
 
-**Figure 1. Overview of four-dimensional integrative computational pipeline.** Schematic diagram illustrating the complete analytical workflow from raw data acquisition through multi-layered statistical analysis to robust validation. The pipeline consists of four integrated modules: **(Module 1) Data Acquisition & Quality Control** - TCGA RNA-seq data download for 1,635 samples (LUAD, LUSC, SKCM), quality filtering, batch effect correction (ComBat), gene identifier mapping (Ensembl $\rightarrow$ HGNC), resulting in 41,497 genes $\times$ 1,635 samples expression matrix. **(Module 2) Immune Deconvolution** - TIMER2.0 algorithm application to estimate six immune cell populations (B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, dendritic cells) for use as confounding covariates in subsequent analyses. **(Module 3) Multi-Layered Statistical Analysis** - Three parallel analytical tracks: (Track A) Simple Spearman correlations between PD-L1 and regulatory proteins; (Track B) Partial correlations controlling for six immune cell covariates using 32-core parallelized computation (49,050 correlation computations); (Track C) Survival analysis including univariate Cox regression (per molecular feature), multivariate Cox regression (7 covariates: CD274, STUB1, CMTM6, HIP1R, SQSTM1, age, sex, stage, cancer type), and proportional hazards assumption testing. **(Module 4) Extensive Sensitivity Analysis** - Four validation strategies applied in parallel: (1) Cancer type-specific stratification (3 independent cohorts); (2) Outlier exclusion testing (Z-score, IQR, MAD methods); (3) Bootstrap stability assessment (1,000 iterations producing 5,000 resampling runs); (4) Alternative correlation methods comparison (Pearson, Spearman, Kendall). Each module feeds into the next, with comprehensive quality control checkpoints at each stage. Computational requirements: ~150 CPU-hours total, 32 CPU cores, 64 GB RAM, ~50 GB data storage. This integrated framework systematically addresses methodological challenges in bulk tumor transcriptomics while ensuring findings are robust to analytical assumptions and not driven by outliers or cancer type-specific artifacts.
+\textbf{Figure 1. Overview of four-dimensional integrative computational pipeline.}
+\end{center}
+
+Schematic diagram illustrating the complete analytical workflow from raw data acquisition through multi-layered statistical analysis to robust validation. The pipeline consists of four integrated modules:\newline
+**(Module 1) Data Acquisition & Quality Control** - TCGA RNA-seq data download for 1,635 samples (LUAD, LUSC, SKCM), quality filtering, batch effect correction (ComBat), gene identifier mapping (Ensembl $\rightarrow$ HGNC), resulting in 41,497 genes $\times$ 1,635 samples expression matrix.\newline
+**(Module 2) Immune Deconvolution** - TIMER2.0 algorithm application to estimate six immune cell populations (B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, dendritic cells) for use as confounding covariates in subsequent analyses.\newline
+**(Module 3) Multi-Layered Statistical Analysis** - Three parallel analytical tracks: (Track A) Simple Spearman correlations between PD-L1 and regulatory proteins; (Track B) Partial correlations controlling for six immune cell covariates using 32-core parallelized computation (49,050 correlation computations); (Track C) Survival analysis including univariate Cox regression (per molecular feature), multivariate Cox regression (7 covariates: CD274, STUB1, CMTM6, HIP1R, SQSTM1, age, sex, stage, cancer type), and proportional hazards assumption testing.\newline
+**(Module 4) Extensive Sensitivity Analysis** - Four validation strategies applied in parallel: (1) Cancer type-specific stratification (3 independent cohorts); (2) Outlier exclusion testing (Z-score, IQR, MAD methods); (3) Bootstrap stability assessment (1,000 iterations producing 5,000 resampling runs); (4) Alternative correlation methods comparison (Pearson, Spearman, Kendall). Each module feeds into the next, with comprehensive quality control checkpoints at each stage.\newline
+Computational requirements: ~150 CPU-hours total, 32 CPU cores, 64 GB RAM, ~50 GB data storage. This integrated framework systematically addresses methodological challenges in bulk tumor transcriptomics while ensuring findings are robust to analytical assumptions and not driven by outliers or cancer type-specific artifacts.
 
 Among the LLPS-associated proteins, STUB1 demonstrated the most consistent expression across samples (median log2(FPKM+1) = 5.8, IQR: 5.3-6.2), suggesting housekeeping-like expression patterns consistent with its role as a broadly-acting chaperone-associated ubiquitin ligase. CMTM6 showed moderate expression (median = 4.1, IQR: 3.4-4.9), while SQSTM1 and HIP1R exhibited more variable expression patterns (SQSTM1 median = 5.2, IQR: 4.5-5.9; HIP1R median = 3.7, IQR: 3.0-4.4).
 
@@ -221,9 +232,14 @@ Notably, CD274 exhibited a modest negative correlation with STUB1 (\ensuremath{\
 
 The correlation between PD-L1 and HIP1R was weak but statistically significant (\ensuremath{\rho} = 0.11, P = $4.8\times10^{-6}$, FDR = 0.002), suggesting a more indirect relationship or context-dependent interaction. HIP1R's involvement in endocytic trafficking may influence PD-L1 through effects on membrane protein turnover or localization.
 
-![](outputs/figures/Figure2_correlations.png)
+\begin{center}
+\includegraphics[width=0.9\textwidth]{outputs/figures/Figure2_correlations.png}
 
-**Figure 2. Correlations between PD-L1 and LLPS-associated proteins.** (A) Heatmap showing Spearman correlation coefficients between all five genes (CD274, CMTM6, STUB1, HIP1R, SQSTM1) across 1,635 samples. Color intensity indicates correlation strength (red = positive, blue = negative). Asterisks indicate FDR-corrected significance: *FDR < 0.05, **FDR < 0.01, ***FDR < 0.001. (B) Scatter plots showing key pairwise correlations: CD274 vs. CMTM6 (top), CD274 vs. STUB1 (middle), CD274 vs. SQSTM1 (bottom). Points colored by cancer type. Regression lines with 95% confidence intervals shown. Simple Spearman \ensuremath{\rho} and partial correlation controlling for immune cells (partial \ensuremath{\rho}) indicated.
+\textbf{Figure 2. Correlations between PD-L1 and LLPS-associated proteins.}
+\end{center}
+
+(A) Heatmap showing Spearman correlation coefficients between all five genes (CD274, CMTM6, STUB1, HIP1R, SQSTM1) across 1,635 samples. Color intensity indicates correlation strength (red = positive, blue = negative). Asterisks indicate FDR-corrected significance: *FDR < 0.05, **FDR < 0.01, ***FDR < 0.001.\newline
+(B) Scatter plots showing key pairwise correlations: CD274 vs. CMTM6 (top), CD274 vs. STUB1 (middle), CD274 vs. SQSTM1 (bottom). Points colored by cancer type. Regression lines with 95% confidence intervals shown. Simple Spearman \ensuremath{\rho} and partial correlation controlling for immune cells (partial \ensuremath{\rho}) indicated.
 
 **Table 2. Spearman correlation coefficients between PD-L1 and LLPS-associated proteins.**
 
@@ -242,9 +258,14 @@ PD-L1 expression showed strong positive correlations with multiple immune cell t
 
 Interestingly, STUB1 expression showed minimal correlation with immune cell infiltration (all |\ensuremath{\rho}| < 0.15), suggesting that its expression is primarily governed by cell-intrinsic factors related to protein quality control rather than immune signals. CMTM6 demonstrated modest positive correlations with macrophages and dendritic cells (\ensuremath{\rho} = 0.25 and 0.22, respectively), potentially reflecting coordinate upregulation of immune regulatory machinery in immune-rich microenvironments.
 
-![](outputs/figures/Figure3_immune_environment.png)
+\begin{center}
+\includegraphics[width=0.9\textwidth]{outputs/figures/Figure3_immune_environment.png}
 
-**Figure 3. Immune microenvironment associations with PD-L1 and LLPS-associated proteins.** (A) Stacked bar plots showing TIMER2.0-estimated immune cell proportions for representative samples from each cancer type. Six cell types shown: B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, dendritic cells. (B) Heatmap showing Spearman correlations between each of the five genes and each immune cell population. Color and size indicate correlation strength and significance.
+\textbf{Figure 3. Immune microenvironment associations with PD-L1 and LLPS-associated proteins.}
+\end{center}
+
+(A) Stacked bar plots showing TIMER2.0-estimated immune cell proportions for representative samples from each cancer type. Six cell types shown: B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, dendritic cells.\newline
+(B) Heatmap showing Spearman correlations between each of the five genes and each immune cell population. Color and size indicate correlation strength and significance.
 
 ### Partial Correlation Analysis Controlling for Immune Infiltration
 
@@ -326,9 +347,15 @@ The overall model demonstrated good discrimination (C-index = 0.72) and was well
 
 Model C-index = 0.72. HR = Hazard Ratio; CI = Confidence Interval. Expression HRs represent per log2 unit increase.
 
-![](outputs/figures/Figure4_survival_analysis.png)
+\begin{center}
+\includegraphics[width=0.9\textwidth]{outputs/figures/Figure4_survival_analysis.png}
 
-**Figure 4. Survival analysis results.** (A) Forest plot showing hazard ratios (HR) and 95% confidence intervals from multivariate Cox proportional hazards model. Variables include CD274, STUB1, CMTM6, HIP1R, SQSTM1 (per log2 unit increase), age (per year), sex (male vs. female), stage (III-IV vs. I-II), and cancer type (LUSC and SKCM vs. LUAD reference). P-values from Wald test indicated. (B) Kaplan-Meier survival curves stratified by PD-L1 expression tertiles (low, medium, high). Log-rank test P-value shown. (C) Kaplan-Meier curves stratified by STUB1 expression tertiles. Number at risk tables below each plot.
+\textbf{Figure 4. Survival analysis results.}
+\end{center}
+
+(A) Forest plot showing hazard ratios (HR) and 95% confidence intervals from multivariate Cox proportional hazards model. Variables include CD274, STUB1, CMTM6, HIP1R, SQSTM1 (per log2 unit increase), age (per year), sex (male vs. female), stage (III-IV vs. I-II), and cancer type (LUSC and SKCM vs. LUAD reference). P-values from Wald test indicated. \newline
+(B) Kaplan-Meier survival curves stratified by PD-L1 expression tertiles (low, medium, high). Log-rank test P-value shown. \newline
+(C) Kaplan-Meier curves stratified by STUB1 expression tertiles. Number at risk tables below each plot.
 
 ### Sensitivity Analyses
 
@@ -336,9 +363,13 @@ Model C-index = 0.72. HR = Hazard Ratio; CI = Confidence Interval. Expression HR
 
 When analyses were stratified by cancer type (Supplementary Figure S1, Supplementary Table S1), the key findings showed consistent direction across all three cancer types, though with varying effect sizes. The CD274-CMTM6 correlation was strongest in SKCM (\ensuremath{\rho} = 0.46), intermediate in LUSC (\ensuremath{\rho} = 0.44), and weakest in LUAD (\ensuremath{\rho} = 0.38), but reached significance in all three (all P < 10$^{-15}$). The negative correlation between CD274 and STUB1 was most pronounced in LUSC (\ensuremath{\rho} = -0.21) and weakest in LUAD (\ensuremath{\rho} = -0.09), but maintained consistent directionality.
 
-![](outputs/figures/FigureS1_study_design.png)
+\begin{center}
+\includegraphics[width=0.9\textwidth]{outputs/figures/FigureS1_study_design.png}
 
-**Supplementary Figure S1. Cancer type-specific correlation analysis.** Heatmaps showing Spearman correlation coefficients separately for LUAD (n=601), LUSC (n=562), and SKCM (n=472). Format as in Figure 2A.
+\textbf{Supplementary Figure S1. Cancer type-specific correlation analysis.}
+\end{center}
+
+Heatmaps showing Spearman correlation coefficients separately for LUAD (n=601), LUSC (n=562), and SKCM (n=472). Format as in Figure 2A.
 
 Cancer type-specific survival models demonstrated heterogeneity across tumor types. PD-L1 showed significant prognostic associations in LUAD (HR = 1.19, P = 0.002) and SKCM (HR = 1.16, P = 0.018), but not in LUSC (HR = 1.07, P = 0.31), illustrating how molecular associations may vary across cancer types. STUB1's protective effect was most evident in LUAD (HR = 0.88, P = 0.024) and showed similar patterns in other cancer types.
 
@@ -352,9 +383,13 @@ Survival analyses after outlier exclusion showed that hazard ratios for CD274 an
 
 Bootstrap analysis with 1,000 iterations confirmed the stability of correlation estimates (Supplementary Figure S2). The 95% confidence intervals from bootstrap distributions were: CD274-CMTM6 (\ensuremath{\rho} = 0.38-0.46), CD274-STUB1 (\ensuremath{\rho} = -0.19 to -0.11), CD274-SQSTM1 (\ensuremath{\rho} = 0.24-0.32). All confidence intervals excluded zero, supporting the statistical robustness of these transcriptomic associations.
 
-![](outputs/figures/FigureS2_sample_characteristics.png)
+\begin{center}
+\includegraphics[width=0.9\textwidth]{outputs/figures/FigureS2_sample_characteristics.png}
 
-**Supplementary Figure S2. Bootstrap stability analysis.** Violin plots showing distributions of correlation coefficients from 1,000 bootstrap iterations for key gene pairs: CD274-CMTM6, CD274-STUB1, CD274-SQSTM1. Horizontal lines indicate median and 95% confidence intervals. Original estimates from full dataset shown as red diamonds.
+\textbf{Supplementary Figure S2. Bootstrap stability analysis.}
+\end{center}
+
+Violin plots showing distributions of correlation coefficients from 1,000 bootstrap iterations for key gene pairs: CD274-CMTM6, CD274-STUB1, CD274-SQSTM1. Horizontal lines indicate median and 95% confidence intervals. Original estimates from full dataset shown as red diamonds.
 
 Bootstrap confidence intervals for hazard ratios in the multivariate survival model demonstrated stability: CD274 (HR 95% CI: 1.05-1.24), STUB1 (HR 95% CI: 0.85-0.99), with intervals excluding the null value of 1.0. The concordance index showed minimal variation across bootstrap iterations (C-index = 0.72 $\pm$ 0.02), demonstrating the stability of the survival modeling approach.
 
