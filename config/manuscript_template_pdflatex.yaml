@@ -1,0 +1,94 @@
+---
+# Pandoc YAML Configuration using pdfLaTeX with Times font
+# This ensures proper Times New Roman rendering and better spacing
+
+# Document class settings
+documentclass: article
+classoption:
+  - 11pt
+  - letterpaper
+  - onecolumn
+
+# Geometry (margins)
+geometry:
+  - margin=1in
+  - top=1in
+  - bottom=1in
+  - left=1in
+  - right=1in
+
+# Prevent large blank spaces
+- includeheadfoot
+
+# Line spacing
+linestretch: 1.5
+
+# Paragraph settings
+indent: true
+parindent: 0.5in
+
+# Section settings
+numbersections: false
+secnumdepth: 0
+
+# Table of contents
+toc: false
+
+# Figure and table settings
+fig-caption: true
+tbl-caption: true
+
+# Links
+colorlinks: true
+linkcolor: black
+urlcolor: blue
+citecolor: black
+
+# LaTeX packages and settings
+header-includes:
+  # Use Times font for everything
+  - \usepackage{mathptmx}  # Times font for text and math
+  - \usepackage{helvet}     # Helvetica for sans-serif
+  - \usepackage{courier}    # Courier for monospace
+  - \usepackage[T1]{fontenc}  # Better font encoding
+  - \usepackage{microtype}    # Improved typography
+  # Graphics and figures
+  - \usepackage{graphicx}
+  - \usepackage{float}
+  - \floatplacement{figure}{H}  # Force figures to stay in place
+  # Tables
+  - \usepackage{longtable}
+  - \usepackage{booktabs}
+  - \usepackage{array}
+  # Spacing and layout
+  - \usepackage{setspace}
+  - \raggedbottom  # Prevent vertical stretching
+  - \usepackage[skip=10pt plus1pt, indent=0.5in]{parskip}  # Better paragraph spacing
+  # Captions
+  - \usepackage{caption}
+  - \captionsetup{font=small,labelfont=bf,skip=12pt,belowskip=12pt}
+  # Math
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  # Links
+  - \usepackage{hyperref}
+  - \hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue, pdfborder={0 0 0}}
+  # Section formatting
+  - \usepackage{titlesec}
+  - \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+  - \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+  - \titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+  - \titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+  - \titlespacing*{\subsection}{0pt}{10pt plus 3pt minus 2pt}{4pt plus 2pt minus 2pt}
+  # Prevent orphans and widows
+  - \widowpenalty=10000
+  - \clubpenalty=10000
+  # Better page breaks
+  - \usepackage{needspace}
+  # Reference section spacing - tighter line spacing
+  - \usepackage{etoolbox}
+  - \AtBeginEnvironment{thebibliography}{\setstretch{1.0}}
+
+# Language
+lang: en-US
+---

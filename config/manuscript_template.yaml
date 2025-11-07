@@ -1,0 +1,84 @@
+---
+# Pandoc YAML Configuration for Professional Academic Paper
+# Based on APA/bioRxiv best practices
+
+# Document metadata
+title: "Multi-Dimensional Integrative Analysis of PD-L1 Regulatory Networks"
+subtitle: "A Computational Framework Integrating Large-Scale Genomics and Immune Deconvolution Across 1,635 Cancer Patients"
+author:
+  - Hsiu-Chi Tsai^1,*^
+institute:
+  - ^1^Department of Computer Science, National Yang Ming Chiao Tung University, Hsinchu, Taiwan
+  - ^*^Corresponding author. Email hctsai1006@cs.nctu.edu.tw
+
+# PDF document settings
+documentclass: article
+papersize: letter
+fontsize: 11pt  # 11pt is also professional and saves space
+
+# Geometry (margins)
+geometry:
+  - margin=1in  # 1 inch on all sides (standard)
+  - top=1in
+  - bottom=1in
+  - left=1in
+  - right=1in
+
+# Font settings - Using TeX Gyre fonts (professional Times/Helvetica/Courier clones)
+# These fonts are pre-installed with TeXLive and are standard in academic publishing
+mainfont: "TeX Gyre Termes"  # Times Roman clone
+sansfont: "TeX Gyre Heros"   # Helvetica clone
+monofont: "TeX Gyre Cursor"  # Courier clone
+mathfont: "TeX Gyre Termes Math"
+
+# Line spacing
+linestretch: 1.5  # 1.5 line spacing (compromise between readability and space)
+
+# Paragraph settings
+indent: true  # Enable paragraph indentation
+parindent: 0.5in  # First-line indent
+
+# Section numbering
+numbersections: false  # We don't want numbered sections for bioRxiv
+secnumdepth: 0
+
+# Table of contents
+toc: false  # No table of contents for bioRxiv
+toc-depth: 2
+
+# Figure and table settings
+fig-caption: true
+tbl-caption: true
+
+# Links
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+link-citations: true
+
+# LaTeX packages
+header-includes:
+  - \usepackage{float}
+  - \usepackage{graphicx}
+  - \usepackage{longtable}
+  - \usepackage{booktabs}
+  - \usepackage{caption}
+  - \captionsetup{font=small,labelfont=bf}
+  - \usepackage{setspace}
+  - \usepackage{microtype}  # Improves text appearance
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  - \usepackage{hyperref}
+  - \hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue}
+  - \raggedbottom  # Prevent stretching of vertical space
+  - \usepackage{titlesec}  # Better section formatting
+  - \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+  - \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+  - \titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+# Code blocks
+highlight-style: pygments
+
+# Other settings
+lang: en-US
+---

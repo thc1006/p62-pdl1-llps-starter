@@ -28,7 +28,7 @@ $^*$ Corresponding author. Email: hctsai1006@cs.nctu.edu.tw
 
 **Methods:** We analyzed 1,635 TCGA patients using four approaches. First, we profiled PD-L1 and candidate regulatory proteins (CMTM6, STUB1, HIP1R, SQSTM1) across three cancer types (LUAD, LUSC, SKCM). Second, we used TIMER2.0 immune deconvolution to quantify six immune cell populations. Third, we performed partial correlation analysis controlling for immune microenvironment effects using 32-core parallelized computation. Fourth, we conducted multivariate Cox regression with 961 death events, adjusting for age, sex, stage and cancer type. We validated findings through cancer type-specific stratification (n=472-601 per stratum), outlier exclusion (Z-score, IQR and MAD methods), bootstrap testing (1,000 iterations) and alternative correlation methods (Pearson, Spearman, Kendall). The analysis required 32 CPUs and 64 GB RAM, integrating Python 3.13 and R 4.3.0 with 15+ bioinformatics packages.
 
-**Results:** We found several PD-L1 regulatory patterns. CMTM6 showed strong positive correlation (ρ = 0.42, P = 2.3×10^-68^). After adjusting for immune infiltration, 74% of this correlation persisted (partial ρ = 0.31, P = 8.7×10^-38^), indicating immune-independent coordination. STUB1 showed negative correlation (ρ = -0.15, P = 6.2×10^-10^) consistent with its E3 ubiquitin ligase function. This remained significant after immune adjustment (partial ρ = -0.12, P = 1.2×10^-6^). In survival analysis, both PD-L1 (HR=1.14, 95% CI: 1.06-1.23, P=2.18×10^-4^) and STUB1 (HR=0.92, 95% CI: 0.86-0.99, P=0.018) retained independent prognostic value after controlling for clinical variables (model C-index=0.72). All findings showed directional consistency exceeding 95% across cancer type-specific analyses, outlier exclusion scenarios, bootstrap iterations and alternative methods.
+**Results:** We found several PD-L1 regulatory patterns. CMTM6 showed strong positive correlation (\ensuremath{\rho} = 0.42, P = $2.3\times10^{-68}$). After adjusting for immune infiltration, 74% of this correlation persisted (partial \ensuremath{\rho} = 0.31, P = $8.7\times10^{-38}$), indicating immune-independent coordination. STUB1 showed negative correlation (\ensuremath{\rho} = -0.15, P = $6.2\times10^{-10}$) consistent with its E3 ubiquitin ligase function. This remained significant after immune adjustment (partial \ensuremath{\rho} = -0.12, P = $1.2\times10^{-6}$). In survival analysis, both PD-L1 (HR=1.14, 95% CI: 1.06-1.23, P=$2.18\times10^{-4}$) and STUB1 (HR=0.92, 95% CI: 0.86-0.99, P=0.018) retained independent prognostic value after controlling for clinical variables (model C-index=0.72). All findings showed directional consistency exceeding 95% across cancer type-specific analyses, outlier exclusion scenarios, bootstrap iterations and alternative methods.
 
 **Conclusions:** We developed an integrated computational pipeline for analyzing regulatory networks in cancer. STUB1 functions as both a PD-L1 regulator and an independent prognostic factor. This suggests potential for combination therapies that enhance immunotherapy while targeting tumor-intrinsic pathways. The analytical approach can be applied to other immunotherapy targets and cancer types.
 
@@ -48,7 +48,7 @@ Several PD-L1 regulatory proteins are linked to LLPS-related processes or contai
 
 Individual studies provide mechanistic insights but lack integration. No large-scale framework exists that combines genomic data with immune microenvironment characteristics and clinical outcomes. Previous studies face methodological limitations. First, small sample sizes (typically <200 patients) prevent statistical inference and subgroup analyses. Second, single-dimensional approaches examine expression correlations without accounting for immune infiltration. Third, most studies lack clinical validation linking molecular features to patient outcomes through multivariate models. Fourth, few studies include sensitivity analyses to test whether findings hold across different analytical methods and cancer types. These gaps have prevented development of reliable computational approaches for analyzing regulatory networks in cancer immunology.
 
-We developed a **four-dimensional computational pipeline** to address these challenges. Our approach uses The Cancer Genome Atlas (TCGA), which contains thousands of tumor samples with transcriptomic, clinical and survival data across different cancer types. We implemented four strategies to overcome complexities in bulk tumor transcriptomics. (1) **TIMER2.0 immune deconvolution** separates tumor-intrinsic gene expression from immune cell contamination. (2) **Partial correlation analysis** with 32-core parallelized computation controls for six immune cell populations while maintaining statistical power. (3) **Survival modeling** with 961 death events provides power to detect hazard ratios as small as 1.10 (80% power at α=0.05). (4) **Sensitivity analyses** include cancer type-specific stratification, outlier testing, bootstrap validation (1,000 iterations) and comparison across three correlation methods to verify findings are not artifacts of analytical choices.
+We developed a **four-dimensional computational pipeline** to address these challenges. Our approach uses The Cancer Genome Atlas (TCGA), which contains thousands of tumor samples with transcriptomic, clinical and survival data across different cancer types. We implemented four strategies to overcome complexities in bulk tumor transcriptomics. (1) **TIMER2.0 immune deconvolution** separates tumor-intrinsic gene expression from immune cell contamination. (2) **Partial correlation analysis** with 32-core parallelized computation controls for six immune cell populations while maintaining statistical power. (3) **Survival modeling** with 961 death events provides power to detect hazard ratios as small as 1.10 (80% power at $\alpha$=0.05). (4) **Sensitivity analyses** include cancer type-specific stratification, outlier testing, bootstrap validation (1,000 iterations) and comparison across three correlation methods to verify findings are not artifacts of analytical choices.
 
 We address four questions. First, what are expression patterns and regulatory associations between PD-L1 and LLPS-associated proteins across 1,635 tumors from three cancer types? Second, how much do immune infiltration versus tumor-intrinsic factors contribute to these associations? Third, do these molecular features provide independent prognostic information beyond clinical variables? Fourth, are findings consistent across cancer types and analytical methods? We answer these questions through integrated computational analysis and validation. The approach can be applied to other immunotherapy targets and cancer types.
 
@@ -63,7 +63,7 @@ We used a four-dimensional computational framework to analyze PD-L1 regulatory n
 **Dimension 1: Data Acquisition and Quality Control** (Section 2.2)
 - Downloaded and processed 1,635 TCGA tumor samples across three cancer types
 - Quality control included outlier detection, batch effect correction (ComBat normalization) and gene identifier standardization
-- Computational requirement: Processing ~50 GB raw RNA-seq data, 41,497 genes × 1,635 samples matrix
+- Computational requirement: Processing ~50 GB raw RNA-seq data, 41,497 genes $\times$ 1,635 samples matrix
 
 **Dimension 2: Immune Microenvironment Deconvolution** (Section 2.3)
 - Applied TIMER2.0 algorithm to deconvolute bulk RNA-seq into six immune cell populations
@@ -86,7 +86,7 @@ We used a four-dimensional computational framework to analyze PD-L1 regulatory n
   - Outlier exclusion testing (3 methods: Z-score, IQR, MAD)
   - Bootstrap stability assessment (1,000 resampling iterations)
   - Alternative correlation methods comparison (Pearson, Spearman, Kendall)
-- Computational requirement: 1,000 bootstrap iterations × 5 correlation tests = 5,000 runs; ~4 hours on 32-core server
+- Computational requirement: 1,000 bootstrap iterations $\times$ 5 correlation tests = 5,000 runs; ~4 hours on 32-core server
 
 All analyses were implemented in Python 3.13 and R 4.3.0. Analyses address statistical challenges in bulk tumor transcriptomics and verify findings are not artifacts of methodological choices or outlier-driven signals.
 
@@ -109,11 +109,11 @@ To minimize batch effects from different sequencing centers and technical platfo
 #### Gene Identifier Conversion
 
 TCGA gene expression data use Ensembl gene identifiers, which we systematically converted to HGNC gene symbols using the following mappings:
-- ENSG00000120217 → CD274 (PD-L1)
-- ENSG00000091317 → CMTM6
-- ENSG00000103266 → STUB1 (CHIP)
-- ENSG00000107018 → HIP1R
-- ENSG00000161011 → SQSTM1 (p62)
+- ENSG00000120217 $\rightarrow$ CD274 (PD-L1)
+- ENSG00000091317 $\rightarrow$ CMTM6
+- ENSG00000103266 $\rightarrow$ STUB1 (CHIP)
+- ENSG00000107018 $\rightarrow$ HIP1R
+- ENSG00000161011 $\rightarrow$ SQSTM1 (p62)
 
 This conversion was validated against the HUGO Gene Nomenclature Committee (HGNC) database and Ensembl release 110.
 
@@ -127,7 +127,7 @@ The analysis was performed using the TIMER2.0 R package with default parameters.
 
 #### Correlation Analysis
 
-We examined pairwise correlations between PD-L1 (CD274) and each LLPS-associated protein using Spearman's rank correlation coefficient (ρ), which is robust to outliers and does not assume linear relationships. Statistical significance was assessed using two-sided tests, with P-values adjusted for multiple testing using the Benjamini-Hochberg false discovery rate (FDR) procedure at α = 0.05.
+We examined pairwise correlations between PD-L1 (CD274) and each LLPS-associated protein using Spearman's rank correlation coefficient (\ensuremath{\rho}), which is robust to outliers and does not assume linear relationships. Statistical significance was assessed using two-sided tests, with P-values adjusted for multiple testing using the Benjamini-Hochberg false discovery rate (FDR) procedure at $\alpha$ = 0.05.
 
 #### Partial Correlation Analysis
 
@@ -153,7 +153,7 @@ We repeated all correlation and survival analyses separately for each cancer typ
 
 #### Outlier Exclusion
 
-We identified outliers using three complementary methods: (1) Z-score thresholding (|Z| > 3), (2) interquartile range (IQR) method (values below Q1 - 1.5×IQR or above Q3 + 1.5×IQR), and (3) robust scaling based on median absolute deviation. Analyses were repeated after excluding samples flagged as outliers by any method.
+We identified outliers using three complementary methods: (1) Z-score thresholding (|Z| > 3), (2) interquartile range (IQR) method (values below Q1 - 1.5$\times$IQR or above Q3 + 1.5$\times$IQR), and (3) robust scaling based on median absolute deviation. Analyses were repeated after excluding samples flagged as outliers by any method.
 
 #### Bootstrap Stability
 
@@ -205,7 +205,7 @@ We first examined the expression distributions of CD274 (PD-L1) and the four LLP
 
 ![](outputs/figures/Figure1_pipeline_flowchart.png)
 
-**Figure 1. Overview of four-dimensional integrative computational pipeline.** Schematic diagram illustrating the complete analytical workflow from raw data acquisition through multi-layered statistical analysis to robust validation. The pipeline consists of four integrated modules: **(Module 1) Data Acquisition & Quality Control** - TCGA RNA-seq data download for 1,635 samples (LUAD, LUSC, SKCM), quality filtering, batch effect correction (ComBat), gene identifier mapping (Ensembl → HGNC), resulting in 41,497 genes × 1,635 samples expression matrix. **(Module 2) Immune Deconvolution** - TIMER2.0 algorithm application to estimate six immune cell populations (B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, dendritic cells) for use as confounding covariates in subsequent analyses. **(Module 3) Multi-Layered Statistical Analysis** - Three parallel analytical tracks: (Track A) Simple Spearman correlations between PD-L1 and regulatory proteins; (Track B) Partial correlations controlling for six immune cell covariates using 32-core parallelized computation (49,050 correlation computations); (Track C) Survival analysis including univariate Cox regression (per molecular feature), multivariate Cox regression (7 covariates: CD274, STUB1, CMTM6, HIP1R, SQSTM1, age, sex, stage, cancer type), and proportional hazards assumption testing. **(Module 4) Extensive Sensitivity Analysis** - Four validation strategies applied in parallel: (1) Cancer type-specific stratification (3 independent cohorts); (2) Outlier exclusion testing (Z-score, IQR, MAD methods); (3) Bootstrap stability assessment (1,000 iterations producing 5,000 resampling runs); (4) Alternative correlation methods comparison (Pearson, Spearman, Kendall). Each module feeds into the next, with comprehensive quality control checkpoints at each stage. Computational requirements: ~150 CPU-hours total, 32 CPU cores, 64 GB RAM, ~50 GB data storage. This integrated framework systematically addresses methodological challenges in bulk tumor transcriptomics while ensuring findings are robust to analytical assumptions and not driven by outliers or cancer type-specific artifacts.
+**Figure 1. Overview of four-dimensional integrative computational pipeline.** Schematic diagram illustrating the complete analytical workflow from raw data acquisition through multi-layered statistical analysis to robust validation. The pipeline consists of four integrated modules: **(Module 1) Data Acquisition & Quality Control** - TCGA RNA-seq data download for 1,635 samples (LUAD, LUSC, SKCM), quality filtering, batch effect correction (ComBat), gene identifier mapping (Ensembl $\rightarrow$ HGNC), resulting in 41,497 genes $\times$ 1,635 samples expression matrix. **(Module 2) Immune Deconvolution** - TIMER2.0 algorithm application to estimate six immune cell populations (B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, dendritic cells) for use as confounding covariates in subsequent analyses. **(Module 3) Multi-Layered Statistical Analysis** - Three parallel analytical tracks: (Track A) Simple Spearman correlations between PD-L1 and regulatory proteins; (Track B) Partial correlations controlling for six immune cell covariates using 32-core parallelized computation (49,050 correlation computations); (Track C) Survival analysis including univariate Cox regression (per molecular feature), multivariate Cox regression (7 covariates: CD274, STUB1, CMTM6, HIP1R, SQSTM1, age, sex, stage, cancer type), and proportional hazards assumption testing. **(Module 4) Extensive Sensitivity Analysis** - Four validation strategies applied in parallel: (1) Cancer type-specific stratification (3 independent cohorts); (2) Outlier exclusion testing (Z-score, IQR, MAD methods); (3) Bootstrap stability assessment (1,000 iterations producing 5,000 resampling runs); (4) Alternative correlation methods comparison (Pearson, Spearman, Kendall). Each module feeds into the next, with comprehensive quality control checkpoints at each stage. Computational requirements: ~150 CPU-hours total, 32 CPU cores, 64 GB RAM, ~50 GB data storage. This integrated framework systematically addresses methodological challenges in bulk tumor transcriptomics while ensuring findings are robust to analytical assumptions and not driven by outliers or cancer type-specific artifacts.
 
 Among the LLPS-associated proteins, STUB1 demonstrated the most consistent expression across samples (median log2(FPKM+1) = 5.8, IQR: 5.3-6.2), suggesting housekeeping-like expression patterns consistent with its role as a broadly-acting chaperone-associated ubiquitin ligase. CMTM6 showed moderate expression (median = 4.1, IQR: 3.4-4.9), while SQSTM1 and HIP1R exhibited more variable expression patterns (SQSTM1 median = 5.2, IQR: 4.5-5.9; HIP1R median = 3.7, IQR: 3.0-4.4).
 
@@ -213,34 +213,34 @@ Cancer type-specific analysis revealed distinct expression patterns (Figure 1B).
 
 ### Correlations Between PD-L1 and LLPS-Associated Proteins
 
-Spearman correlation analysis revealed significant associations between PD-L1 and multiple LLPS-associated proteins (Figure 2A, Table 2). The strongest correlation was observed between CD274 and CMTM6 (ρ = 0.42, P = 2.3×10<sup>-68</sup>, FDR < 0.001), consistent with CMTM6's established role as a PD-L1 stabilizer that prevents lysosomal degradation. This robust positive correlation was maintained across all three cancer types, though with varying effect sizes: LUAD (ρ = 0.38), LUSC (ρ = 0.44), SKCM (ρ = 0.46).
+Spearman correlation analysis revealed significant associations between PD-L1 and multiple LLPS-associated proteins (Figure 2A, Table 2). The strongest correlation was observed between CD274 and CMTM6 (\ensuremath{\rho} = 0.42, P = $2.3\times10^{-68}$, FDR < 0.001), consistent with CMTM6's established role as a PD-L1 stabilizer that prevents lysosomal degradation. This robust positive correlation was maintained across all three cancer types, though with varying effect sizes: LUAD (\ensuremath{\rho} = 0.38), LUSC (\ensuremath{\rho} = 0.44), SKCM (\ensuremath{\rho} = 0.46).
 
-PD-L1 also showed significant positive correlation with SQSTM1 (ρ = 0.28, P = 1.4×10<sup>-30</sup>, FDR < 0.001), suggesting potential coordinate regulation or functional interactions between these proteins. SQSTM1's role in selective autophagy and its propensity for LLPS-mediated aggregate formation may contribute to this association through mechanisms involving protein quality control or stress response pathways.
+PD-L1 also showed significant positive correlation with SQSTM1 (\ensuremath{\rho} = 0.28, P = $1.4\times10^{-30}$, FDR < 0.001), suggesting potential coordinate regulation or functional interactions between these proteins. SQSTM1's role in selective autophagy and its propensity for LLPS-mediated aggregate formation may contribute to this association through mechanisms involving protein quality control or stress response pathways.
 
-Notably, CD274 exhibited a modest negative correlation with STUB1 (ρ = -0.15, P = 6.2×10<sup>-10</sup>, FDR < 0.001), supporting the proposed role of STUB1 as a negative regulator of PD-L1 through ubiquitin-mediated degradation. While the magnitude of this correlation was smaller than that with CMTM6, it remained statistically robust after multiple testing correction and was directionally consistent across cancer types.
+Notably, CD274 exhibited a modest negative correlation with STUB1 (\ensuremath{\rho} = -0.15, P = $6.2\times10^{-10}$, FDR < 0.001), supporting the proposed role of STUB1 as a negative regulator of PD-L1 through ubiquitin-mediated degradation. While the magnitude of this correlation was smaller than that with CMTM6, it remained statistically robust after multiple testing correction and was directionally consistent across cancer types.
 
-The correlation between PD-L1 and HIP1R was weak but statistically significant (ρ = 0.11, P = 4.8×10<sup>-6</sup>, FDR = 0.002), suggesting a more indirect relationship or context-dependent interaction. HIP1R's involvement in endocytic trafficking may influence PD-L1 through effects on membrane protein turnover or localization.
+The correlation between PD-L1 and HIP1R was weak but statistically significant (\ensuremath{\rho} = 0.11, P = $4.8\times10^{-6}$, FDR = 0.002), suggesting a more indirect relationship or context-dependent interaction. HIP1R's involvement in endocytic trafficking may influence PD-L1 through effects on membrane protein turnover or localization.
 
 ![](outputs/figures/Figure2_correlations.png)
 
-**Figure 2. Correlations between PD-L1 and LLPS-associated proteins.** (A) Heatmap showing Spearman correlation coefficients between all five genes (CD274, CMTM6, STUB1, HIP1R, SQSTM1) across 1,635 samples. Color intensity indicates correlation strength (red = positive, blue = negative). Asterisks indicate FDR-corrected significance: *FDR < 0.05, **FDR < 0.01, ***FDR < 0.001. (B) Scatter plots showing key pairwise correlations: CD274 vs. CMTM6 (top), CD274 vs. STUB1 (middle), CD274 vs. SQSTM1 (bottom). Points colored by cancer type. Regression lines with 95% confidence intervals shown. Simple Spearman ρ and partial correlation controlling for immune cells (partial ρ) indicated.
+**Figure 2. Correlations between PD-L1 and LLPS-associated proteins.** (A) Heatmap showing Spearman correlation coefficients between all five genes (CD274, CMTM6, STUB1, HIP1R, SQSTM1) across 1,635 samples. Color intensity indicates correlation strength (red = positive, blue = negative). Asterisks indicate FDR-corrected significance: *FDR < 0.05, **FDR < 0.01, ***FDR < 0.001. (B) Scatter plots showing key pairwise correlations: CD274 vs. CMTM6 (top), CD274 vs. STUB1 (middle), CD274 vs. SQSTM1 (bottom). Points colored by cancer type. Regression lines with 95% confidence intervals shown. Simple Spearman \ensuremath{\rho} and partial correlation controlling for immune cells (partial \ensuremath{\rho}) indicated.
 
 **Table 2. Spearman correlation coefficients between PD-L1 and LLPS-associated proteins.**
 
-| Gene Pair | Spearman ρ | P-value | FDR | Interpretation |
+| Gene Pair | Spearman \ensuremath{\rho} | P-value | FDR | Interpretation |
 |-----------|------------|---------|-----|----------------|
-| CD274 - CMTM6 | 0.42 | 2.3×10⁻⁶⁸ | <0.001 | Strong positive |
-| CD274 - SQSTM1 | 0.28 | 1.4×10⁻³⁰ | <0.001 | Moderate positive |
-| CD274 - STUB1 | -0.15 | 6.2×10⁻¹⁰ | <0.001 | Weak negative |
-| CD274 - HIP1R | 0.11 | 4.8×10⁻⁶ | 0.002 | Weak positive |
+| CD274 - CMTM6 | 0.42 | $2.3\times10^{-68}$ | <0.001 | Strong positive |
+| CD274 - SQSTM1 | 0.28 | $1.4\times10^{-30}$ | <0.001 | Moderate positive |
+| CD274 - STUB1 | -0.15 | $6.2\times10^{-10}$ | <0.001 | Weak negative |
+| CD274 - HIP1R | 0.11 | $4.8\times10^{-6}$ | 0.002 | Weak positive |
 
 ### Immune Microenvironment Associations
 
 TIMER2.0 deconvolution analysis successfully estimated immune cell proportions for all 1,635 samples. The immune composition varied substantially across samples and cancer types (Figure 3A). As expected, immune cell infiltration was generally higher in SKCM compared to lung cancers, consistent with melanoma's classification as an immunologically "hot" tumor type.
 
-PD-L1 expression showed strong positive correlations with multiple immune cell types (Figure 3B), particularly macrophages (ρ = 0.51, P < 10<sup>-100</sup>), dendritic cells (ρ = 0.48, P < 10<sup>-90</sup>), and CD8+ T cells (ρ = 0.39, P < 10<sup>-60</sup>). These associations reflect PD-L1's induction by interferon-gamma produced by activated T cells and its preferential expression on myeloid antigen-presenting cells. The correlation with CD4+ T cells was moderate (ρ = 0.31, P < 10<sup>-35</sup>), while associations with B cells and neutrophils were weaker (ρ = 0.22 and 0.18, respectively).
+PD-L1 expression showed strong positive correlations with multiple immune cell types (Figure 3B), particularly macrophages (\ensuremath{\rho} = 0.51, P < 10$^{-100}$), dendritic cells (\ensuremath{\rho} = 0.48, P < 10$^{-90}$), and CD8+ T cells (\ensuremath{\rho} = 0.39, P < 10$^{-60}$). These associations reflect PD-L1's induction by interferon-gamma produced by activated T cells and its preferential expression on myeloid antigen-presenting cells. The correlation with CD4+ T cells was moderate (\ensuremath{\rho} = 0.31, P < 10$^{-35}$), while associations with B cells and neutrophils were weaker (\ensuremath{\rho} = 0.22 and 0.18, respectively).
 
-Interestingly, STUB1 expression showed minimal correlation with immune cell infiltration (all |ρ| < 0.15), suggesting that its expression is primarily governed by cell-intrinsic factors related to protein quality control rather than immune signals. CMTM6 demonstrated modest positive correlations with macrophages and dendritic cells (ρ = 0.25 and 0.22, respectively), potentially reflecting coordinate upregulation of immune regulatory machinery in immune-rich microenvironments.
+Interestingly, STUB1 expression showed minimal correlation with immune cell infiltration (all |\ensuremath{\rho}| < 0.15), suggesting that its expression is primarily governed by cell-intrinsic factors related to protein quality control rather than immune signals. CMTM6 demonstrated modest positive correlations with macrophages and dendritic cells (\ensuremath{\rho} = 0.25 and 0.22, respectively), potentially reflecting coordinate upregulation of immune regulatory machinery in immune-rich microenvironments.
 
 ![](outputs/figures/Figure3_immune_environment.png)
 
@@ -250,31 +250,31 @@ Interestingly, STUB1 expression showed minimal correlation with immune cell infi
 
 To determine whether the observed correlations between PD-L1 and LLPS-associated proteins were independent of immune microenvironment composition, we performed partial correlation analysis controlling for all six immune cell populations (Figure 2B, Table 3).
 
-After accounting for immune infiltration, the correlation between CD274 and CMTM6 remained highly significant but was reduced in magnitude (partial ρ = 0.31, P = 8.7×10<sup>-38</sup>). This attenuation suggests that approximately 26% of the observed correlation [(0.42-0.31)/0.42 × 100%] is attributable to shared associations with immune cell infiltration, while the remaining 74% represents immune-independent coordination between PD-L1 and CMTM6.
+After accounting for immune infiltration, the correlation between CD274 and CMTM6 remained highly significant but was reduced in magnitude (partial \ensuremath{\rho} = 0.31, P = $8.7\times10^{-38}$). This attenuation suggests that approximately 26% of the observed correlation [(0.42-0.31)/0.42 $\times$ 100%] is attributable to shared associations with immune cell infiltration, while the remaining 74% represents immune-independent coordination between PD-L1 and CMTM6.
 
-The partial correlation between CD274 and STUB1 remained negative and statistically significant (partial ρ = -0.12, P = 1.2×10<sup>-6</sup>), with only minimal attenuation compared to the simple correlation. This finding indicates that STUB1's negative association with PD-L1 is largely independent of immune context and likely reflects direct regulatory interactions or shared regulation by cell-intrinsic pathways.
+The partial correlation between CD274 and STUB1 remained negative and statistically significant (partial \ensuremath{\rho} = -0.12, P = $1.2\times10^{-6}$), with only minimal attenuation compared to the simple correlation. This finding indicates that STUB1's negative association with PD-L1 is largely independent of immune context and likely reflects direct regulatory interactions or shared regulation by cell-intrinsic pathways.
 
-The positive correlation between CD274 and SQSTM1 showed substantial reduction after controlling for immune cells (partial ρ = 0.14, P = 1.8×10<sup>-8</sup>), suggesting that much of this association is mediated by immune-related processes. SQSTM1's roles in inflammatory signaling and autophagy may link its expression to immune activation states.
+The positive correlation between CD274 and SQSTM1 showed substantial reduction after controlling for immune cells (partial \ensuremath{\rho} = 0.14, P = $1.8\times10^{-8}$), suggesting that much of this association is mediated by immune-related processes. SQSTM1's roles in inflammatory signaling and autophagy may link its expression to immune activation states.
 
-The correlation between CD274 and HIP1R became non-significant after controlling for immune infiltration (partial ρ = 0.05, P = 0.08), indicating that this association is primarily mediated by shared responses to immune signals rather than direct molecular interactions.
+The correlation between CD274 and HIP1R became non-significant after controlling for immune infiltration (partial \ensuremath{\rho} = 0.05, P = 0.08), indicating that this association is primarily mediated by shared responses to immune signals rather than direct molecular interactions.
 
 **Table 3. Partial correlation coefficients controlling for immune cell infiltration.**
 
-| Gene Pair | Simple ρ | Partial ρ* | P-value | % Attenuation** |
+| Gene Pair | Simple \ensuremath{\rho} | Partial \ensuremath{\rho}* | P-value | % Attenuation** |
 |-----------|----------|------------|---------|-----------------|
-| CD274 - CMTM6 | 0.42 | 0.31 | 8.7×10⁻³⁸ | 26% |
-| CD274 - SQSTM1 | 0.28 | 0.14 | 1.8×10⁻⁸ | 50% |
-| CD274 - STUB1 | -0.15 | -0.12 | 1.2×10⁻⁶ | 20% |
+| CD274 - CMTM6 | 0.42 | 0.31 | $8.7\times10^{-38}$ | 26% |
+| CD274 - SQSTM1 | 0.28 | 0.14 | $1.8\times10^{-8}$ | 50% |
+| CD274 - STUB1 | -0.15 | -0.12 | $1.2\times10^{-6}$ | 20% |
 | CD274 - HIP1R | 0.11 | 0.05 | 0.08 | 55% |
 
 *Controlling for B cells, CD4+ T cells, CD8+ T cells, neutrophils, macrophages, and dendritic cells.
-**Calculated as (|simple ρ| - |partial ρ|) / |simple ρ| × 100%
+**Calculated as (|simple \ensuremath{\rho}| - |partial \ensuremath{\rho}|) / |simple \ensuremath{\rho}| $\times$ 100%
 
 ### Survival Analysis
 
 #### Univariate Survival Analysis
 
-Univariate Cox proportional hazards models revealed significant associations between molecular features and overall survival (Table 4). Higher PD-L1 expression was associated with increased hazard of death (HR = 1.18 per log2 unit increase, 95% CI: 1.11-1.25, P = 3.6×10<sup>-7</sup>). This finding appears paradoxical given that PD-L1 expression is used as a biomarker for immunotherapy response, but aligns with observations that high baseline PD-L1 often indicates aggressive disease biology in untreated cohorts.
+Univariate Cox proportional hazards models revealed significant associations between molecular features and overall survival (Table 4). Higher PD-L1 expression was associated with increased hazard of death (HR = 1.18 per log2 unit increase, 95% CI: 1.11-1.25, P = $3.6\times10^{-7}$). This finding appears paradoxical given that PD-L1 expression is used as a biomarker for immunotherapy response, but aligns with observations that high baseline PD-L1 often indicates aggressive disease biology in untreated cohorts.
 
 Among LLPS-associated proteins, STUB1 showed the strongest prognostic value (HR = 0.85, 95% CI: 0.74-0.97, P = 0.012), with higher expression associated with better survival. This protective effect is consistent with STUB1's role in degrading oncogenic proteins and maintaining protein homeostasis. SQSTM1 also demonstrated prognostic significance (HR = 1.14, 95% CI: 1.04-1.26, P = 0.006), with higher expression associated with worse outcomes, possibly reflecting increased cellular stress and autophagy demand in aggressive tumors.
 
@@ -284,7 +284,7 @@ CMTM6 and HIP1R did not show significant univariate associations with survival (
 
 | Variable | HR | 95% CI | P-value |
 |----------|-----|--------|---------|
-| CD274 expression | 1.18 | 1.11-1.25 | 3.6×10⁻⁷ |
+| CD274 expression | 1.18 | 1.11-1.25 | $3.6\times10^{-7}$ |
 | STUB1 expression | 0.85 | 0.74-0.97 | 0.012 |
 | CMTM6 expression | 1.06 | 0.96-1.17 | 0.21 |
 | HIP1R expression | 1.04 | 0.95-1.13 | 0.34 |
@@ -301,7 +301,7 @@ To assess independent prognostic value while controlling for established clinica
 
 In the multivariate model, tumor stage emerged as the strongest predictor of survival (HR = 2.09 for stage III-IV vs. I-II, 95% CI: 1.79-2.43, P < 0.001), as expected. Age also showed significant association (HR = 1.02 per year, 95% CI: 1.01-1.03, P < 0.001), while sex was not significantly associated with survival (P = 0.18). Cancer type showed significant heterogeneity in baseline hazards (P = 0.002), with SKCM patients having worse prognosis compared to LUAD after adjusting for other factors.
 
-Importantly, CD274 retained significant prognostic value in the multivariate model (HR = 1.14, 95% CI: 1.06-1.23, P = 2.18×10<sup>-4</sup>), demonstrating that PD-L1's association with survival is independent of stage, age, sex, cancer type, and the other molecular features. This represents a 14% increase in hazard per unit increase in log2(FPKM+1), translating to a substantial effect given the wide dynamic range of PD-L1 expression.
+Importantly, CD274 retained significant prognostic value in the multivariate model (HR = 1.14, 95% CI: 1.06-1.23, P = $2.18\times10^{-4}$), demonstrating that PD-L1's association with survival is independent of stage, age, sex, cancer type, and the other molecular features. This represents a 14% increase in hazard per unit increase in log2(FPKM+1), translating to a substantial effect given the wide dynamic range of PD-L1 expression.
 
 STUB1 also maintained independent prognostic significance (HR = 0.92, 95% CI: 0.86-0.99, P = 0.018), corresponding to an 8% reduction in hazard per unit increase in expression. This protective effect was attenuated compared to univariate analysis but remained statistically robust, suggesting that STUB1's prognostic value is partially independent of PD-L1 levels and other factors.
 
@@ -313,7 +313,7 @@ The overall model demonstrated good discrimination (C-index = 0.72) and was well
 
 | Variable | HR | 95% CI | P-value |
 |----------|-----|--------|---------|
-| CD274 expression | 1.14 | 1.06-1.23 | 2.18×10⁻⁴ |
+| CD274 expression | 1.14 | 1.06-1.23 | $2.18\times10^{-4}$ |
 | STUB1 expression | 0.92 | 0.86-0.99 | 0.018 |
 | CMTM6 expression | 1.03 | 0.96-1.11 | 0.42 |
 | HIP1R expression | 1.02 | 0.95-1.09 | 0.51 |
@@ -334,7 +334,7 @@ Model C-index = 0.72. HR = Hazard Ratio; CI = Confidence Interval. Expression HR
 
 #### Cancer Type-Specific Effects
 
-When analyses were stratified by cancer type (Supplementary Figure S1, Supplementary Table S1), the key findings showed consistent direction across all three cancer types, though with varying effect sizes. The CD274-CMTM6 correlation was strongest in SKCM (ρ = 0.46), intermediate in LUSC (ρ = 0.44), and weakest in LUAD (ρ = 0.38), but reached significance in all three (all P < 10<sup>-15</sup>). The negative correlation between CD274 and STUB1 was most pronounced in LUSC (ρ = -0.21) and weakest in LUAD (ρ = -0.09), but maintained consistent directionality.
+When analyses were stratified by cancer type (Supplementary Figure S1, Supplementary Table S1), the key findings showed consistent direction across all three cancer types, though with varying effect sizes. The CD274-CMTM6 correlation was strongest in SKCM (\ensuremath{\rho} = 0.46), intermediate in LUSC (\ensuremath{\rho} = 0.44), and weakest in LUAD (\ensuremath{\rho} = 0.38), but reached significance in all three (all P < 10$^{-15}$). The negative correlation between CD274 and STUB1 was most pronounced in LUSC (\ensuremath{\rho} = -0.21) and weakest in LUAD (\ensuremath{\rho} = -0.09), but maintained consistent directionality.
 
 ![](outputs/figures/FigureS1_study_design.png)
 
@@ -344,23 +344,23 @@ Cancer type-specific survival models demonstrated heterogeneity across tumor typ
 
 #### Outlier Robustness
 
-After excluding outliers identified by Z-score thresholding (n = 147 samples removed, 9.0% of total), correlation estimates remained highly consistent (Supplementary Table S2). The CD274-CMTM6 correlation changed minimally (ρ = 0.41 vs. 0.42 in full dataset), as did the CD274-STUB1 correlation (ρ = -0.14 vs. -0.15). Similar consistency was observed when outliers were defined by IQR criteria (n = 203 removed) or robust scaling methods (n = 178 removed).
+After excluding outliers identified by Z-score thresholding (n = 147 samples removed, 9.0% of total), correlation estimates remained highly consistent (Supplementary Table S2). The CD274-CMTM6 correlation changed minimally (\ensuremath{\rho} = 0.41 vs. 0.42 in full dataset), as did the CD274-STUB1 correlation (\ensuremath{\rho} = -0.14 vs. -0.15). Similar consistency was observed when outliers were defined by IQR criteria (n = 203 removed) or robust scaling methods (n = 178 removed).
 
 Survival analyses after outlier exclusion showed that hazard ratios for CD274 and STUB1 remained within 5% of the original estimates, with P-values remaining highly significant (all P < 0.01). This demonstrates the robustness of the findings to outlier handling.
 
 #### Bootstrap Stability
 
-Bootstrap analysis with 1,000 iterations confirmed the stability of correlation estimates (Supplementary Figure S2). The 95% confidence intervals from bootstrap distributions were: CD274-CMTM6 (ρ = 0.38-0.46), CD274-STUB1 (ρ = -0.19 to -0.11), CD274-SQSTM1 (ρ = 0.24-0.32). All confidence intervals excluded zero, supporting the statistical robustness of these transcriptomic associations.
+Bootstrap analysis with 1,000 iterations confirmed the stability of correlation estimates (Supplementary Figure S2). The 95% confidence intervals from bootstrap distributions were: CD274-CMTM6 (\ensuremath{\rho} = 0.38-0.46), CD274-STUB1 (\ensuremath{\rho} = -0.19 to -0.11), CD274-SQSTM1 (\ensuremath{\rho} = 0.24-0.32). All confidence intervals excluded zero, supporting the statistical robustness of these transcriptomic associations.
 
 ![](outputs/figures/FigureS2_sample_characteristics.png)
 
 **Supplementary Figure S2. Bootstrap stability analysis.** Violin plots showing distributions of correlation coefficients from 1,000 bootstrap iterations for key gene pairs: CD274-CMTM6, CD274-STUB1, CD274-SQSTM1. Horizontal lines indicate median and 95% confidence intervals. Original estimates from full dataset shown as red diamonds.
 
-Bootstrap confidence intervals for hazard ratios in the multivariate survival model demonstrated stability: CD274 (HR 95% CI: 1.05-1.24), STUB1 (HR 95% CI: 0.85-0.99), with intervals excluding the null value of 1.0. The concordance index showed minimal variation across bootstrap iterations (C-index = 0.72 ± 0.02), demonstrating the stability of the survival modeling approach.
+Bootstrap confidence intervals for hazard ratios in the multivariate survival model demonstrated stability: CD274 (HR 95% CI: 1.05-1.24), STUB1 (HR 95% CI: 0.85-0.99), with intervals excluding the null value of 1.0. The concordance index showed minimal variation across bootstrap iterations (C-index = 0.72 $\pm$ 0.02), demonstrating the stability of the survival modeling approach.
 
 #### Alternative Correlation Methods
 
-Comparison across correlation methods revealed general concordance (Supplementary Table S3). For CD274-CMTM6, Spearman ρ = 0.42, Pearson r = 0.44, and Kendall τ = 0.29 (all P < 10<sup>-60</sup>). The slightly stronger Pearson correlation suggests an approximately linear relationship, while the consistency across non-parametric methods (Spearman, Kendall) demonstrates robustness to distributional assumptions. For CD274-STUB1, Spearman ρ = -0.15, Pearson r = -0.13, and Kendall τ = -0.10 (all P < 10<sup>-7</sup>), showing consistent negative associations across methods.
+Comparison across correlation methods revealed general concordance (Supplementary Table S3). For CD274-CMTM6, Spearman \ensuremath{\rho} = 0.42, Pearson r = 0.44, and Kendall $\tau$ = 0.29 (all P < 10$^{-60}$). The slightly stronger Pearson correlation suggests an approximately linear relationship, while the consistency across non-parametric methods (Spearman, Kendall) demonstrates robustness to distributional assumptions. For CD274-STUB1, Spearman \ensuremath{\rho} = -0.15, Pearson r = -0.13, and Kendall $\tau$ = -0.10 (all P < 10$^{-7}$), showing consistent negative associations across methods.
 
 
 
@@ -372,15 +372,15 @@ Our analysis of 1,635 TCGA tumors reveals three main findings about PD-L1 regula
 
 ### PD-L1 and CMTM6: A Conserved Regulatory Axis
 
-The positive correlation between PD-L1 and CMTM6 across all three cancer types (ρ = 0.38-0.46) validates prior biochemical studies at population scale. Burr and colleagues (2017) and Mezzadra and colleagues (2017) identified CMTM6 as a regulator of PD-L1 stability through cell-based experiments. They showed CMTM6 physically associates with PD-L1 at the plasma membrane and recycling endosomes to prevent ubiquitination and lysosomal degradation. Our data show this regulatory relationship appears as coordinated transcriptomic expression across tumor types, thousands of samples and multiple cancer contexts. This suggests CMTM6-PD-L1 coordination is conserved in cancer biology rather than being cell line-specific.
+The positive correlation between PD-L1 and CMTM6 across all three cancer types (\ensuremath{\rho} = 0.38-0.46) validates prior biochemical studies at population scale. Burr and colleagues (2017) and Mezzadra and colleagues (2017) identified CMTM6 as a regulator of PD-L1 stability through cell-based experiments. They showed CMTM6 physically associates with PD-L1 at the plasma membrane and recycling endosomes to prevent ubiquitination and lysosomal degradation. Our data show this regulatory relationship appears as coordinated transcriptomic expression across tumor types, thousands of samples and multiple cancer contexts. This suggests CMTM6-PD-L1 coordination is conserved in cancer biology rather than being cell line-specific.
 
-This correlation remained substantial (partial ρ = 0.31) after controlling for immune cell infiltration. The association is not simply due to coordinate immune-mediated upregulation. Interferon-gamma and other immune signals can induce both PD-L1 and CMTM6. However, the correlation persisting after accounting for immune infiltration indicates additional regulatory mechanisms. These could include shared transcriptional control, regulation by oncogenic signaling pathways (PI3K/AKT or MAPK), or post-transcriptional regulation by microRNAs or RNA-binding proteins.
+This correlation remained substantial (partial \ensuremath{\rho} = 0.31) after controlling for immune cell infiltration. The association is not simply due to coordinate immune-mediated upregulation. Interferon-gamma and other immune signals can induce both PD-L1 and CMTM6. However, the correlation persisting after accounting for immune infiltration indicates additional regulatory mechanisms. These could include shared transcriptional control, regulation by oncogenic signaling pathways (PI3K/AKT or MAPK), or post-transcriptional regulation by microRNAs or RNA-binding proteins.
 
 The PD-L1-CMTM6 axis has clinical implications. If CMTM6 expression affects PD-L1 protein durability, tumors with high CMTM6 might have more stable PD-L1 levels. These could be less susceptible to downregulation during immunotherapy. Therapeutic strategies targeting CMTM6 could destabilize PD-L1 and improve immunotherapy efficacy as a combination therapy approach.
 
 ### STUB1 as a Negative Regulator with Protective Effects
 
-PD-L1 and STUB1 show negative correlation (ρ = -0.15). Though modest in magnitude, this was statistically significant and stable across multiple sensitivity analyses. STUB1 (STIP1 homology and U-box containing protein 1, also known as CHIP) is an E3 ubiquitin ligase in protein quality control. It targets misfolded or damaged proteins for proteasomal degradation. Recent studies identified PD-L1 as a STUB1 substrate. STUB1 promotes PD-L1 ubiquitination and degradation.
+PD-L1 and STUB1 show negative correlation (\ensuremath{\rho} = -0.15). Though modest in magnitude, this was statistically significant and stable across multiple sensitivity analyses. STUB1 (STIP1 homology and U-box containing protein 1, also known as CHIP) is an E3 ubiquitin ligase in protein quality control. It targets misfolded or damaged proteins for proteasomal degradation. Recent studies identified PD-L1 as a STUB1 substrate. STUB1 promotes PD-L1 ubiquitination and degradation.
 
 STUB1 showed association with favorable outcomes (HR = 0.92, P = 0.018) even after adjusting for PD-L1 levels and clinical factors. This suggests STUB1 has protective effects beyond PD-L1 regulation. STUB1 targets many client proteins in oncogenic signaling, including mutant p53, ErbB2 and various kinases. Higher STUB1 expression may reflect more efficient protein quality control that limits oncogenic protein accumulation.
 
@@ -390,25 +390,25 @@ Strategies to enhance STUB1 activity could simultaneously reduce PD-L1 levels an
 
 ### SQSTM1 and the Autophagy-Immunity Interface
 
-SQSTM1 (p62) showed significant positive correlation with PD-L1 (ρ = 0.28), but this association was substantially attenuated after controlling for immune cell infiltration (partial ρ = 0.14). SQSTM1 is a multifunctional scaffold protein best known for its role in selective autophagy, where it recognizes ubiquitinated cargo and delivers it to autophagosomes for degradation. SQSTM1 contains a PB1 domain that enables self-oligomerization and has been shown to undergo liquid-liquid phase separation to form protein aggregates that facilitate autophagic clearance.
+SQSTM1 (p62) showed significant positive correlation with PD-L1 (\ensuremath{\rho} = 0.28), but this association was substantially attenuated after controlling for immune cell infiltration (partial \ensuremath{\rho} = 0.14). SQSTM1 is a multifunctional scaffold protein best known for its role in selective autophagy, where it recognizes ubiquitinated cargo and delivers it to autophagosomes for degradation. SQSTM1 contains a PB1 domain that enables self-oligomerization and has been shown to undergo liquid-liquid phase separation to form protein aggregates that facilitate autophagic clearance.
 
-The strong immune-dependent component of the PD-L1-SQSTM1 correlation likely reflects SQSTM1's roles in inflammatory signaling. SQSTM1 participates in the NF-κB pathway by binding to and regulating signaling adaptors, and it accumulates in response to oxidative stress and protein damage. In tumors with high immune infiltration, increased inflammatory signals and cytokine production may drive SQSTM1 upregulation coincident with PD-L1 induction, explaining the correlation observed in simple analysis.
+The strong immune-dependent component of the PD-L1-SQSTM1 correlation likely reflects SQSTM1's roles in inflammatory signaling. SQSTM1 participates in the NF-$\kappa$B pathway by binding to and regulating signaling adaptors, and it accumulates in response to oxidative stress and protein damage. In tumors with high immune infiltration, increased inflammatory signals and cytokine production may drive SQSTM1 upregulation coincident with PD-L1 induction, explaining the correlation observed in simple analysis.
 
-The residual partial correlation (ρ = 0.14) after controlling for immune cells suggests some immune-independent coordination. One possibility is that both PD-L1 and SQSTM1 are upregulated in response to cellular stress or protein misfolding, representing parallel adaptive responses. Alternatively, SQSTM1-mediated autophagy may influence PD-L1 through effects on protein turnover or vesicular trafficking.
+The residual partial correlation (\ensuremath{\rho} = 0.14) after controlling for immune cells suggests some immune-independent coordination. One possibility is that both PD-L1 and SQSTM1 are upregulated in response to cellular stress or protein misfolding, representing parallel adaptive responses. Alternatively, SQSTM1-mediated autophagy may influence PD-L1 through effects on protein turnover or vesicular trafficking.
 
 SQSTM1 showed significant association in univariate analysis (HR = 1.14, P = 0.006) that became non-significant in multivariate models (HR = 1.08, P = 0.093), suggesting that its prognostic association is partially explained by correlation with other clinical and molecular features. This pattern indicates that SQSTM1 expression may primarily reflect aggressive disease biology rather than independently drive outcomes. High SQSTM1 may indicate elevated cellular stress, defective autophagy, or adaptation to metabolic demands in aggressive tumors.
 
 ### Immune Microenvironment Relationships
 
-The strong correlations between PD-L1 and multiple immune cell populations, particularly macrophages (ρ = 0.51) and dendritic cells (ρ = 0.48), align with established biology of PD-L1 regulation. Interferon-gamma secreted by activated T cells is a potent inducer of PD-L1 through JAK/STAT signaling, and myeloid antigen-presenting cells express high baseline PD-L1 as part of their normal function in regulating T cell responses.
+The strong correlations between PD-L1 and multiple immune cell populations, particularly macrophages (\ensuremath{\rho} = 0.51) and dendritic cells (\ensuremath{\rho} = 0.48), align with established biology of PD-L1 regulation. Interferon-gamma secreted by activated T cells is a potent inducer of PD-L1 through JAK/STAT signaling, and myeloid antigen-presenting cells express high baseline PD-L1 as part of their normal function in regulating T cell responses.
 
-The observation that the PD-L1-CMTM6 correlation remained robust (partial ρ = 0.31) after controlling for immune infiltration suggests that tumor-intrinsic factors, likely involving oncogenic signaling pathways, contribute substantially to coordinate expression of these proteins. Oncogenic activation of PI3K, MAPK, or STAT3 pathways can induce PD-L1 independent of immune signals, and similar mechanisms may regulate CMTM6 or affect the stability of the PD-L1-CMTM6 complex.
+The observation that the PD-L1-CMTM6 correlation remained robust (partial \ensuremath{\rho} = 0.31) after controlling for immune infiltration suggests that tumor-intrinsic factors, likely involving oncogenic signaling pathways, contribute substantially to coordinate expression of these proteins. Oncogenic activation of PI3K, MAPK, or STAT3 pathways can induce PD-L1 independent of immune signals, and similar mechanisms may regulate CMTM6 or affect the stability of the PD-L1-CMTM6 complex.
 
-The minimal correlation between STUB1 and immune cell populations (all |ρ| < 0.15) suggests that STUB1 expression is governed primarily by cell-intrinsic protein homeostasis demands rather than immune signals. This finding supports the model that STUB1 functions as a constitutive quality control factor whose levels reflect the burden of misfolded proteins and general cellular stress rather than specific immune-mediated regulation.
+The minimal correlation between STUB1 and immune cell populations (all |\ensuremath{\rho}| < 0.15) suggests that STUB1 expression is governed primarily by cell-intrinsic protein homeostasis demands rather than immune signals. This finding supports the model that STUB1 functions as a constitutive quality control factor whose levels reflect the burden of misfolded proteins and general cellular stress rather than specific immune-mediated regulation.
 
 ### Clinical Implications and Prognostic Value
 
-The analytical framework demonstrates how molecular features like PD-L1 can be assessed for prognostic value in multivariate models. PD-L1 showed significant independent prognostic association (HR = 1.14, P = 2.18×10<sup>-4</sup>) after adjusting for clinical covariates, indicating that higher PD-L1 expression predicts worse outcomes in this cohort. This finding reflects aggressive disease biology in untreated patients, while in immunotherapy contexts, high PD-L1 is associated with better treatment response—underscoring PD-L1's complex role as both an immune resistance mechanism and a predictive biomarker.
+The analytical framework demonstrates how molecular features like PD-L1 can be assessed for prognostic value in multivariate models. PD-L1 showed significant independent prognostic association (HR = 1.14, P = $2.18\times10^{-4}$) after adjusting for clinical covariates, indicating that higher PD-L1 expression predicts worse outcomes in this cohort. This finding reflects aggressive disease biology in untreated patients, while in immunotherapy contexts, high PD-L1 is associated with better treatment response—underscoring PD-L1's complex role as both an immune resistance mechanism and a predictive biomarker.
 
 The protective effect of STUB1 (HR = 0.92, P = 0.018) suggests potential value as a complementary biomarker. Combined molecular scores incorporating PD-L1, STUB1, and clinical variables could potentially improve risk stratification. Tumors with high PD-L1 but low STUB1 might represent an aggressive subset with defective protein quality control, warranting further investigation in experimental studies.
 
@@ -450,7 +450,7 @@ Sixth, direct investigation of LLPS in PD-L1 regulation would require biophysica
 
 ### Conclusions
 
-We analyzed 1,635 tumors to investigate PD-L1 regulatory networks involving LLPS-associated proteins. The transcriptomic associations we found validate prior mechanistic studies at large scale. PD-L1 shows positive correlation with CMTM6 (ρ = 0.42) and negative correlation with STUB1 (ρ = -0.15). Both associations persist after immune adjustment.
+We analyzed 1,635 tumors to investigate PD-L1 regulatory networks involving LLPS-associated proteins. The transcriptomic associations we found validate prior mechanistic studies at large scale. PD-L1 shows positive correlation with CMTM6 (\ensuremath{\rho} = 0.42) and negative correlation with STUB1 (\ensuremath{\rho} = -0.15). Both associations persist after immune adjustment.
 
 These findings demonstrate the value of large-scale computational approaches for studying molecular regulatory networks. The statistical support, consistency across cancer types and robustness across analytical methods indicate these transcriptomic associations reflect biological regulation. However, biochemical assays, cell-based functional studies and proteomic analyses are needed to establish mechanistic causality and assess protein-level regulation.
 
@@ -472,8 +472,8 @@ All source data analyzed in this study are publicly available and fully de-ident
 
 **Processed Data Availability:**
 All processed intermediate and final datasets generated in this study are available as Supplementary Data Files:
-- Supplementary Data 1: Quality-controlled expression matrix (1,635 samples × 41,497 genes) with batch-corrected log2(FPKM+1) values
-- Supplementary Data 2: TIMER2.0 immune cell deconvolution estimates for all samples (1,635 samples × 6 immune cell types)
+- Supplementary Data 1: Quality-controlled expression matrix (1,635 samples $\times$ 41,497 genes) with batch-corrected log2(FPKM+1) values
+- Supplementary Data 2: TIMER2.0 immune cell deconvolution estimates for all samples (1,635 samples $\times$ 6 immune cell types)
 - Supplementary Data 3: Simple and partial correlation matrices between all gene pairs
 - Supplementary Data 4: Univariate and multivariate Cox regression results with full coefficient estimates and confidence intervals
 - Supplementary Data 5: Complete sensitivity analysis results (cancer type-specific, outlier exclusion, bootstrap, alternative methods)
