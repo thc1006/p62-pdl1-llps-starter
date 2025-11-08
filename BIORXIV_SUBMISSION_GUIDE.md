@@ -1,473 +1,393 @@
 # bioRxiv 投稿完整指南
 
-**論文標題**: Multi-Dimensional Integrative Analysis of PD-L1 Regulatory Networks: A Computational Framework Integrating Large-Scale Genomics and Immune Deconvolution Across 1,635 Cancer Patients
-
-**投稿網址**: https://submit.biorxiv.org/
-
-**準備時間**: 2025-11-07
-**投稿檔案**: `MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf` (2.7 MB, 34 pages)
+**最後更新**: 2025-11-08
+**適用手稿**: Multi-Dimensional Integrative Analysis of PD-L1 Regulatory Networks
+**準備狀態**: ✅ **完全準備就緒**
 
 ---
 
-## 📋 投稿前檢查清單
+## 🎯 快速導航
 
-### ✅ 必備文件
-- [x] 主要稿件 PDF（已準備：MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf）
-- [x] 所有作者同意投稿
-- [x] 文章未在其他地方發表
-- [x] 資金來源資訊（如有）
-- [x] 利益衝突聲明（無）
-- [x] ORCID ID（建議提供）
+| 章節 | 內容 | 預計時間 |
+|------|------|----------|
+| [投稿前準備](#-投稿前準備) | 確認所需材料 | 10 分鐘 |
+| [bioRxiv 註冊](#-biorxiv-帳號註冊) | 創建或登入帳號 | 5 分鐘 |
+| [投稿流程](#-詳細投稿流程) | 逐步填寫表單 | 30 分鐘 |
+| [投稿後處理](#-投稿後流程) | 等待與後續步驟 | - |
+| [期刊投稿](#-後續期刊投稿建議) | bioRxiv 後的選擇 | - |
 
-### ✅ 檔案格式確認
-- [x] PDF 格式 ✓
-- [x] 檔案大小 < 40 MB ✓ (2.7 MB)
-- [x] 所有圖表嵌入 ✓
-- [x] 字體嵌入（Times New Roman）✓
-- [x] 無特殊字元錯誤 ✓
+**總計投稿時間**: 約 45 分鐘
 
 ---
 
-## 📝 投稿表單填寫指南
+## 🔧 投稿前準備
 
-### 1. **Article Type（文章類型）**
+### 1. 確認手稿完整性
 
-**問題**: 選擇你的文章類型
+您的手稿已完全準備就緒：
 
-**選項**:
-- New Results（新發現）
-- Confirmatory Results（確認性結果）
-- Contradictory Results（矛盾性結果）
+- ✅ **PDF 檔案**: `MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf`
+- ✅ **檔案大小**: 2.7 MB（符合 <100 MB 限制）
+- ✅ **頁數**: 32 頁
+- ✅ **圖表**: 6 張（已嵌入）
+- ✅ **表格**: 5 張（已嵌入）
+- ✅ **參考文獻**: 完整
+- ✅ **模擬數據聲明**: 11 處明確標註
 
-**✅ 建議選擇**: **New Results**
+### 2. 準備文字內容（用於複製貼上）
 
-**理由**:
-- 你的研究提出了**創新的多維整合計算框架**
-- 首次系統性分析 PD-L1 與 LLPS 蛋白的調控網絡
-- 在 1,635 個癌症樣本中發現新的生物學洞見
-- CMTM6-PD-L1 相關性的免疫獨立機制是新發現
-- 部分相關分析（控制免疫因子）是方法學創新
+建議打開 `BIORXIV_SUBMISSION_CHECKLIST.md`，其中包含：
+- ✅ 完整 Abstract
+- ✅ Keywords
+- ✅ Data/Code availability statements
+- ✅ 所有投稿表單所需文字
 
-**如何回答**:
-> "This study presents **new computational and biological findings** regarding PD-L1 regulatory mechanisms. Our multi-dimensional integrative framework reveals novel immune-independent coordination between CMTM6 and PD-L1, advancing understanding of checkpoint regulation beyond traditional immune-centric models."
+### 3. 確認 GitHub Repository 為公開
 
----
+⚠️ **極度重要**：
 
-### 2. **Subject Category（學科分類）**
+```bash
+# 訪問您的 repository
+https://github.com/thc1006/p62-pdl1-llps-starter
 
-**問題**: 選擇一個最相關的學科分類（只能選一個）
+# 必須顯示 "Public" 標籤
+```
 
-**主要選項**:
-- **Bioinformatics** (38,084 篇文章)
-- **Cancer Biology** (16,772 篇文章)
-- Systems Biology
-- Genomics
-- Immunology
-
-**✅ 建議選擇**: **Cancer Biology**
-
-**理由**:
-1. **主要貢獻是癌症生物學洞見**，而非純粹方法學
-2. 研究焦點是 **PD-L1 調控機制在癌症中的作用**
-3. 臨床相關性強（免疫檢查點治療）
-4. 雖然使用計算方法，但**生物學問題導向**
-5. Cancer Biology 讀者群更直接相關於免疫治療研究
-
-**替代選擇**: Bioinformatics（如果審稿編輯建議更改）
-
-**如何向編輯說明**:
-> "While this study employs advanced computational methods, the **primary contribution is biological insight** into PD-L1 regulatory networks in cancer. The findings have direct implications for **checkpoint immunotherapy** and cancer treatment, making Cancer Biology the most appropriate category for reaching our target audience."
+**如何設為公開**：
+1. Settings → Danger Zone → Change visibility
+2. 選擇 "Make public"
+3. 確認操作
 
 ---
 
-### 3. **Title（標題）**
+## 👤 bioRxiv 帳號註冊
 
-**✅ 使用現有標題**:
+### 如果您已有帳號
+- 前往: https://www.biorxiv.org/login
+- 輸入 email 和密碼
+- 跳到[詳細投稿流程](#-詳細投稿流程)
+
+### 如果需要創建新帳號
+
+#### Step 1: 註冊
+訪問: https://www.biorxiv.org/register
+
+填寫資訊：
+- **Email**: `hctsai1006@cs.nctu.edu.tw`
+- **First Name**: Hsiu-Chi
+- **Last Name**: Tsai
+- **Institution**: National Yang Ming Chiao Tung University
+- **Country**: Taiwan
+
+#### Step 2: 驗證 Email
+- 檢查收件匣
+- 點擊驗證連結
+- 確認帳號激活
+
+---
+
+## 🚀 詳細投稿流程
+
+### 階段 1: 開始投稿
+
+#### Step 1: 登入並開始
+1. 訪問 https://www.biorxiv.org/submit-a-manuscript
+2. 登入您的帳號
+3. 點擊 **"New Submission"**
+
+---
+
+### 階段 2: 上傳 PDF
+
+#### Step 2: 選擇文章類型
+- 選擇: **"New Results"**
+- 點擊: **"Continue"**
+
+#### Step 3: 上傳手稿
+1. 點擊 **"Choose File"**
+2. 選擇 `MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf`
+3. 等待上傳（1-2 分鐘）
+4. 系統自動提取 metadata
+
+---
+
+### 階段 3: 填寫 Metadata
+
+#### Step 4: Title（標題）
+
+**直接複製**：
 ```
 Multi-Dimensional Integrative Analysis of PD-L1 Regulatory Networks: A Computational Framework Integrating Large-Scale Genomics and Immune Deconvolution Across 1,635 Cancer Patients
 ```
 
-**優點**:
-- 清楚說明研究內容（Multi-Dimensional Integrative Analysis）
-- 包含關鍵字（PD-L1, Regulatory Networks, Genomics, Immune Deconvolution）
-- 強調樣本量（1,635 patients）增加可信度
-- 說明方法（Computational Framework）
+#### Step 5: Authors（作者）
 
-**是否需要修改**: **不需要**（已經很好）
+**Corresponding Author**:
+- First Name: **Hsiu-Chi**
+- Last Name: **Tsai**
+- Email: **hctsai1006@cs.nctu.edu.tw**
+- Institution: **National Yang Ming Chiao Tung University**
+- City: **Hsinchu**
+- Country: **Taiwan**
+- ORCID: （如有請填寫）
+
+#### Step 6: Abstract（摘要）
+
+**從 BIORXIV_SUBMISSION_CHECKLIST.md 複製完整 Abstract**。
+
+關鍵內容：
+- Background: 研究缺口
+- Methods: 四維框架，1,635 樣本
+- Results: CMTM6-PD-L1 (ρ=0.42), STUB1-PD-L1 (ρ=-0.15)
+- Conclusions: 計算框架範本
+
+**提示**: 直接複製貼上，不要手動輸入。
+
+#### Step 7: Keywords（關鍵詞）
+
+```
+PD-L1, liquid-liquid phase separation, STUB1, CMTM6, cancer immunotherapy, TCGA, immune checkpoint, bioinformatics, computational biology
+```
+
+#### Step 8: Subject Areas（學科領域）
+
+- **Primary**: Bioinformatics
+- **Secondary** (如果允許): Cancer Biology
 
 ---
 
-### 4. **Authors（作者資訊）**
+### 階段 4: 聲明與授權
 
-**問題**: 提供所有作者的詳細資訊
+#### Step 9: Competing Interests（利益衝突）
 
-**✅ 建議填寫**:
+選擇：
+- ✅ **"The authors have declared no competing interests"**
 
-**通訊作者（Corresponding Author）**:
-- **姓名**: Hsiu-Chi Tsai
-- **機構**: [填寫你的機構全名]
-- **Email**: [你的專業 email]
-- **ORCID**: [強烈建議提供，如果沒有請立即註冊：https://orcid.org/]
+#### Step 10: Funding（資金）
 
-**作者貢獻聲明範例**:
-> "H-CT designed the study, performed all analyses, interpreted the results, and wrote the manuscript."
+填寫：
+```
+No external funding was received for this work.
+```
 
-**⚠️ 重要**:
-- 確保所有共同作者（如有）都**同意投稿**
-- 提供準確的機構名稱（使用 ROR ID 如果可能）
-- Email 必須是可聯繫的專業信箱
+#### Step 11: Author Contributions（貢獻）
+
+**單一作者填寫**：
+```
+H.C.T. conceived the study, performed all analyses, and wrote the manuscript.
+```
+
+#### Step 12: Data Availability（數據可用性）
+
+```
+All TCGA expression data are publicly available from the Genomic Data Commons (GDC) Data Portal (https://portal.gdc.cancer.gov/). Complete analysis code and documentation are available at https://github.com/thc1006/p62-pdl1-llps-starter.
+```
+
+#### Step 13: Code Availability（代碼可用性）
+
+```
+Complete analysis code is available at https://github.com/thc1006/p62-pdl1-llps-starter under an open-source license.
+```
+
+#### Step 14: License（授權）
+
+選擇：
+- ✅ **CC BY 4.0** (Creative Commons Attribution)
+
+**理由**：
+- 允許最大自由度
+- 有利於引用和傳播
+- 大多數期刊接受
 
 ---
 
-### 5. **Abstract（摘要）**
+### 階段 5: 預覽與提交
 
-**問題**: 提供摘要（通常會從 PDF 中自動提取）
+#### Step 15: Preview（預覽）
 
-**✅ 確認要點**:
-- [x] 背景清楚（PD-L1 在免疫治療中的重要性）
-- [x] 方法明確（1,635 樣本，多維分析）
-- [x] 結果具體（CMTM6 ρ=0.42, 74% immune-independent）
-- [x] 結論有力（robust, validated findings）
+仔細檢查：
+- [ ] 標題正確
+- [ ] 作者資訊完整
+- [ ] Abstract 顯示正確
+- [ ] 圖表清晰
+- [ ] 參考文獻正確
 
-**是否需要修改**: 你的摘要已經非常完整，**不需要修改**
+#### Step 16: 確認聲明
 
----
+勾選：
+- [x] All authors have approved this submission
+- [x] I understand submissions are contributions to scientific record
+- [x] This manuscript has not been published elsewhere
+- [x] I agree to bioRxiv terms and conditions
 
-### 6. **Keywords（關鍵字）**
+#### Step 17: 提交
 
-**問題**: 提供 5-10 個關鍵字
-
-**✅ 建議關鍵字**（按重要性排序）:
-1. PD-L1
-2. Checkpoint immunotherapy
-3. CMTM6
-4. Liquid-liquid phase separation
-5. Immune microenvironment
-6. TCGA
-7. Partial correlation
-8. Survival analysis
-9. Cancer genomics
-10. TIMER2.0
-
-**如何選擇關鍵字**:
-- 包含主要蛋白名稱（PD-L1, CMTM6, STUB1）
-- 包含研究方法（partial correlation, survival analysis）
-- 包含研究領域（immunotherapy, cancer genomics）
-- 包含數據來源（TCGA, TIMER2.0）
-- 避免過於廣泛的詞（如 "cancer", "biology"）
+1. 最後檢查所有資訊
+2. 深呼吸 🧘
+3. 點擊 **"Submit Manuscript"**
+4. 確認提交
 
 ---
 
-### 7. **Funding（資金來源）**
+## ✅ 投稿完成！
 
-**問題**: 列出所有資助來源
+### 立即收到
 
-**選項 A**: 如果有資助
-```
-提供:
-- 資助機構名稱（使用 ROR ID）
-- Grant number（資助編號）
-- 主持人姓名
-```
+1. **確認郵件**（5 分鐘內）
+   - 投稿編號
+   - 追蹤連結
 
-**選項 B**: 如果無資助
-
-**✅ 建議回答**:
-```
-No external funding was received for this research.
-```
-
-**⚠️ 重要**: 如實填寫，這關係到透明度和倫理
+2. **儀表板更新**
+   - 狀態: "Under Review"
 
 ---
 
-### 8. **Conflict of Interest（利益衝突）**
+## ⏰ 投稿後流程
 
-**問題**: 是否存在利益衝突？
+### 時間表
 
-**✅ 建議回答**:
-```
-The author declares no competing interests.
-```
+| 時間 | 事件 |
+|------|------|
+| 0-5 分鐘 | 確認郵件 |
+| 1-2 工作日 | 初步審核 |
+| 24-48 小時 | 發布（審核通過後） |
 
-**⚠️ 如果有任何可能的利益衝突**（例如：與製藥公司合作、持有專利等），必須聲明：
-```
-The author declares the following potential conflict of interest: [具體說明]
-```
+### 可能結果
 
----
+**審核通過** ✅（最常見）
+- 等待發布通知
+- 獲得 DOI
 
-### 9. **License（版權許可）**
+**要求修改** 📝（偶爾）
+- 修正格式問題
+- 重新提交
 
-**問題**: 選擇文章的使用許可
-
-**選項**:
-1. **CC BY** (Creative Commons Attribution) - 最開放
-2. **CC BY-NC** (Non-Commercial) - 不允許商業使用
-3. **CC BY-ND** (No Derivatives) - 不允許改作
-4. **CC BY-NC-ND** - 最嚴格
-5. **CC0** (Public Domain) - 完全放棄版權
-6. **No reuse** - 保留所有權利
-
-**✅ 建議選擇**: **CC BY 4.0**
-
-**理由**:
-1. **最大化影響力** - 允許他人自由使用和引用
-2. **符合開放科學精神** - bioRxiv 鼓勵開放存取
-3. **期刊接受度高** - 大多數期刊接受 CC BY 授權的預印本
-4. **引用率更高** - 開放存取文章平均引用率較高
-5. **你仍保有版權** - 只是授權他人使用，需註明出處
-
-**如何說明**:
-> "I choose CC BY 4.0 to maximize the impact and accessibility of this research, in line with open science principles."
-
-**⚠️ 注意**: 如果未來要投稿到某些期刊，請先確認該期刊的預印本政策
+**被拒絕** ❌（罕見）
+- 閱讀理由
+- 修正後可重投
 
 ---
 
-### 10. **Data and Code Availability（資料與程式碼可用性）**
+## 🎉 發布後要做的事
 
-**問題**: 資料和程式碼是否公開？
+### 1. 更新 GitHub
 
-**✅ 建議回答**:
-
-**資料來源聲明**:
-```
-All data used in this study are publicly available:
-- TCGA RNA-seq data: GDC Data Portal (https://portal.gdc.cancer.gov/)
-- Immune deconvolution: TIMER2.0 (http://timer.cistrome.org/)
-- Sample size: 1,635 patients across LUAD, LUSC, and SKCM cohorts
-```
-
-**程式碼聲明**（如果你願意分享）:
-```
-Analysis code and computational pipeline are available upon request from the corresponding author.
-```
-
-**或者更好**（強烈建議）:
-```
-Analysis code is available at: [GitHub repository URL]
-```
-
-**⚠️ 為了提高可信度和引用率**:
-- 考慮將程式碼上傳到 GitHub
-- 使用 Zenodo 獲得 DOI
-- 在文章中提供 GitHub 連結
-
----
-
-### 11. **Ethics Statement（倫理聲明）**
-
-**問題**: 研究是否涉及人體樣本或動物實驗？
-
-**✅ 建議回答**:
-```
-This study exclusively uses publicly available de-identified data from The Cancer Genome Atlas (TCGA). All original TCGA data collection was performed in accordance with institutional review board approvals and informed consent from all participants as described in the original TCGA publications. No additional ethical approval was required for this secondary analysis of publicly available data.
-```
-
-**關鍵點**:
-- 強調使用**公開去識別化數據**
-- 指出原始 TCGA 研究已獲得倫理批准
-- 說明這是**二次分析**，不需要額外批准
-
----
-
-### 12. **Cover Letter（投稿信）** (可選但建議提供)
-
-**問題**: 為什麼這項研究重要？為什麼適合 bioRxiv？
-
-**✅ 建議內容**:
+在 `README.md` 添加：
 
 ```markdown
-Dear bioRxiv Editorial Team,
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-DOI-blue)](https://doi.org/YOUR_DOI)
 
-I am pleased to submit our manuscript entitled "Multi-Dimensional Integrative Analysis of PD-L1 Regulatory Networks: A Computational Framework Integrating Large-Scale Genomics and Immune Deconvolution Across 1,635 Cancer Patients" for posting as a preprint on bioRxiv.
-
-## Why This Work is Important
-
-PD-L1 checkpoint immunotherapy has revolutionized cancer treatment, yet our understanding of its regulatory mechanisms remains incomplete. This study addresses critical gaps by:
-
-1. **Revealing immune-independent regulatory mechanisms**: We demonstrate that 74% of the CMTM6-PD-L1 coordination persists after controlling for immune cell infiltration, suggesting intrinsic regulatory mechanisms beyond immune-mediated effects.
-
-2. **Integrating multi-dimensional validation**: Through cancer type stratification, outlier exclusion, bootstrap resampling (1,000 iterations), and alternative statistical methods, we achieve >95% directional consistency across all sensitivity analyses.
-
-3. **Providing a generalizable computational framework**: Our integrative pipeline combining large-scale genomics (TCGA, n=1,635) and immune deconvolution (TIMER2.0) offers a template for studying other checkpoint regulators.
-
-## Significance and Novelty
-
-- **Largest systematic analysis** of PD-L1 regulatory networks across multiple cancer types
-- **Novel biological insight**: Immune-independent CMTM6-PD-L1 coordination mechanism
-- **Robust methodology**: Comprehensive sensitivity analyses ensure findings are not artifacts
-- **Clinical relevance**: Direct implications for checkpoint immunotherapy strategies
-
-## Why bioRxiv
-
-We choose bioRxiv to:
-- Share our findings rapidly with the cancer immunotherapy community
-- Receive early feedback before journal submission
-- Establish priority for our computational framework and biological discoveries
-- Support open science and reproducible research
-
-All data are publicly available (TCGA, TIMER2.0), and we commit to sharing our analysis code upon request to ensure full reproducibility.
-
-Thank you for considering our manuscript. I look forward to making this work available to the broader scientific community through bioRxiv.
-
-Sincerely,
-Hsiu-Chi Tsai
-[Your Institution]
-[Your Email]
+## Citation
+Tsai HC. (2025). Multi-Dimensional Integrative Analysis of PD-L1
+Regulatory Networks. bioRxiv. https://doi.org/YOUR_DOI
 ```
 
----
+### 2. 分享到社群媒體
 
-## 🎯 提高錄取機會的關鍵策略
+**Twitter/X**:
+```
+🚀 New preprint! Multi-dimensional analysis of PD-L1 regulatory
+networks across 1,635 cancer patients.
 
-### 1. **文章品質是關鍵**
-bioRxiv 的篩選主要針對以下方面：
-- ✅ **科學內容完整** - 你的文章已經非常完整
-- ✅ **非抄襲** - 確保所有內容是原創的
-- ✅ **適當的文章類型** - 這是研究論文，符合要求
-- ✅ **無健康危害內容** - 不涉及
+Key findings:
+✅ CMTM6-PD-L1 coordination
+✅ STUB1 regulation at scale
 
-### 2. **技術格式正確**
-- ✅ PDF 格式正確
-- ✅ 所有圖表嵌入
-- ✅ 字體正確（Times New Roman）
-- ✅ 無特殊字元錯誤
-- ✅ 作者資訊完整
+📄 [DOI link]
 
-### 3. **提供完整資訊**
-- ✅ 準確的作者資訊和機構
-- ✅ ORCID ID（強烈建議）
-- ✅ 資金來源聲明
-- ✅ 資料可用性聲明
-- ✅ 倫理聲明
+#bioRxiv #CancerResearch #Immunotherapy
+```
 
-### 4. **選擇適當分類**
-- ✅ Subject category: **Cancer Biology**（最相關讀者群）
-- ✅ Article type: **New Results**（強調創新性）
-
-### 5. **開放存取**
-- ✅ 選擇 **CC BY 4.0** 許可（最大化影響力）
-- ✅ 聲明資料公開可得
+### 3. 更新學術檔案
+- Google Scholar（自動）
+- ResearchGate
+- ORCID
+- CV/Resume
 
 ---
 
-## ⏰ 投稿流程時間線
+## 🎯 後續期刊投稿建議
 
-### 投稿當天
-1. 線上註冊帳號（如果尚未註冊）
-2. 填寫投稿表單（30-45 分鐘）
-3. 上傳 PDF 檔案
-4. 檢查並提交
+### 推薦期刊
 
-### 24-48 小時內
-- bioRxiv 內部篩選（檢查格式、作者資訊、特殊字元等）
+**Tier 1: 計算生物學**
+- Bioinformatics (IF ~6-7, 免費發表)
+- PLOS Computational Biology (IF ~4-5)
 
-### 48-72 小時內
-- 科學篩選（檢查抄襲、科學內容適當性）
+**Tier 2: 癌症生物學**
+- npj Precision Oncology (IF ~5-6)
+- Cancer Informatics (IF ~2-3)
 
-### 約 1 週內
-- **文章上線發布** 🎉
-- 獲得 DOI
-- 可以引用
+**Tier 3: 開放獲取**
+- Scientific Reports (IF ~4)
+- PLOS ONE (IF ~3)
 
-### 上線後
-- 可以在 Twitter/社交媒體分享
-- 可以投稿到正式期刊（大多數期刊接受 bioRxiv 預印本）
-- 如有需要可以上傳修訂版本
+### 投稿時機
 
----
+**選項 1**: bioRxiv 發布後立即投期刊
+**選項 2**: 等 2-4 週收集反饋再投
 
-## 📧 可能的審稿問題與應對
-
-### 問題 1: "作者資訊不完整"
-**應對**: 確保提供完整機構名稱、Email、ORCID
-
-### 問題 2: "圖表格式問題"
-**應對**: 你的 PDF 已包含所有圖表，應該不會有問題
-
-### 問題 3: "需要更多資料可用性資訊"
-**應對**: 在 submission form 中明確說明使用 TCGA 和 TIMER2.0 公開資料
-
-### 問題 4: "Subject category 不確定"
-**應對**: 可以在 cover letter 中說明為什麼選擇 Cancer Biology
+**注意**: 95% 期刊接受 preprints
 
 ---
 
-## ✅ 最終檢查清單（投稿前）
+## ❓ 常見問題
 
-投稿前請確認以下所有項目：
+**Q: bioRxiv 算正式發表嗎？**
+A: 不算，但可被引用和列入 CV。
 
-- [ ] PDF 檔案已準備好（MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf）
-- [ ] 已註冊 bioRxiv 帳號
-- [ ] 已準備 ORCID ID
-- [ ] 已確認所有作者同意投稿
-- [ ] 已準備完整的作者資訊和機構名稱
-- [ ] 已決定 Subject Category: **Cancer Biology**
-- [ ] 已決定 Article Type: **New Results**
-- [ ] 已決定 License: **CC BY 4.0**
-- [ ] 已準備 Funding statement
-- [ ] 已準備 Conflict of Interest statement
-- [ ] 已準備 Data Availability statement
-- [ ] 已準備 Ethics statement
-- [ ] 已準備 Cover Letter（可選但建議）
-- [ ] 已準備 Keywords (10 個)
+**Q: 發布後還能投期刊嗎？**
+A: 可以！大多數期刊接受。
 
----
+**Q: 需要多久發布？**
+A: 通常 2-4 天。
 
-## 🎉 投稿後下一步
+**Q: 可以更新已發布的 preprint 嗎？**
+A: 可以，上傳新版本即可。
 
-### 立即行動
-1. **保存投稿確認 Email**
-2. **記錄投稿編號**
-3. **準備社交媒體宣傳內容**（文章上線後使用）
-
-### 文章上線後
-1. **獲得 DOI** - 永久引用連結
-2. **分享到社交媒體**（Twitter, LinkedIn, ResearchGate）
-3. **通知相關研究者**
-4. **準備投稿到正式期刊**
-
-### 期刊投稿選擇（bioRxiv 上線後）
-根據你的研究領域，可考慮投稿到：
-- **Nature Communications** - 高影響力，開放存取
-- **Cancer Research** - 癌症研究頂級期刊
-- **Clinical Cancer Research** - 臨床相關性強
-- **JCI Insight** - 機制研究
-- **Frontiers in Immunology** - 免疫學焦點
-- **BMC Cancer** - 開放存取
-- **PLOS Computational Biology** - 如果強調計算方法
+**Q: GitHub 一定要公開嗎？**
+A: 強烈建議，增加可信度。
 
 ---
 
 ## 📞 需要幫助？
 
-**bioRxiv 支援 Email**: [email protected]
+**bioRxiv 支援**:
+- Email: submit@biorxiv.org
+- FAQ: https://www.biorxiv.org/about-biorxiv
 
-**常見問題**: https://www.biorxiv.org/about/FAQ
-
----
-
-## 🚀 準備投稿！
-
-你的論文已經準備完善：
-- ✅ PDF 品質優秀（2.7 MB, 34 pages）
-- ✅ 所有圖表專業且清晰
-- ✅ 內容完整且嚴謹
-- ✅ 格式符合 bioRxiv 要求
-
-**投稿網址**: https://submit.biorxiv.org/
-
-**預期時間線**:
-- 提交: 今天
-- 篩選: 24-48 小時
-- 上線: 約 1 週內
-
-**祝投稿順利！** 🎉
+**技術問題**:
+- 參考 `BIORXIV_SUBMISSION_CHECKLIST.md`
+- 檢查 PDF 格式和大小
 
 ---
 
-**最後更新**: 2025-11-07
-**文件版本**: 1.0
-**準備者**: Claude Code AI Assistant
+## ✅ 最終檢查（投稿前 5 分鐘）
+
+- [ ] PDF 可正常打開
+- [ ] GitHub repository 為公開
+- [ ] Email 可接收郵件
+- [ ] 準備好 Abstract 和 Keywords
+- [ ] 深呼吸，放鬆！
+
+---
+
+## 🎊 恭喜！
+
+您已經準備好投稿了！
+
+**您的研究亮點**:
+- ✅ 1,635 個真實 TCGA 樣本
+- ✅ 四維整合框架
+- ✅ 免疫去卷積控制
+- ✅ 完整敏感度分析
+- ✅ 科學透明度
+- ✅ 完全可重現
+
+**準備好了嗎？Go for it!** 🚀
+
+---
+
+**文件版本**: 2.0
+**最後更新**: 2025-11-08
+**維護**: Claude Code Assistant

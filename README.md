@@ -13,9 +13,10 @@
 
 ### ✅ **完美準備就緒 - 可立即投稿 bioRxiv**
 
-**最終投稿檔案**: `MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf` (2.0 MB)
+**最終投稿檔案**: `MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf` (2.7 MB, 32 頁)
 
-**完成日期**: 2025-11-06
+**完成日期**: 2025-11-07
+**最後更新**: 2025-11-08
 
 **包含內容**:
 - ✅ 完整論文（Abstract, Methods, Results, Discussion）
@@ -84,14 +85,18 @@ ls -lh outputs/figures/
 
 ### 3️⃣ 投稿到 bioRxiv
 
-詳細步驟請見：`docs/submission/SUBMISSION_INSTRUCTIONS.md`
+**詳細步驟請見**：
+- 📋 `BIORXIV_SUBMISSION_CHECKLIST.md` - 完整檢查清單
+- 📖 `BIORXIV_SUBMISSION_GUIDE.md` - 逐步投稿指南
 
+**快速投稿流程**：
 ```
 1. 前往: https://www.biorxiv.org/submit-a-manuscript
 2. 上傳: MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf
 3. 填寫:
-   - Subject Area: Cancer Biology
-   - Article Category: Confirmatory Results
+   - Subject Area: Bioinformatics (Primary)
+   - Article Type: New Results
+   - License: CC BY 4.0
 ```
 
 **不需要**單獨上傳圖片（已全部嵌入 PDF）
