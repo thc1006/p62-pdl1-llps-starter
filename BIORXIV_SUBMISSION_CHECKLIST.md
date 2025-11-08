@@ -257,6 +257,80 @@ All scripts are provided with detailed instructions for reproducibility.
 
 ---
 
+## 📁 檔案上傳指南
+
+bioRxiv 投稿需要上傳檔案到三個區域。以下是您專案中的檔案位置：
+
+### 區域 1: Manuscript Files（必須上傳）
+
+**上傳此檔案**：
+```
+檔案路徑: /home/thc1006/dev/p62-pdl1-llps-starter/MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf
+檔案大小: 2.7 MB
+```
+
+**如何找到**：
+- 位於專案根目錄
+- 檔名：`MANUSCRIPT_bioRxiv_SUBMISSION_FINAL.pdf`
+
+**上傳方式**：
+1. 拖曳 PDF 到 "Drop manuscript Files here" 區域
+2. 或點擊 "Select Files" 瀏覽選擇
+
+---
+
+### 區域 2: Image Files（可選，建議不上傳）
+
+**圖片已嵌入 PDF，無需單獨上傳**
+
+如果系統要求或您想單獨上傳，圖片位置：
+
+```
+目錄: /home/thc1006/dev/p62-pdl1-llps-starter/outputs/figures/
+
+可用圖片：
+├── Figure1_pipeline_flowchart.png (200 KB)
+├── Figure2_correlations.png (1.1 MB)
+├── Figure3_immune_environment.png (446 KB)
+├── Figure4_survival_analysis.png (419 KB)
+├── FigureS1_study_design.png (302 KB)
+└── FigureS2_sample_characteristics.png (431 KB)
+```
+
+**注意**：
+- ✅ **推薦**：不上傳圖片（已嵌入 PDF）
+- ⚠️ **僅在系統要求時上傳**
+
+---
+
+### 區域 3: Supplemental Files（可選）
+
+**選項 A：不上傳（推薦新手）**
+- bioRxiv 不強制要求補充材料
+- 可以在手稿中說明代碼和數據在 GitHub
+
+**選項 B：上傳補充材料（可選）**
+
+如果您想提供補充材料，可以上傳：
+
+**補充文件 1：補充材料文檔**
+```
+檔案: SUPPLEMENTARY_MATERIALS.md
+位置: /home/thc1006/dev/p62-pdl1-llps-starter/SUPPLEMENTARY_MATERIALS.md
+大小: 20 KB
+```
+
+**建議**：
+- 將 `.md` 轉為 `.pdf` 後上傳
+- 或直接在 Data Availability 聲明中引用 GitHub
+
+**轉換指令**（如需要）：
+```bash
+pandoc SUPPLEMENTARY_MATERIALS.md -o SUPPLEMENTARY_MATERIALS.pdf
+```
+
+---
+
 ## 🚀 投稿步驟
 
 ### Step 1: 前往 bioRxiv

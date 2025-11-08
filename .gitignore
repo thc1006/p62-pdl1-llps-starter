@@ -12,8 +12,6 @@ __pycache__/
 data/*
 !data/.gitkeep
 artifacts/
-figures/
-outputs/
 
 # Large model weights (>100MB) and problematic files
 # tools/SaProt is a 4.9GB git repo with large model files
